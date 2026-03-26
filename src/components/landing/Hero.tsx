@@ -21,7 +21,7 @@ const HeroTrustIndicator = () => {
         <div className="flex -space-x-3">
           {[1, 2, 3, 4].map((i) => (
             <div key={i} className="relative w-10 h-10 rounded-full border-2 border-white dark:border-zinc-950 overflow-hidden ring-2 ring-transparent group-hover:ring-blue-200 dark:group-hover:ring-blue-500/30 transition-all duration-500 bg-zinc-200 dark:bg-zinc-800 shadow-sm">
-              <img src={`https://i.pravatar.cc/100?img=${i + 10}`} alt="" role="presentation" className="w-full h-full object-cover" />
+              <img src={`https://i.pravatar.cc/100?img=${i + 10}`} alt="" role="presentation" className="w-full h-full object-cover" loading="lazy" width="40" height="40" />
             </div>
           ))}
           <div className="w-10 h-10 rounded-full border-2 border-white dark:border-zinc-950 bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center text-xs font-bold text-white relative z-10 shadow-lg shadow-blue-500/20">
