@@ -7,7 +7,7 @@ interface ModuleToolbarProps {
   searchPlaceholder?: string;
 }
 
-const ModuleToolbar = ({ color, actionLabel, searchPlaceholder = "Search..." }: ModuleToolbarProps) => (
+const ModuleToolbar = ({ color: _color, actionLabel, searchPlaceholder = "Search..." }: ModuleToolbarProps) => (
   <div className="px-4 py-3 border-b border-zinc-100 dark:border-zinc-800 flex justify-between items-center gap-4 shrink-0 bg-white dark:bg-zinc-900">
     <div className="relative flex-1 max-w-md">
       <Search size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-400" />

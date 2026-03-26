@@ -2,7 +2,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import { BookOpen, Users, HelpCircle, Code2, ArrowRight, PlayCircle } from 'lucide-react';
+import type { LucideIcon } from 'lucide-react';
+import { BookOpen, Users, Code2, ArrowRight, PlayCircle } from 'lucide-react';
 import { Button } from '../ui/UI';
 
 const resourceColorClasses: Record<string, { bgBlur: string; icon: string; link: string }> = {
@@ -12,7 +13,16 @@ const resourceColorClasses: Record<string, { bgBlur: string; icon: string; link:
   emerald: { bgBlur: 'bg-emerald-500/10', icon: 'bg-emerald-100 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400', link: 'text-emerald-600 dark:text-emerald-400' },
 };
 
-const ResourceCard = ({ icon: Icon, title, desc, linkText, color, delay }: any) => {
+interface ResourceCardProps {
+  icon: LucideIcon;
+  title: string;
+  desc: string;
+  linkText: string;
+  color: string;
+  delay: number;
+}
+
+const ResourceCard = ({ icon: Icon, title, desc, linkText, color, delay }: ResourceCardProps) => {
   const colors = resourceColorClasses[color] || resourceColorClasses.blue;
   return (
   <motion.a

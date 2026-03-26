@@ -1,9 +1,20 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import type { LucideIcon } from 'lucide-react';
 import { CheckCircle2 } from 'lucide-react';
 import { nodeColorClasses } from '../../../data/workflows';
 
-const WorkflowNode = ({ icon: Icon, label, subLabel, color, delay, x, y }: any) => {
+interface WorkflowNodeProps {
+  icon: LucideIcon;
+  label: string;
+  subLabel: string;
+  color: string;
+  delay: number;
+  x: string;
+  y: string;
+}
+
+const WorkflowNode = ({ icon: Icon, label, subLabel, color, delay, x, y }: WorkflowNodeProps) => {
   const colors = nodeColorClasses[color] || nodeColorClasses.blue;
   return (
   <motion.div

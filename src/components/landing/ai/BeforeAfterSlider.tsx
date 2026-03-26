@@ -1,39 +1,49 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { MoveHorizontal } from 'lucide-react';
 
 const BeforeAfterSlider = () => {
     const [sliderPosition, setSliderPosition] = useState(50);
     const [isDragging, setIsDragging] = useState(false);
+    const [containerWidth, setContainerWidth] = useState<number | null>(null);
     const containerRef = useRef<HTMLDivElement>(null);
-    const imageRef = useRef<HTMLImageElement>(null);
 
-    const handleMouseMove = (e: React.MouseEvent | MouseEvent) => {
-      if (!isDragging || !containerRef.current) return;
-      const rect = containerRef.current.getBoundingClientRect();
-      const x = Math.max(0, Math.min(e.clientX - rect.left, rect.width));
-      setSliderPosition((x / rect.width) * 100);
-    };
+    // Track container width via ResizeObserver
+    useEffect(() => {
+      const el = containerRef.current;
+      if (!el) return;
+      const observer = new ResizeObserver(([entry]) => {
+        setContainerWidth(entry.contentRect.width);
+      });
+      observer.observe(el);
+      return () => observer.disconnect();
+    }, []);
 
-    const handleTouchMove = (e: React.TouchEvent | TouchEvent) => {
-      if (!isDragging || !containerRef.current) return;
-      const rect = containerRef.current.getBoundingClientRect();
-      const x = Math.max(0, Math.min(e.touches[0].clientX - rect.left, rect.width));
+    const updatePosition = useCallback((clientX: number) => {
+      const el = containerRef.current;
+      if (!el) return;
+      const rect = el.getBoundingClientRect();
+      const x = Math.max(0, Math.min(clientX - rect.left, rect.width));
       setSliderPosition((x / rect.width) * 100);
-    };
+    }, []);
+
+    const handleMouseMove = useCallback((e: MouseEvent) => {
+      updatePosition(e.clientX);
+    }, [updatePosition]);
+
+    const handleTouchMove = useCallback((e: React.TouchEvent) => {
+      updatePosition(e.touches[0].clientX);
+    }, [updatePosition]);
 
     useEffect(() => {
-      const handleGlobalMove = (e: MouseEvent) => handleMouseMove(e as any);
-      const handleGlobalUp = () => setIsDragging(false);
-
-      if (isDragging) {
-        window.addEventListener('mousemove', handleGlobalMove);
-        window.addEventListener('mouseup', handleGlobalUp);
-      }
+      if (!isDragging) return;
+      const handleUp = () => setIsDragging(false);
+      window.addEventListener('mousemove', handleMouseMove);
+      window.addEventListener('mouseup', handleUp);
       return () => {
-        window.removeEventListener('mousemove', handleGlobalMove);
-        window.removeEventListener('mouseup', handleGlobalUp);
+        window.removeEventListener('mousemove', handleMouseMove);
+        window.removeEventListener('mouseup', handleUp);
       };
-    }, [isDragging]);
+    }, [isDragging, handleMouseMove]);
 
     return (
       <div
@@ -41,12 +51,11 @@ const BeforeAfterSlider = () => {
         className="relative w-full h-full rounded-xl overflow-hidden cursor-ew-resize select-none group touch-none min-h-[160px]"
         onMouseDown={() => setIsDragging(true)}
         onTouchStart={() => setIsDragging(true)}
-        onTouchMove={handleTouchMove as any}
+        onTouchMove={handleTouchMove}
         onTouchEnd={() => setIsDragging(false)}
       >
         {/* Base Image (After - Enhanced) */}
         <img
-          ref={imageRef}
           src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80"
           alt="Property photo after AI enhancement"
           className="absolute inset-0 w-full h-full object-cover pointer-events-none"
@@ -67,7 +76,7 @@ const BeforeAfterSlider = () => {
             src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80"
             alt="Property photo before AI enhancement"
             className="absolute inset-0 w-full h-full object-cover max-w-none pointer-events-none filter brightness-75 contrast-75 sepia-[0.3]"
-            style={{ width: containerRef.current ? containerRef.current.offsetWidth : '100%' }}
+            style={{ width: containerWidth ?? '100%' }}
             loading="lazy"
             width="600"
             height="400"

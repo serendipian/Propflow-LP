@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
+import type { LucideIcon } from 'lucide-react';
 import { Zap, PieChart, Database, Calendar, Sparkles, Share2, Puzzle, GitBranch } from 'lucide-react';
 import { SectionBadge } from '../ui/UI';
 
@@ -19,7 +20,7 @@ const ConnectionLine = ({ direction = "left", delay = 0 }) => {
   );
 };
 
-const FeatureNode = ({ icon: Icon, title, desc, align = "left", delay = 0 }: { icon: any, title: string, desc: string, align?: "left" | "right", delay?: number }) => (
+const FeatureNode = ({ icon: Icon, title, desc, align = "left", delay = 0 }: { icon: LucideIcon, title: string, desc: string, align?: "left" | "right", delay?: number }) => (
   <motion.div 
     className={`relative flex items-center gap-4 p-4 rounded-2xl border border-zinc-100 dark:border-zinc-800 bg-white/80 dark:bg-zinc-900/80 backdrop-blur-sm shadow-sm hover:border-blue-200 dark:hover:border-blue-500/30 transition-all duration-300 group z-10 w-full max-w-[380px]
     ${align === "left" ? "flex-row-reverse text-right" : "flex-row text-left"}

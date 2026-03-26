@@ -1,8 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import { Layout, Globe, Code, Palette, ArrowRight, CheckCircle2, Layers, MessageSquare, Search, ChevronDown, Compass, Database, Link } from 'lucide-react';
-import { SectionBadge, Button, GlassPanel } from '../ui/UI';
+import { Globe, Palette, ArrowRight, CheckCircle2, MessageSquare, Search, ChevronDown, Compass, Database, Link } from 'lucide-react';
+import { SectionBadge, Button } from '../ui/UI';
 
 export default function WebsiteBuilderSection() {
   const { t } = useTranslation();

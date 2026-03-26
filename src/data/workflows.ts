@@ -1,3 +1,4 @@
+import type { LucideIcon } from 'lucide-react';
 import { Zap, Share2, Clock, BarChart3, DollarSign, UserPlus, RefreshCw, Star, CalendarCheck } from 'lucide-react';
 
 // --- Color Map for WorkflowNode ---
@@ -21,7 +22,7 @@ export const workflows: Record<WorkflowType, {
   label: string;
   title: string;
   desc: string;
-  icon: any;
+  icon: LucideIcon;
 }> = {
   leads: {
     label: "Lead Routing",

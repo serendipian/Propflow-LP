@@ -8,7 +8,7 @@ import {
   followUpItems, activeOffers, revenueBarHeights
 } from '../../../data/operations';
 
-const OpsVisualization = ({ id, color }: { id: string; color: string }) => {
+const OpsVisualization = ({ id, color: _color }: { id: string; color: string }) => {
    switch (id) {
       case 'dashboard':
          return (

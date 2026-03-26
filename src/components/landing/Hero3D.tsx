@@ -1,5 +1,5 @@
 
-import React, { useRef } from 'react';
+import React from 'react';
 import { motion, useSpring, useMotionValue, useTransform } from 'framer-motion';
 import { Search, Bell, LayoutDashboard, Building, Users, PieChart, Layers, Database, TrendingUp, Zap, CheckCircle2, Command } from 'lucide-react';
 import { Button, GlassPanel } from '../ui/UI';

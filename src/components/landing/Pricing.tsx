@@ -1,7 +1,7 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Check, X, Bot, ArrowRight, Minus, Box, Building2, Phone, Info } from 'lucide-react';
+import { Bot, Box, Building2, Info } from 'lucide-react';
 import { Button, SectionBadge } from '../ui/UI';
 import { useTranslation } from 'react-i18next';
 import { formatPrice } from '../../lib/currency';
@@ -26,15 +26,13 @@ export default function Pricing() {
   const [aiTier, setAiTier] = useState(0);
 
   // Reset add-ons when switching to Enterprise (as they are included)
-  useEffect(() => {
-    if (selectedPlan === 'enterprise') {
-      setAddons({
-        website: true, automation: true, inbox: true,
-        api: true
-      });
-      setAiTier(4); // Max AI visually (though custom in reality)
+  const handlePlanChange = (id: PlanId) => {
+    setSelectedPlan(id);
+    if (id === 'enterprise') {
+      setAddons({ website: true, automation: true, inbox: true, api: true });
+      setAiTier(4);
     }
-  }, [selectedPlan]);
+  };
 
   // Calculate Total Cost
   const calculateTotal = () => {
@@ -106,7 +104,7 @@ export default function Pricing() {
           {(Object.entries(basePlans) as [PlanId, typeof basePlans['solo']][]).map(([id, plan]) => (
             <div 
                 key={id}
-                onClick={() => setSelectedPlan(id)}
+                onClick={() => handlePlanChange(id)}
                 className={`flex flex-col p-6 md:p-8 rounded-xl border transition-all duration-300 relative group cursor-pointer
                 ${selectedPlan === id 
                     ? 'bg-white dark:bg-zinc-950 border-blue-600 ring-2 ring-blue-600 shadow-2xl scale-[1.01] z-10' 

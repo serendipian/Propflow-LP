@@ -2,7 +2,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import { Shield, Users, Trophy, Lock, Activity, Settings, Briefcase, Home, DollarSign, Eye, Plus, Check, ArrowUpRight, CheckCircle2 } from 'lucide-react';
+import { Shield, Users, Trophy, Lock, Activity, Settings, Briefcase, Home, DollarSign, Eye, Plus, Check } from 'lucide-react';
 import { SectionBadge } from '../ui/UI';
 
 const PermissionRow = ({ label, enabled, delay }: { label: string, enabled: boolean, delay: number }) => (
@@ -20,7 +20,15 @@ const PermissionRow = ({ label, enabled, delay }: { label: string, enabled: bool
   </motion.div>
 );
 
-const UserRow = ({ name, role, status, img, delay }: any) => (
+interface UserRowProps {
+  name: string;
+  role: string;
+  status: string;
+  img: string;
+  delay: number;
+}
+
+const UserRow = ({ name, role, status, img, delay }: UserRowProps) => (
   <motion.div 
     initial={{ opacity: 0, y: 10 }}
     whileInView={{ opacity: 1, y: 0 }}

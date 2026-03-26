@@ -2,7 +2,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-import { ChevronRight, Play, Star } from 'lucide-react';
+import { ChevronRight, Star } from 'lucide-react';
 import { Button, GlassPill } from '../ui/UI';
 
 const TrustIndicator = () => {
