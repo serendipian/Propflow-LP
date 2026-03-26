@@ -49,7 +49,7 @@ export default function OperationsSection() {
                      : 'bg-zinc-100 dark:bg-zinc-900/50 border-transparent text-zinc-500 dark:text-zinc-400 hover:bg-zinc-200 dark:hover:bg-zinc-800 hover:text-zinc-900 dark:hover:text-zinc-200'
                  }`}
                >
-                 <div className={`transition-colors duration-300 ${isActive ? `text-${module.color}-500` : 'text-current'}`}>
+                 <div className={`transition-colors duration-300 ${isActive ? (module.color === 'emerald' ? 'text-emerald-500' : 'text-blue-500') : 'text-current'}`}>
                     <module.icon size={16} />
                  </div>
                  <span>{module.label}</span>
@@ -100,7 +100,7 @@ export default function OperationsSection() {
                                 <h3 className="text-2xl font-bold text-zinc-900 dark:text-white mb-1">{activeModule.label}</h3>
                                 <p className="text-sm text-zinc-500 dark:text-zinc-400">{activeModule.desc}</p>
                              </div>
-                             <div className={`p-2 rounded-lg bg-${activeModule.color}-50 dark:bg-${activeModule.color}-900/20 text-${activeModule.color}-600 dark:text-${activeModule.color}-400 hidden sm:block`}>
+                             <div className={`p-2 rounded-lg hidden sm:block ${activeModule.color === 'emerald' ? 'bg-emerald-50 dark:bg-emerald-900/20 text-emerald-600 dark:text-emerald-400' : 'bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400'}`}>
                                 <activeModule.icon size={20} />
                              </div>
                           </div>
@@ -137,7 +137,7 @@ const OpsVisualization = ({ id, color }: { id: string, color: string }) => {
                   ].map((stat, i) => (
                     <div key={i} className="bg-zinc-50 dark:bg-zinc-800/50 p-3 rounded-xl border border-zinc-100 dark:border-zinc-800 flex flex-col justify-between">
                         <div className="flex justify-between items-start mb-1">
-                           <div className={`text-${color}-500 opacity-80`}><stat.icon size={14} /></div>
+                           <div className="text-blue-500 opacity-80"><stat.icon size={14} /></div>
                            <span className="text-[10px] bg-cyan-100 dark:bg-cyan-900/30 text-cyan-600 dark:text-cyan-400 px-1.5 rounded-sm font-medium">{stat.trend}</span>
                         </div>
                         <div>
@@ -359,10 +359,10 @@ const OpsVisualization = ({ id, color }: { id: string, color: string }) => {
                   <div className="h-4 w-8 bg-zinc-100 dark:bg-zinc-800 rounded" />
                </div>
                {[1, 2, 3, 4].map((i) => (
-                  <div key={i} className={`flex items-start gap-4 p-4 rounded-xl border transition-colors ${i===1 ? `bg-${color}-50 dark:bg-${color}-900/10 border-${color}-200 dark:border-${color}-900/50` : 'bg-zinc-50 dark:bg-zinc-800/50 border-zinc-100 dark:border-zinc-800'}`}>
+                  <div key={i} className={`flex items-start gap-4 p-4 rounded-xl border transition-colors ${i===1 ? 'bg-blue-50 dark:bg-blue-900/10 border-blue-200 dark:border-blue-900/50' : 'bg-zinc-50 dark:bg-zinc-800/50 border-zinc-100 dark:border-zinc-800'}`}>
                      <div className="flex flex-col items-center gap-1 w-12 pt-1">
                         <span className="text-xs font-medium text-zinc-500">10:00</span>
-                        <div className={`w-0.5 h-10 bg-${color}-200 dark:bg-${color}-800 rounded-full my-1`} />
+                        <div className="w-0.5 h-10 bg-blue-200 dark:bg-blue-800 rounded-full my-1" />
                      </div>
                      <div className="flex-1">
                         <div className="h-3 w-3/4 bg-zinc-200 dark:bg-zinc-700 rounded mb-2.5" />
@@ -371,7 +371,7 @@ const OpsVisualization = ({ id, color }: { id: string, color: string }) => {
                            <div className="h-2 w-20 bg-zinc-200 dark:bg-zinc-700/50 rounded" />
                         </div>
                      </div>
-                     {i===1 && <div className={`px-2 py-1 rounded text-[10px] font-bold bg-${color}-100 dark:bg-${color}-900/40 text-${color}-600 dark:text-${color}-400 uppercase tracking-wide`}>Now</div>}
+                     {i===1 && <div className="px-2 py-1 rounded text-[10px] font-bold bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-400 uppercase tracking-wide">Now</div>}
                   </div>
                ))}
             </div>
@@ -404,7 +404,7 @@ const OpsVisualization = ({ id, color }: { id: string, color: string }) => {
                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                   {[1, 2, 3, 4].map((i) => (
                     <div key={i} className="bg-zinc-50 dark:bg-zinc-800/50 p-4 rounded-xl border border-zinc-100 dark:border-zinc-800">
-                        <div className={`text-${color}-500 mb-2 opacity-80`}><TrendingUp size={16} /></div>
+                        <div className="text-emerald-500 mb-2 opacity-80"><TrendingUp size={16} /></div>
                         <div className="h-4 w-12 bg-zinc-200 dark:bg-zinc-700 rounded mb-1.5" />
                         <div className="h-1.5 w-8 bg-zinc-200 dark:bg-zinc-700/50 rounded" />
                     </div>
@@ -413,13 +413,13 @@ const OpsVisualization = ({ id, color }: { id: string, color: string }) => {
                <div className="flex-1 bg-zinc-50 dark:bg-zinc-800/30 rounded-xl border border-zinc-100 dark:border-zinc-800 p-6 flex items-end justify-between gap-3 relative overflow-hidden">
                   <div className="absolute inset-0 bg-grid-zinc-200/50 dark:bg-grid-zinc-700/10 [mask-image:linear-gradient(to_bottom,transparent,black)]" />
                   {[40, 70, 50, 90, 60, 80, 50, 75, 45, 65, 85, 55].map((h, i) => (
-                     <div key={i} className={`flex-1 bg-${color}-100 dark:bg-${color}-500/20 rounded-t-md relative group transition-all hover:opacity-80`} style={{ height: `${h}%` }}>
-                        <div className={`absolute bottom-0 left-0 right-0 bg-${color}-500 dark:bg-${color}-500 h-1.5 w-full opacity-50`} />
-                        <motion.div 
+                     <div key={i} className="flex-1 bg-emerald-100 dark:bg-emerald-500/20 rounded-t-md relative group transition-all hover:opacity-80" style={{ height: `${h}%` }}>
+                        <div className="absolute bottom-0 left-0 right-0 bg-emerald-500 dark:bg-emerald-500 h-1.5 w-full opacity-50" />
+                        <motion.div
                             initial={{ height: 0 }}
                             whileInView={{ height: `${h}%` }}
                             transition={{ duration: 1, delay: i * 0.05 }}
-                            className={`absolute bottom-0 left-0 right-0 bg-${color}-400/20 dark:bg-${color}-400/30 w-full`}
+                            className="absolute bottom-0 left-0 right-0 bg-emerald-400/20 dark:bg-emerald-400/30 w-full"
                         />
                      </div>
                   ))}

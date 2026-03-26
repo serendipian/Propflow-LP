@@ -146,7 +146,7 @@ export default function TeamSection() {
                         <div className="flex items-center gap-5">
                             <div className="relative">
                                 <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-zinc-100 dark:border-zinc-800 shadow-lg relative z-10">
-                                    <img src="https://i.pravatar.cc/150?img=11" className="w-full h-full object-cover" alt="Agent" />
+                                    <img src="https://i.pravatar.cc/150?img=11" className="w-full h-full object-cover" alt="" role="presentation" />
                                 </div>
                                 <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-blue-600 border-2 border-white dark:border-zinc-900 rounded-full flex items-center justify-center z-20">
                                     <Check size={12} className="text-white stroke-[3px]" />

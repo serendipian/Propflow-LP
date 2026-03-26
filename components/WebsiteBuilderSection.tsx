@@ -85,7 +85,7 @@ export default function WebsiteBuilderSection() {
                    <div className="h-[80%] w-full bg-[url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80')] bg-cover bg-center relative">
                       <div className="absolute inset-0 bg-black/40" />
                       <div className="absolute inset-0 flex flex-col justify-center items-center px-12 text-white text-center pt-20">
-                         <h1 className="text-5xl md:text-7xl font-serif mb-8 leading-tight drop-shadow-lg">Luxury Living in<br/>Los Angeles.</h1>
+                         <p className="text-5xl md:text-7xl font-serif mb-8 leading-tight drop-shadow-lg">Luxury Living in<br/>Los Angeles.</p>
                          
                          {/* Search Filter Bar */}
                          <div className="bg-white p-4 rounded-lg flex items-center gap-2 shadow-2xl mt-8 w-full max-w-[600px] mx-auto transform transition-transform hover:scale-105">
@@ -125,7 +125,7 @@ export default function WebsiteBuilderSection() {
                                   <img 
                                     src={`https://images.unsplash.com/photo-${i === 1 ? '1520250497591-112f2f40a3f4' : i === 2 ? '1613977257363-707ba9348227' : '1512917774080-9991f1c4c750'}?auto=format&fit=crop&w=300&q=80`}
                                     className="w-full h-full object-cover"
-                                    alt="Property"
+                                    alt="Sample luxury property listing"
                                   />
                                </div>
                             </div>
@@ -207,11 +207,11 @@ export default function WebsiteBuilderSection() {
                 
                 <div className="flex flex-col items-start gap-3 mb-8 w-full">
                     <div className="flex items-center gap-2 px-3 py-1.5 rounded-md bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 shadow-sm w-full">
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/9/98/WordPress_blue_logo.svg" className="w-4 h-4 shrink-0" alt="WP" />
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/9/98/WordPress_blue_logo.svg" className="w-4 h-4 shrink-0" alt="WordPress logo" />
                       <span className="text-xs font-semibold text-zinc-700 dark:text-zinc-300">WordPress</span>
                     </div>
                     <div className="flex items-center gap-2 px-3 py-1.5 rounded-md bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 shadow-sm w-full">
-                      <img src="https://cdn.prod.website-files.com/5e2d6349d44c45b85d95e263/5e2d6349d44c45664d95e28a_webflow-mark.svg" className="w-4 h-4 shrink-0" alt="WF" />
+                      <img src="https://cdn.prod.website-files.com/5e2d6349d44c45b85d95e263/5e2d6349d44c45664d95e28a_webflow-mark.svg" className="w-4 h-4 shrink-0" alt="Webflow logo" />
                       <span className="text-xs font-semibold text-zinc-700 dark:text-zinc-300">Webflow</span>
                     </div>
                 </div>

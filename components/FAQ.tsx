@@ -114,7 +114,7 @@ export default function FAQ() {
             
             <div className="p-6 rounded-2xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 relative overflow-hidden group shadow-sm">
                 <div className="relative z-10">
-                    <h4 className="font-semibold text-zinc-900 dark:text-white mb-2">Still have questions?</h4>
+                    <h3 className="font-semibold text-zinc-900 dark:text-white mb-2">Still have questions?</h3>
                     <p className="text-sm text-zinc-500 mb-6">Our team is available 7 days a week.</p>
                     <Button variant="secondary" className="w-full gap-2 justify-center">
                         <MessageCircle size={16} /> Chat to Support

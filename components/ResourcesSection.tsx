@@ -4,8 +4,17 @@ import { motion } from 'framer-motion';
 import { BookOpen, Users, HelpCircle, Code2, ArrowRight, PlayCircle } from 'lucide-react';
 import { Button } from './UI';
 
-const ResourceCard = ({ icon: Icon, title, desc, linkText, color, delay }: any) => (
-  <motion.a 
+const resourceColorClasses: Record<string, { bgBlur: string; icon: string; link: string }> = {
+  blue: { bgBlur: 'bg-blue-500/10', icon: 'bg-blue-100 dark:bg-blue-500/10 text-blue-600 dark:text-blue-400', link: 'text-blue-600 dark:text-blue-400' },
+  indigo: { bgBlur: 'bg-indigo-500/10', icon: 'bg-indigo-100 dark:bg-indigo-500/10 text-indigo-600 dark:text-indigo-400', link: 'text-indigo-600 dark:text-indigo-400' },
+  violet: { bgBlur: 'bg-violet-500/10', icon: 'bg-violet-100 dark:bg-violet-500/10 text-violet-600 dark:text-violet-400', link: 'text-violet-600 dark:text-violet-400' },
+  emerald: { bgBlur: 'bg-emerald-500/10', icon: 'bg-emerald-100 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400', link: 'text-emerald-600 dark:text-emerald-400' },
+};
+
+const ResourceCard = ({ icon: Icon, title, desc, linkText, color, delay }: any) => {
+  const colors = resourceColorClasses[color] || resourceColorClasses.blue;
+  return (
+  <motion.a
     href="#"
     className="group relative flex flex-col p-6 rounded-2xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 overflow-hidden hover:shadow-lg dark:hover:shadow-[0_0_20px_-5px_rgba(59,130,246,0.15)] transition-all duration-300"
     initial={{ opacity: 0, y: 20 }}
@@ -13,22 +22,23 @@ const ResourceCard = ({ icon: Icon, title, desc, linkText, color, delay }: any) 
     viewport={{ once: true }}
     transition={{ duration: 0.5, delay }}
   >
-    <div className={`absolute top-0 right-0 w-32 h-32 bg-${color}-500/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 transition-opacity opacity-50 group-hover:opacity-100`} />
-    
-    <div className={`w-10 h-10 rounded-lg bg-${color}-100 dark:bg-${color}-500/10 text-${color}-600 dark:text-${color}-400 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300`}>
+    <div className={`absolute top-0 right-0 w-32 h-32 ${colors.bgBlur} rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 transition-opacity opacity-50 group-hover:opacity-100`} />
+
+    <div className={`w-10 h-10 rounded-lg ${colors.icon} flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300`}>
        <Icon size={20} />
     </div>
-    
+
     <h3 className="text-lg font-bold text-zinc-900 dark:text-white mb-2">{title}</h3>
     <p className="text-sm text-zinc-600 dark:text-zinc-400 mb-6 leading-relaxed flex-1">
        {desc}
     </p>
-    
-    <div className={`flex items-center gap-2 text-sm font-semibold text-${color}-600 dark:text-${color}-400 group-hover:gap-3 transition-all`}>
+
+    <div className={`flex items-center gap-2 text-sm font-semibold ${colors.link} group-hover:gap-3 transition-all`}>
        {linkText} <ArrowRight size={14} />
     </div>
   </motion.a>
-);
+  );
+};
 
 export default function ResourcesSection() {
   return (

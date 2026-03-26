@@ -70,12 +70,12 @@ export default function FeatureHighlight() {
                         >
                         {/* Active Indicator Line */}
                         {isActive && (
-                            <div className={`absolute left-0 top-0 bottom-0 w-1 bg-${module.color}-500`} />
+                            <div className={`absolute left-0 top-0 bottom-0 w-1 bg-blue-500`} />
                         )}
                         
                         <div className={`w-5 h-5 flex-shrink-0 flex items-center justify-center transition-colors ${
                             isActive 
-                            ? `text-${module.color}-600 dark:text-${module.color}-400` 
+                            ? `text-blue-600 dark:text-blue-400` 
                             : 'text-zinc-400 group-hover:text-zinc-600 dark:group-hover:text-zinc-300'
                         }`}>
                             <module.icon size={18} />
@@ -97,7 +97,7 @@ export default function FeatureHighlight() {
                 <div className="p-5 border-b border-zinc-100 dark:border-zinc-800 shrink-0">
                     <div className="flex items-center justify-between gap-6">
                         <div className="flex items-center gap-4">
-                            <div className={`w-12 h-12 rounded-xl bg-${activeModule.color}-50 dark:bg-${activeModule.color}-900/20 text-${activeModule.color}-600 dark:text-${activeModule.color}-400 flex items-center justify-center shrink-0 border border-${activeModule.color}-100 dark:border-${activeModule.color}-500/10`}>
+                            <div className={`w-12 h-12 rounded-xl bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 flex items-center justify-center shrink-0 border border-blue-100 dark:border-blue-500/10`}>
                                 <activeModule.icon size={24} />
                             </div>
                             <div>
@@ -110,7 +110,7 @@ export default function FeatureHighlight() {
 
                         {/* Decorative Tag */}
                          <div className="hidden sm:flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-zinc-100 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 self-start mt-1">
-                            <div className={`w-1.5 h-1.5 rounded-full bg-${activeModule.color}-500 animate-pulse`} />
+                            <div className={`w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse`} />
                             <span className="text-[10px] font-medium text-zinc-500 dark:text-zinc-400">Live</span>
                          </div>
                     </div>
@@ -165,7 +165,7 @@ const ModuleToolbar = ({ color, actionLabel, searchPlaceholder = "Search..." }: 
         className="w-full pl-9 pr-4 py-2 bg-zinc-50 dark:bg-zinc-800/50 border border-zinc-200 dark:border-zinc-700 rounded-lg text-sm text-zinc-700 dark:text-zinc-200 focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all placeholder:text-zinc-400"
       />
     </div>
-    <button className={`flex items-center gap-2 px-3 py-2 bg-${color}-600 hover:bg-${color}-700 text-white rounded-lg text-xs font-semibold shadow-sm transition-colors`}>
+    <button className={`flex items-center gap-2 px-3 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-xs font-semibold shadow-sm transition-colors`}>
       <Plus size={14} strokeWidth={2.5} />
       <span className="hidden sm:inline">{actionLabel}</span>
     </button>
@@ -234,7 +234,7 @@ const ModuleVisualization = ({ id, color }: { id: string, color: string }) => {
                             <div className="h-28 relative overflow-hidden bg-zinc-200 dark:bg-zinc-800">
                               <img 
                                   src={`https://images.unsplash.com/photo-${prop.img}?auto=format&fit=crop&w=400&q=80`} 
-                                  alt="Property" 
+                                  alt={prop.address}
                                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                               />
                               <div className="absolute top-2 left-2 px-1.5 py-0.5 bg-black/60 backdrop-blur-md rounded text-[9px] font-bold text-white uppercase tracking-wide">
@@ -292,7 +292,7 @@ const ModuleVisualization = ({ id, color }: { id: string, color: string }) => {
                       <div key={i} className="bg-white dark:bg-zinc-900 p-3 rounded-lg border border-zinc-200 dark:border-zinc-700 shadow-sm flex flex-col gap-2 relative">
                         <div className="flex justify-between items-start">
                             <div className="flex items-center gap-2">
-                                <div className={`w-8 h-8 rounded-full bg-${color}-100 dark:bg-${color}-900/20 text-${color}-600 flex items-center justify-center font-bold text-xs`}>
+                                <div className={`w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900/20 text-blue-600 flex items-center justify-center font-bold text-xs`}>
                                     {['JD', 'AS', 'MK', 'LB'][i-1]}
                                 </div>
                                 <div>
@@ -300,7 +300,7 @@ const ModuleVisualization = ({ id, color }: { id: string, color: string }) => {
                                     <div className="text-[10px] text-zinc-500">Budget: $4k - $5k/mo</div>
                                 </div>
                             </div>
-                            <div className={`px-1.5 py-0.5 bg-${color}-100 dark:bg-${color}-900/30 text-${color}-600 dark:text-${color}-400 rounded text-[9px] font-bold`}>
+                            <div className={`px-1.5 py-0.5 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded text-[9px] font-bold`}>
                                 2 Matches
                             </div>
                         </div>
@@ -326,7 +326,7 @@ const ModuleVisualization = ({ id, color }: { id: string, color: string }) => {
                <div className="p-4 grid grid-cols-1 md:grid-cols-2 gap-3 content-start h-full overflow-y-auto custom-scrollbar bg-zinc-50/30 dark:bg-black/20">
                   {[1, 2, 3, 4, 5].map(i => (
                       <div key={i} className="flex items-center gap-3 p-3 bg-white dark:bg-zinc-900 rounded-lg border border-zinc-200 dark:border-zinc-700 shadow-sm hover:border-blue-300 dark:hover:border-blue-700 transition-colors">
-                        <div className={`w-10 h-10 rounded-full bg-${color}-100 dark:bg-${color}-900/20 flex items-center justify-center text-${color}-600`}>
+                        <div className={`w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900/20 flex items-center justify-center text-blue-600`}>
                             <UserCircle size={18} />
                         </div>
                         <div className="flex-1 space-y-1.5">
@@ -354,7 +354,7 @@ const ModuleVisualization = ({ id, color }: { id: string, color: string }) => {
                   {[1, 2, 3, 4].map(i => (
                       <div key={i} className="flex items-center justify-between p-3 bg-white dark:bg-zinc-900 rounded-lg border border-zinc-100 dark:border-zinc-800 hover:shadow-sm transition-shadow">
                         <div className="flex items-center gap-3">
-                            <div className={`w-8 h-8 rounded bg-${color}-50 dark:bg-${color}-900/20 flex items-center justify-center text-${color}-500`}>
+                            <div className={`w-8 h-8 rounded bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center text-blue-500`}>
                               <Receipt size={14} />
                             </div>
                             <div className="flex flex-col">
@@ -379,7 +379,7 @@ const ModuleVisualization = ({ id, color }: { id: string, color: string }) => {
                   {[1, 2, 3, 4].map(i => (
                       <div key={i} className="flex gap-3 relative pl-4">
                         <div className={`absolute left-0 top-0 bottom-0 w-0.5 bg-zinc-200 dark:bg-zinc-800 ${i === 2 ? 'bg-gradient-to-b from-zinc-200 to-transparent dark:from-zinc-800' : ''}`} />
-                        <div className={`absolute left-[-2.5px] top-4 w-1.5 h-1.5 rounded-full ${i===0 ? `bg-${color}-500` : 'bg-zinc-300 dark:bg-zinc-700'}`} />
+                        <div className={`absolute left-[-2.5px] top-4 w-1.5 h-1.5 rounded-full ${i===0 ? 'bg-blue-500' : 'bg-zinc-300 dark:bg-zinc-700'}`} />
                         <div className="flex-1 bg-white dark:bg-zinc-900 p-3 rounded-lg border border-zinc-200 dark:border-zinc-700 shadow-sm">
                             <div className="flex justify-between mb-2">
                               <div className="h-2 w-20 bg-zinc-200 dark:bg-zinc-700 rounded" />
@@ -408,11 +408,11 @@ const ModuleVisualization = ({ id, color }: { id: string, color: string }) => {
                   </div>
                   <div className="flex-1 grid grid-cols-7 grid-rows-4 gap-1">
                       {Array.from({length: 28}).map((_, i) => (
-                        <div key={i} className={`rounded-md border relative transition-colors ${i === 12 || i === 22 ? `bg-${color}-50 dark:bg-${color}-900/20 border-${color}-200 dark:border-${color}-800` : 'bg-white dark:bg-zinc-900 border-zinc-100 dark:border-zinc-800 hover:bg-zinc-50 dark:hover:bg-zinc-800'}`}>
+                        <div key={i} className={`rounded-md border relative transition-colors ${i === 12 || i === 22 ? `bg-blue-50 dark:bg-blue-900/20 border-blue-200 dark:border-blue-800` : 'bg-white dark:bg-zinc-900 border-zinc-100 dark:border-zinc-800 hover:bg-zinc-50 dark:hover:bg-zinc-800'}`}>
                             <span className="absolute top-1 left-1 text-[8px] text-zinc-400">{i + 1}</span>
                             {(i === 12 || i === 22) && (
                                 <div className="absolute inset-0 flex items-center justify-center">
-                                    <div className={`w-1.5 h-1.5 rounded-full bg-${color}-500`} />
+                                    <div className={`w-1.5 h-1.5 rounded-full bg-blue-500`} />
                                 </div>
                             )}
                         </div>
@@ -459,7 +459,7 @@ const ModuleVisualization = ({ id, color }: { id: string, color: string }) => {
                            </div>
 
                            <div className="flex -space-x-2 shrink-0">
-                               <img src={`https://i.pravatar.cc/150?img=${task.user}`} alt="User" className="w-6 h-6 rounded-full border border-white dark:border-zinc-900" />
+                               <img src={`https://i.pravatar.cc/150?img=${task.user}`} alt={`Assigned to task: ${task.title}`} className="w-6 h-6 rounded-full border border-white dark:border-zinc-900" />
                            </div>
                            
                         </div>
@@ -479,11 +479,11 @@ const ModuleVisualization = ({ id, color }: { id: string, color: string }) => {
                <div className="p-4 grid grid-cols-1 md:grid-cols-2 gap-2 content-start h-full overflow-y-auto custom-scrollbar bg-zinc-50/30 dark:bg-black/20">
                   {[1, 2, 3, 4, 5, 6].map(i => (
                       <div key={i} className="flex items-center gap-3 p-2.5 bg-white dark:bg-zinc-900 rounded-lg border border-zinc-200 dark:border-zinc-700 hover:shadow-sm transition-all">
-                        <div className={`w-4 h-4 rounded border-2 border-${color}-200 dark:border-${color}-800 flex items-center justify-center`}>
-                            {i < 3 && <div className={`w-2.5 h-2.5 bg-${color}-500 rounded-[1px]`} />}
+                        <div className={`w-4 h-4 rounded border-2 border-blue-200 dark:border-blue-800 flex items-center justify-center`}>
+                            {i < 3 && <div className={`w-2.5 h-2.5 bg-blue-500 rounded-[1px]`} />}
                         </div>
                         <div className="flex-1 h-2 bg-zinc-100 dark:bg-zinc-800 rounded" />
-                        {i === 1 && <div className={`px-1.5 py-0.5 bg-${color}-100 dark:bg-${color}-900/30 rounded text-[8px] font-bold text-${color}-500 uppercase`}>Urgent</div>}
+                        {i === 1 && <div className={`px-1.5 py-0.5 bg-blue-100 dark:bg-blue-900/30 rounded text-[8px] font-bold text-blue-500 uppercase`}>Urgent</div>}
                       </div>
                   ))}
                </div>

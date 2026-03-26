@@ -10,6 +10,19 @@ import {
 } from 'lucide-react';
 import { SectionBadge } from './UI';
 
+// --- Color Map for WorkflowNode ---
+
+const nodeColorClasses: Record<string, { bg: string; text: string; border: string }> = {
+  blue: { bg: 'bg-blue-50 dark:bg-blue-900/20', text: 'text-blue-600 dark:text-blue-400', border: 'border-blue-100 dark:border-blue-500/20' },
+  orange: { bg: 'bg-orange-50 dark:bg-orange-900/20', text: 'text-orange-600 dark:text-orange-400', border: 'border-orange-100 dark:border-orange-500/20' },
+  red: { bg: 'bg-red-50 dark:bg-red-900/20', text: 'text-red-600 dark:text-red-400', border: 'border-red-100 dark:border-red-500/20' },
+  cyan: { bg: 'bg-cyan-50 dark:bg-cyan-900/20', text: 'text-cyan-600 dark:text-cyan-400', border: 'border-cyan-100 dark:border-cyan-500/20' },
+  indigo: { bg: 'bg-indigo-50 dark:bg-indigo-900/20', text: 'text-indigo-600 dark:text-indigo-400', border: 'border-indigo-100 dark:border-indigo-500/20' },
+  green: { bg: 'bg-green-50 dark:bg-green-900/20', text: 'text-green-600 dark:text-green-400', border: 'border-green-100 dark:border-green-500/20' },
+  pink: { bg: 'bg-pink-50 dark:bg-pink-900/20', text: 'text-pink-600 dark:text-pink-400', border: 'border-pink-100 dark:border-pink-500/20' },
+  purple: { bg: 'bg-purple-50 dark:bg-purple-900/20', text: 'text-purple-600 dark:text-purple-400', border: 'border-purple-100 dark:border-purple-500/20' },
+};
+
 // --- Types & Data ---
 
 type WorkflowType = 'leads' | 'listings' | 'retention' | 'reporting' | 'commissions' | 'stale' | 'priceupdate' | 'reviews' | 'viewingconfirm';
@@ -78,7 +91,9 @@ const workflows: Record<WorkflowType, {
 
 // --- Components ---
 
-const WorkflowNode = ({ icon: Icon, label, subLabel, color, delay, x, y }: any) => (
+const WorkflowNode = ({ icon: Icon, label, subLabel, color, delay, x, y }: any) => {
+  const colors = nodeColorClasses[color] || nodeColorClasses.blue;
+  return (
   <motion.div
     className={`absolute w-48 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl p-3 shadow-lg z-20 flex items-center gap-3`}
     style={{ left: x, top: y }}
@@ -87,7 +102,7 @@ const WorkflowNode = ({ icon: Icon, label, subLabel, color, delay, x, y }: any) 
     exit={{ opacity: 0, scale: 0.8 }}
     transition={{ duration: 0.4, delay }}
   >
-    <div className={`w-10 h-10 rounded-lg bg-${color}-50 dark:bg-${color}-900/20 flex items-center justify-center text-${color}-600 dark:text-${color}-400 shrink-0 border border-${color}-100 dark:border-${color}-500/20`}>
+    <div className={`w-10 h-10 rounded-lg ${colors.bg} flex items-center justify-center ${colors.text} shrink-0 border ${colors.border}`}>
       <Icon size={20} />
     </div>
     <div className="min-w-0">
@@ -104,7 +119,8 @@ const WorkflowNode = ({ icon: Icon, label, subLabel, color, delay, x, y }: any) 
         <CheckCircle2 size={12} className="text-white" />
     </motion.div>
   </motion.div>
-);
+  );
+};
 
 const ConnectionPath = ({ d, color = "#3b82f6", delay = 0 }: { d: string, color?: string, delay?: number }) => (
     <>

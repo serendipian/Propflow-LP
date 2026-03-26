@@ -104,7 +104,7 @@ const SmartChat = () => {
                             {/* Property Card 1 */}
                             <div className="flex gap-3 bg-zinc-50 dark:bg-zinc-900/50 p-2 rounded-lg border border-zinc-100 dark:border-zinc-700/50">
                                 <div className="w-12 h-12 bg-zinc-200 dark:bg-zinc-700 rounded-md overflow-hidden relative">
-                                    <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=100&q=80" className="w-full h-full object-cover" alt="Prop" />
+                                    <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=100&q=80" className="w-full h-full object-cover" alt="Sunset Heights apartment exterior" />
                                 </div>
                                 <div className="flex-1 min-w-0">
                                     <div className="flex justify-between items-start">
@@ -118,7 +118,7 @@ const SmartChat = () => {
                             {/* Property Card 2 */}
                             <div className="flex gap-3 bg-zinc-50 dark:bg-zinc-900/50 p-2 rounded-lg border border-zinc-100 dark:border-zinc-700/50">
                                 <div className="w-12 h-12 bg-zinc-200 dark:bg-zinc-700 rounded-md overflow-hidden relative">
-                                    <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=100&q=80" className="w-full h-full object-cover" alt="Prop" />
+                                    <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=100&q=80" className="w-full h-full object-cover" alt="The Williamsburg apartment exterior" />
                                 </div>
                                 <div className="flex-1 min-w-0">
                                     <div className="flex justify-between items-start">
@@ -213,7 +213,7 @@ const BeforeAfterSlider = () => {
         <img 
           ref={imageRef}
           src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80" 
-          alt="After"
+          alt="Property photo after AI enhancement"
           className="absolute inset-0 w-full h-full object-cover pointer-events-none"
         />
         <div className="absolute top-3 right-3 bg-blue-600/90 text-white text-[10px] font-bold px-2 py-1 rounded-md backdrop-blur-md z-10 shadow-sm">
@@ -227,7 +227,7 @@ const BeforeAfterSlider = () => {
         >
           <img 
             src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80" 
-            alt="Before"
+            alt="Property photo before AI enhancement"
             className="absolute inset-0 w-full h-full object-cover max-w-none pointer-events-none filter brightness-75 contrast-75 sepia-[0.3]"
             style={{ width: containerRef.current ? containerRef.current.offsetWidth : '100%' }}
           />

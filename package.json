@@ -1,7 +1,8 @@
 {
-  "name": "copy-of-lp",
+  "name": "propflow-lp",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "description": "Propflow marketing website - The OS for Modern Real Estate",
   "type": "module",
   "scripts": {
     "dev": "vite",
