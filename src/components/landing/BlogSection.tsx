@@ -2,8 +2,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Clock, Calendar } from 'lucide-react';
-import { Button } from './UI';
-import { blogPosts } from '../data/blog';
+import { Button } from '../ui/UI';
+import { blogPosts } from '../../data/blog';
 
 export default function BlogSection() {
   return (

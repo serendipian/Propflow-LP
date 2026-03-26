@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Zap, PieChart, Database, Calendar, Sparkles, Share2, Puzzle, GitBranch } from 'lucide-react';
-import { SectionBadge } from './UI';
+import { SectionBadge } from '../ui/UI';
 
 const ConnectionLine = ({ direction = "left", delay = 0 }) => {
   return (

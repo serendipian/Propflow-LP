@@ -2,8 +2,8 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MessageCircle, ChevronDown, HelpCircle } from 'lucide-react';
-import { Button, SectionBadge } from './UI';
-import { faqs } from '../data/faq';
+import { Button, SectionBadge } from '../ui/UI';
+import { faqs } from '../../data/faq';
 
 interface FAQItemProps {
   item: { q: string; a: string };

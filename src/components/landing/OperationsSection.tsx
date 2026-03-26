@@ -5,7 +5,7 @@ import {
   TrendingUp, Briefcase, Eye, Users, MapPin, Clock, 
   CheckCircle2, ListTodo, FileText, ArrowUpRight
 } from 'lucide-react';
-import { SectionBadge, GlassPanel } from './UI';
+import { SectionBadge, GlassPanel } from '../ui/UI';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const modules = [

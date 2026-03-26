@@ -2,7 +2,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Shield, Users, Trophy, Lock, Activity, Settings, Briefcase, Home, DollarSign, Eye, Plus, Check, ArrowUpRight, CheckCircle2 } from 'lucide-react';
-import { SectionBadge } from './UI';
+import { SectionBadge } from '../ui/UI';
 
 const PermissionRow = ({ label, enabled, delay }: { label: string, enabled: boolean, delay: number }) => (
   <motion.div 

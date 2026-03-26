@@ -7,7 +7,7 @@ import {
   MapPin, BedDouble, Bath, Maximize, Filter, Plus,
   ChevronDown, LayoutGrid, AlignJustify, Map, Columns3
 } from 'lucide-react';
-import { SectionBadge } from './UI';
+import { SectionBadge } from '../ui/UI';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const modules = [

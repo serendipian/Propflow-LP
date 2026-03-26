@@ -2,7 +2,7 @@
 import React, { useRef } from 'react';
 import { motion, useSpring, useMotionValue, useTransform } from 'framer-motion';
 import { Search, Bell, LayoutDashboard, Building, Users, PieChart, Layers, Database, TrendingUp, Zap, CheckCircle2, Command } from 'lucide-react';
-import { Button, GlassPanel } from './UI';
+import { Button, GlassPanel } from '../ui/UI';
 
 export default function Hero3D() {
   const x = useMotionValue(0);

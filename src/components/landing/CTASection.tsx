@@ -2,7 +2,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ChevronRight, Play, Star } from 'lucide-react';
-import { Button, GlassPill } from './UI';
+import { Button, GlassPill } from '../ui/UI';
 
 const TrustIndicator = () => {
   return (

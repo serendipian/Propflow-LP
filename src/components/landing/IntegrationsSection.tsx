@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { SectionBadge } from './UI';
+import { SectionBadge } from '../ui/UI';
 
 // --- Brand Logos Configuration ---
 

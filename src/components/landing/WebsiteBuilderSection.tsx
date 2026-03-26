@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Layout, Globe, Code, Palette, ArrowRight, CheckCircle2, Layers, MessageSquare, Search, ChevronDown, Compass, Database, Link } from 'lucide-react';
-import { SectionBadge, Button, GlassPanel } from './UI';
+import { SectionBadge, Button, GlassPanel } from '../ui/UI';
 
 export default function WebsiteBuilderSection() {
   return (

@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Check, X, Globe, Zap, MessageSquare, Bot, ArrowRight, Minus, Sparkles, Box, Webhook, Image as ImageIcon, Building2, Phone, Info } from 'lucide-react';
-import { Button, SectionBadge } from './UI';
+import { Button, SectionBadge } from '../ui/UI';
 
 type BillingCycle = 'monthly' | 'yearly';
 type PlanId = 'solo' | 'team' | 'enterprise';

@@ -1,10 +1,10 @@
 
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ArrowRight } from 'lucide-react';
-import { Button } from './UI';
-import ThemeToggle from './ThemeToggle';
-import LanguagePicker from './LanguagePicker';
-import { navLinks } from '../data/navigation';
+import { Button } from '../ui/UI';
+import ThemeToggle from '../ui/ThemeToggle';
+import LanguagePicker from '../landing/LanguagePicker';
+import { navLinks } from '../../data/navigation';
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);

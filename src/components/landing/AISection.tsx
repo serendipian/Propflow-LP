@@ -6,7 +6,7 @@ import {
   MessageSquare, Magnet, Send, User, MoveHorizontal,
   Building, AlignLeft, Trophy
 } from 'lucide-react';
-import { SectionBadge } from './UI';
+import { SectionBadge } from '../ui/UI';
 
 // --- Sub-Component: Smart Chat Simulation ---
 const SmartChat = () => {

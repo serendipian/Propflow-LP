@@ -2,7 +2,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { BookOpen, Users, HelpCircle, Code2, ArrowRight, PlayCircle } from 'lucide-react';
-import { Button } from './UI';
+import { Button } from '../ui/UI';
 
 const resourceColorClasses: Record<string, { bgBlur: string; icon: string; link: string }> = {
   blue: { bgBlur: 'bg-blue-500/10', icon: 'bg-blue-100 dark:bg-blue-500/10 text-blue-600 dark:text-blue-400', link: 'text-blue-600 dark:text-blue-400' },

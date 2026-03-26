@@ -8,7 +8,7 @@ import {
   GraduationCap, Key, ShieldCheck, AlertCircle, TrendingDown, FileWarning, Search,
   RefreshCw, CalendarCheck, Users, Calendar, Briefcase, User, Play, Settings, MoreHorizontal
 } from 'lucide-react';
-import { SectionBadge } from './UI';
+import { SectionBadge } from '../ui/UI';
 
 // --- Color Map for WorkflowNode ---
 
