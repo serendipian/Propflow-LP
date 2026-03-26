@@ -160,5 +160,90 @@
     "security": "Sécurité",
     "copyright": "© {{year}} Propflow Inc. Tous droits réservés.",
     "designedFor": "Conçu pour le futur."
+  },
+  "pricingPage": {
+    "title": "Tarifs Simples et Transparents",
+    "subtitle": "Pas de frais cachés. Pas de surprises. Annulez à tout moment.",
+    "seeComparison": "Comparer toutes les fonctionnalités",
+    "billedMonthly": "Facturation Mensuelle",
+    "billedYearly": "Facturation Annuelle",
+    "startFree": "Commencer gratuitement",
+    "talkToUs": "Nous contacter",
+    "customPricing": "Sur mesure",
+    "volumePricing": "Contactez-nous pour un tarif volume",
+    "comparison": {
+      "title": "Comparer les Plans",
+      "feature": "Fonctionnalité",
+      "included": "Inclus",
+      "notIncluded": "Non inclus"
+    },
+    "faq": {
+      "title": "FAQ Tarifs",
+      "items": [
+        { "q": "Que se passe-t-il après mon essai de 30 jours ?", "a": "Vous serez invité à choisir un plan. Sinon, votre compte passe en lecture seule — aucune donnée n'est perdue. Vous pouvez passer à un plan supérieur à tout moment." },
+        { "q": "Puis-je changer de plan plus tard ?", "a": "Oui, passez à un plan supérieur ou inférieur à tout moment. Lors d'un upgrade, vous accédez immédiatement aux nouvelles fonctionnalités. Lors d'un downgrade, le changement s'applique au prochain cycle de facturation." },
+        { "q": "Quels modes de paiement acceptez-vous ?", "a": "Nous acceptons toutes les grandes cartes de crédit (Visa, Mastercard, Amex) et les virements bancaires pour les plans Enterprise annuels." },
+        { "q": "Y a-t-il une politique de remboursement ?", "a": "Oui. Si vous n'êtes pas satisfait dans les 14 premiers jours d'un plan payant, nous vous remboursons intégralement — sans questions." },
+        { "q": "Qu'est-ce qui est inclus dans chaque plan ?", "a": "Tous les plans incluent des contacts et biens illimités, les modules CRM de base, la gestion du pipeline, le matching intelligent, l'agenda synchronisé et le support par email." },
+        { "q": "Proposez-vous des tarifs Enterprise sur mesure ?", "a": "Absolument. Les plans Enterprise sont adaptés à la taille et aux besoins de votre agence. Contactez-nous et nous concevrons un forfait qui vous convient." }
+      ]
+    },
+    "enterprise": {
+      "title": "Besoin d'un plan sur mesure pour votre agence ?",
+      "subtitle": "Notre plan Enterprise s'adapte à votre équipe. Bénéficiez de limites IA personnalisées, d'un support dédié et de remises volume.",
+      "cta": "Nous Contacter"
+    },
+    "seeFullPricing": "Voir tous les tarifs →"
+  },
+  "contactPage": {
+    "title": "Contactez-nous",
+    "subtitle": "Nous répondons généralement sous 24 heures",
+    "form": {
+      "name": "Nom Complet",
+      "namePlaceholder": "Jean Dupont",
+      "email": "Email Professionnel",
+      "emailPlaceholder": "jean@agence.com",
+      "company": "Nom de l'Entreprise",
+      "companyPlaceholder": "Votre Agence (optionnel)",
+      "subject": "Sujet",
+      "subjectPlaceholder": "Sélectionnez un sujet",
+      "subjectOptions": {
+        "general": "Demande Générale",
+        "demo": "Réserver une Démo",
+        "sales": "Question Commerciale",
+        "partnership": "Partenariat"
+      },
+      "message": "Message",
+      "messagePlaceholder": "Dites-nous comment nous pouvons vous aider...",
+      "submit": "Envoyer le Message",
+      "sending": "Envoi en cours..."
+    },
+    "validation": {
+      "nameRequired": "Le nom est requis",
+      "nameMin": "Le nom doit contenir au moins 2 caractères",
+      "emailRequired": "L'email est requis",
+      "emailInvalid": "Veuillez entrer une adresse email valide",
+      "subjectRequired": "Veuillez sélectionner un sujet",
+      "messageRequired": "Le message est requis",
+      "messageMin": "Le message doit contenir au moins 10 caractères"
+    },
+    "success": {
+      "title": "Message Envoyé !",
+      "message": "Merci de nous avoir contactés. Nous vous répondrons sous 24 heures.",
+      "sendAnother": "Envoyer un autre message"
+    },
+    "info": {
+      "title": "Informations de Contact",
+      "email": "hello@propflow.app",
+      "phone": "+212 5XX-XXXXXX",
+      "address": "Casablanca, Maroc",
+      "hours": "Lun–Ven, 9h00 – 18h00 (GMT+1)",
+      "hoursLabel": "Horaires d'Ouverture",
+      "demo": {
+        "title": "Réserver une Démo",
+        "description": "Découvrez Propflow en action avec une présentation personnalisée pour votre agence.",
+        "cta": "Planifier une Démo"
+      }
+    }
   }
 }

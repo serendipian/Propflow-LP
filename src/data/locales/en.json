@@ -160,5 +160,90 @@
     "security": "Security",
     "copyright": "© {{year}} Propflow Inc. All rights reserved.",
     "designedFor": "Designed for the future."
+  },
+  "pricingPage": {
+    "title": "Simple, Transparent Pricing",
+    "subtitle": "No hidden fees. No surprises. Cancel anytime.",
+    "seeComparison": "Compare all features",
+    "billedMonthly": "Billed Monthly",
+    "billedYearly": "Billed Yearly",
+    "startFree": "Start for free",
+    "talkToUs": "Talk to us",
+    "customPricing": "Custom",
+    "volumePricing": "Contact us for volume pricing",
+    "comparison": {
+      "title": "Compare Plans",
+      "feature": "Feature",
+      "included": "Included",
+      "notIncluded": "Not included"
+    },
+    "faq": {
+      "title": "Pricing FAQ",
+      "items": [
+        { "q": "What happens after my 30-day trial?", "a": "You'll be prompted to choose a plan. If you don't, your account enters read-only mode — no data is lost. You can upgrade anytime to resume full access." },
+        { "q": "Can I change plans later?", "a": "Yes, upgrade or downgrade anytime. When upgrading, you get immediate access to new features. When downgrading, the change applies at the next billing cycle." },
+        { "q": "What payment methods do you accept?", "a": "We accept all major credit cards (Visa, Mastercard, Amex) and bank transfers for yearly Enterprise plans." },
+        { "q": "Is there a refund policy?", "a": "Yes. If you're not satisfied within the first 14 days of a paid plan, we'll issue a full refund — no questions asked." },
+        { "q": "What's included in every plan?", "a": "All plans include unlimited contacts and properties, core CRM modules, pipeline management, smart matching, synced agenda, and email support." },
+        { "q": "Do you offer custom Enterprise pricing?", "a": "Absolutely. Enterprise plans are tailored to your agency size and needs. Contact us and we'll design a package that fits." }
+      ]
+    },
+    "enterprise": {
+      "title": "Need a custom plan for your agency?",
+      "subtitle": "Our Enterprise plan scales with your team. Get custom AI limits, dedicated support, and volume discounts.",
+      "cta": "Contact Us"
+    },
+    "seeFullPricing": "See full pricing →"
+  },
+  "contactPage": {
+    "title": "Get in Touch",
+    "subtitle": "We typically respond within 24 hours",
+    "form": {
+      "name": "Full Name",
+      "namePlaceholder": "John Doe",
+      "email": "Work Email",
+      "emailPlaceholder": "john@agency.com",
+      "company": "Company Name",
+      "companyPlaceholder": "Your Agency (optional)",
+      "subject": "Subject",
+      "subjectPlaceholder": "Select a subject",
+      "subjectOptions": {
+        "general": "General Inquiry",
+        "demo": "Book a Demo",
+        "sales": "Sales Question",
+        "partnership": "Partnership"
+      },
+      "message": "Message",
+      "messagePlaceholder": "Tell us how we can help...",
+      "submit": "Send Message",
+      "sending": "Sending..."
+    },
+    "validation": {
+      "nameRequired": "Name is required",
+      "nameMin": "Name must be at least 2 characters",
+      "emailRequired": "Email is required",
+      "emailInvalid": "Please enter a valid email address",
+      "subjectRequired": "Please select a subject",
+      "messageRequired": "Message is required",
+      "messageMin": "Message must be at least 10 characters"
+    },
+    "success": {
+      "title": "Message Sent!",
+      "message": "Thank you for reaching out. We'll get back to you within 24 hours.",
+      "sendAnother": "Send another message"
+    },
+    "info": {
+      "title": "Contact Information",
+      "email": "hello@propflow.app",
+      "phone": "+212 5XX-XXXXXX",
+      "address": "Casablanca, Morocco",
+      "hours": "Mon–Fri, 9:00 AM – 6:00 PM (GMT+1)",
+      "hoursLabel": "Business Hours",
+      "demo": {
+        "title": "Book a Demo",
+        "description": "See Propflow in action with a personalized walkthrough for your agency.",
+        "cta": "Schedule Demo"
+      }
+    }
   }
 }
