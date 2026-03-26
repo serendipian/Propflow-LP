@@ -2,9 +2,9 @@ export const navLinks = [
   { label: 'Product', href: '#product' },
   { label: 'Solutions', href: '#solutions' },
   { label: 'Features', href: '#features' },
-  { label: 'Pricing', href: '#pricing' },
+  { label: 'Pricing', href: '/pricing' },
   { label: 'Resources', href: '#resources' },
-  { label: 'Help', href: '#faq' },
+  { label: 'Help', href: '/contact' },
 ] as const;
 
 export const siteConfig = {
