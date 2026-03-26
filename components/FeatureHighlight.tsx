@@ -232,10 +232,13 @@ const ModuleVisualization = ({ id, color }: { id: string, color: string }) => {
                         <div key={i} className="group bg-white dark:bg-zinc-900 rounded-xl border border-zinc-200 dark:border-zinc-800 overflow-hidden hover:shadow-lg dark:hover:shadow-blue-900/10 hover:border-blue-300 dark:hover:border-blue-700/50 transition-all duration-300 flex flex-col">
                             {/* Image Section - Reduced Height */}
                             <div className="h-28 relative overflow-hidden bg-zinc-200 dark:bg-zinc-800">
-                              <img 
-                                  src={`https://images.unsplash.com/photo-${prop.img}?auto=format&fit=crop&w=400&q=80`} 
+                              <img
+                                  src={`https://images.unsplash.com/photo-${prop.img}?auto=format&fit=crop&w=400&q=80`}
                                   alt={prop.address}
                                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                  loading="lazy"
+                                  width="600"
+                                  height="400"
                               />
                               <div className="absolute top-2 left-2 px-1.5 py-0.5 bg-black/60 backdrop-blur-md rounded text-[9px] font-bold text-white uppercase tracking-wide">
                                   For Sale
@@ -459,7 +462,7 @@ const ModuleVisualization = ({ id, color }: { id: string, color: string }) => {
                            </div>
 
                            <div className="flex -space-x-2 shrink-0">
-                               <img src={`https://i.pravatar.cc/150?img=${task.user}`} alt={`Assigned to task: ${task.title}`} className="w-6 h-6 rounded-full border border-white dark:border-zinc-900" />
+                               <img src={`https://i.pravatar.cc/150?img=${task.user}`} alt={`Assigned to task: ${task.title}`} className="w-6 h-6 rounded-full border border-white dark:border-zinc-900" loading="lazy" width="24" height="24" />
                            </div>
                            
                         </div>

@@ -29,7 +29,7 @@ const UserRow = ({ name, role, status, img, delay }: any) => (
   >
     <div className="flex items-center gap-3">
         <div className="w-8 h-8 rounded-full bg-zinc-100 dark:bg-zinc-800 overflow-hidden border border-zinc-200 dark:border-zinc-700 shrink-0">
-            <img src={img} alt={name} className="w-full h-full object-cover" />
+            <img src={img} alt={name} className="w-full h-full object-cover" loading="lazy" width="32" height="32" />
         </div>
         <div className="min-w-0">
             <div className="text-xs font-bold text-zinc-900 dark:text-white truncate">{name}</div>
@@ -43,6 +43,13 @@ const UserRow = ({ name, role, status, img, delay }: any) => (
     </div>
   </motion.div>
 );
+
+const performanceKpis = [
+  { label: 'Closed Deals', val: '14', icon: Briefcase },
+  { label: 'Earned Commission', val: '$24k', icon: DollarSign },
+  { label: 'Completed Viewings', val: '32', icon: Eye },
+  { label: 'Managed Properties', val: '48', icon: Home }
+];
 
 export default function TeamSection() {
   return (
@@ -146,7 +153,7 @@ export default function TeamSection() {
                         <div className="flex items-center gap-5">
                             <div className="relative">
                                 <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-zinc-100 dark:border-zinc-800 shadow-lg relative z-10">
-                                    <img src="https://i.pravatar.cc/150?img=11" className="w-full h-full object-cover" alt="" role="presentation" />
+                                    <img src="https://i.pravatar.cc/150?img=11" className="w-full h-full object-cover" alt="" role="presentation" loading="lazy" width="64" height="64" />
                                 </div>
                                 <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-blue-600 border-2 border-white dark:border-zinc-900 rounded-full flex items-center justify-center z-20">
                                     <Check size={12} className="text-white stroke-[3px]" />
@@ -241,12 +248,7 @@ export default function TeamSection() {
 
                      {/* 4 KPIs Grid - 2 Columns for detailed text */}
                      <div className="grid grid-cols-2 gap-3">
-                         {[
-                             { label: 'Closed Deals', val: '14', icon: Briefcase },
-                             { label: 'Earned Commission', val: '$24k', icon: DollarSign },
-                             { label: 'Completed Viewings', val: '32', icon: Eye },
-                             { label: 'Managed Properties', val: '48', icon: Home }
-                         ].map((kpi, i) => (
+                         {performanceKpis.map((kpi, i) => (
                             <div key={i} className="flex items-center gap-3 p-3 rounded-xl bg-zinc-50 dark:bg-zinc-800/30 border border-zinc-100 dark:border-zinc-800/50 transition-all hover:bg-blue-50/50 dark:hover:bg-blue-900/10 hover:border-blue-100 dark:hover:border-blue-800/30 group cursor-default">
                                 <div className="p-2 rounded-lg bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 shrink-0">
                                     <kpi.icon size={16} />

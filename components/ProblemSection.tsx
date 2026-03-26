@@ -4,18 +4,18 @@ import { motion } from 'framer-motion';
 import { Brain, DatabaseZap, UserX, EyeOff, Clock, Shuffle, MessageSquareOff, AlertTriangle } from 'lucide-react';
 import RevenueLeakVisualization from './RevenueLeakVisualization';
 
-export default function ProblemSection() {
-  const pains = [
-    { icon: Brain, label: "Mental Overload" },
-    { icon: DatabaseZap, label: "Data Loss" },
-    { icon: UserX, label: "Dropped Leads" },
-    { icon: EyeOff, label: "Low Visibility" },
-    { icon: Clock, label: "Slow Response" },
-    { icon: Shuffle, label: "Chaotic Workflow" },
-    { icon: MessageSquareOff, label: "Missed Follow-Ups" },
-    { icon: AlertTriangle, label: "Zero Accountability" },
-  ];
+const pains = [
+  { icon: Brain, label: "Mental Overload" },
+  { icon: DatabaseZap, label: "Data Loss" },
+  { icon: UserX, label: "Dropped Leads" },
+  { icon: EyeOff, label: "Low Visibility" },
+  { icon: Clock, label: "Slow Response" },
+  { icon: Shuffle, label: "Chaotic Workflow" },
+  { icon: MessageSquareOff, label: "Missed Follow-Ups" },
+  { icon: AlertTriangle, label: "Zero Accountability" },
+];
 
+export default function ProblemSection() {
   return (
     <section className="py-32 md:py-48 bg-zinc-50 dark:bg-zinc-950 relative overflow-hidden flex flex-col items-center justify-center min-h-[60vh] transition-colors duration-500">
       

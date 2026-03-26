@@ -4,6 +4,7 @@ import { Menu, X, ArrowRight } from 'lucide-react';
 import { Button } from './UI';
 import ThemeToggle from './ThemeToggle';
 import LanguagePicker from './LanguagePicker';
+import { navLinks } from '../data/navigation';
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -14,8 +15,6 @@ export default function Navigation() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  const navLinks = ['Product', 'Solutions', 'Features', 'Pricing', 'Resources', 'Help'];
 
   return (
     <div className="absolute top-0 left-0 right-0 z-50 flex flex-col font-sans pointer-events-none">
@@ -68,9 +67,12 @@ export default function Navigation() {
 
           <div className="md:hidden flex items-center gap-3 relative z-10">
             <ThemeToggle />
-            <button 
+            <button
               className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-expanded={mobileMenuOpen}
+              aria-controls="mobile-menu"
+              aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
             >
               {mobileMenuOpen ? <X /> : <Menu />}
             </button>
@@ -78,7 +80,7 @@ export default function Navigation() {
         </div>
 
         {mobileMenuOpen && (
-          <div className="absolute top-full left-0 right-0 bg-white dark:bg-zinc-950 border-b border-zinc-200 dark:border-zinc-800 p-6 flex flex-col gap-4 md:hidden animate-in slide-in-from-top-5 shadow-xl">
+          <div id="mobile-menu" role="menu" className="absolute top-full left-0 right-0 bg-white dark:bg-zinc-950 border-b border-zinc-200 dark:border-zinc-800 p-6 flex flex-col gap-4 md:hidden animate-in slide-in-from-top-5 shadow-xl">
             {navLinks.map((item) => (
               <a key={item} href="#" className="text-base font-medium text-zinc-600 dark:text-zinc-400 hover:text-blue-600 dark:hover:text-blue-400">
                 {item}

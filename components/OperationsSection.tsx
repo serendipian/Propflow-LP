@@ -36,12 +36,16 @@ export default function OperationsSection() {
         </div>
 
         {/* Tabs - Single Row */}
-        <div className="flex flex-wrap justify-center gap-3 mb-12 w-full max-w-4xl">
+        <div role="tablist" aria-label="Operations modules" className="flex flex-wrap justify-center gap-3 mb-12 w-full max-w-4xl">
            {modules.map((module) => {
              const isActive = activeId === module.id;
              return (
                <button
                  key={module.id}
+                 role="tab"
+                 aria-selected={isActive}
+                 aria-controls={`ops-panel-${module.id}`}
+                 id={`ops-tab-${module.id}`}
                  onClick={() => setActiveId(module.id)}
                  className={`flex items-center gap-2.5 px-5 py-3 rounded-md text-sm font-semibold transition-all duration-300 border relative overflow-hidden group ${
                    isActive 
@@ -89,6 +93,9 @@ export default function OperationsSection() {
                     <AnimatePresence mode="wait">
                        <motion.div
                           key={activeId}
+                          id={`ops-panel-${activeId}`}
+                          role="tabpanel"
+                          aria-labelledby={`ops-tab-${activeId}`}
                           initial={{ opacity: 0, scale: 0.98, y: 10 }}
                           animate={{ opacity: 1, scale: 1, y: 0 }}
                           exit={{ opacity: 0, scale: 0.98, y: -10 }}
@@ -122,6 +129,47 @@ export default function OperationsSection() {
   );
 }
 
+const dashboardStats = [
+  { label: 'Revenue', val: '$124k', trend: '+12%', icon: DollarSign },
+  { label: 'Deals', val: '42', trend: '+5', icon: Briefcase },
+  { label: 'Viewings', val: '156', trend: '+28%', icon: Eye },
+  { label: 'Leads', val: '89', trend: '+14%', icon: Users }
+];
+
+const latestRequests = [
+  { name: "Sarah Connor", req: "3 Bed • Downtown", budget: "$4.2k", time: "2m ago" },
+  { name: "John Wick", req: "Studio • Basement", budget: "$2.5k", time: "15m ago" },
+  { name: "Bruce Wayne", req: "Penthouse • City View", budget: "$15k", time: "1h ago" },
+  { name: "Clark Kent", req: "Farmhouse • Quiet", budget: "$800k", time: "3h ago" },
+  { name: "Diana Prince", req: "Loft • Museum District", budget: "$1.2M", time: "5h ago" },
+  { name: "Tony Stark", req: "Modern Mansion • Cliffside", budget: "$25M", time: "1d ago" },
+];
+
+const upcomingViewings = [
+  { time: "10:00 AM", title: "Open House", loc: "Sunset Blvd" },
+  { time: "01:30 PM", title: "Private Viewing", loc: "Park Ave" },
+  { time: "04:00 PM", title: "Key Handover", loc: "Broadway" },
+];
+
+const followUpItems = [
+  { task: "Call Mike regarding contract", due: "Today" },
+  { task: "Email Sarah photos", due: "Today" },
+  { task: "Update listing price", due: "Tomorrow" },
+  { task: "Schedule viewing for 124 Main", due: "Tomorrow" },
+  { task: "Send invoice #402", due: "Wed" },
+  { task: "Review feedback from open house", due: "Fri" },
+];
+
+const activeOffers = [
+  { prop: "128 Golden Oak", offer: "$4.4M", status: "Countered", statusColor: "text-blue-500 bg-blue-50 dark:bg-blue-900/20" },
+  { prop: "55 Hudson Yards", offer: "$1.2M", status: "Pending", statusColor: "text-blue-500 bg-blue-50 dark:bg-blue-900/20" },
+  { prop: "220 Central Park", offer: "$6.8M", status: "Reviewing", statusColor: "text-blue-500 bg-blue-50 dark:bg-blue-900/20" },
+  { prop: "15 Westfield Blvd", offer: "$950k", status: "Accepted", statusColor: "text-cyan-600 bg-cyan-50 dark:bg-cyan-900/20" },
+  { prop: "90210 Beverly Hills", offer: "$3.1M", status: "New", statusColor: "text-blue-500 bg-blue-50 dark:bg-blue-900/20" },
+];
+
+const revenueBarHeights = [40, 70, 50, 90, 60, 80, 50, 75, 45, 65, 85, 55];
+
 const OpsVisualization = ({ id, color }: { id: string, color: string }) => {
    switch (id) {
       case 'dashboard':
@@ -129,12 +177,7 @@ const OpsVisualization = ({ id, color }: { id: string, color: string }) => {
             <div className="flex flex-col gap-4 h-full">
                {/* Top KPIs - Compact */}
                <div className="grid grid-cols-4 gap-3 shrink-0">
-                  {[
-                    { label: 'Revenue', val: '$124k', trend: '+12%', icon: DollarSign },
-                    { label: 'Deals', val: '42', trend: '+5', icon: Briefcase },
-                    { label: 'Viewings', val: '156', trend: '+28%', icon: Eye },
-                    { label: 'Leads', val: '89', trend: '+14%', icon: Users }
-                  ].map((stat, i) => (
+                  {dashboardStats.map((stat, i) => (
                     <div key={i} className="bg-zinc-50 dark:bg-zinc-800/50 p-3 rounded-xl border border-zinc-100 dark:border-zinc-800 flex flex-col justify-between">
                         <div className="flex justify-between items-start mb-1">
                            <div className="text-blue-500 opacity-80"><stat.icon size={14} /></div>
@@ -177,14 +220,7 @@ const OpsVisualization = ({ id, color }: { id: string, color: string }) => {
                          <span className="text-[9px] text-blue-500 cursor-pointer hover:underline">View All</span>
                       </div>
                       <div className="flex-1 flex flex-col gap-2.5 overflow-y-auto no-scrollbar">
-                         {[
-                            { name: "Sarah Connor", req: "3 Bed • Downtown", budget: "$4.2k", time: "2m ago" },
-                            { name: "John Wick", req: "Studio • Basement", budget: "$2.5k", time: "15m ago" },
-                            { name: "Bruce Wayne", req: "Penthouse • City View", budget: "$15k", time: "1h ago" },
-                            { name: "Clark Kent", req: "Farmhouse • Quiet", budget: "$800k", time: "3h ago" },
-                            { name: "Diana Prince", req: "Loft • Museum District", budget: "$1.2M", time: "5h ago" },
-                            { name: "Tony Stark", req: "Modern Mansion • Cliffside", budget: "$25M", time: "1d ago" },
-                         ].map((req, i) => (
+                         {latestRequests.map((req, i) => (
                             <div key={i} className="flex items-center gap-3">
                                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-zinc-200 to-zinc-300 dark:from-zinc-700 dark:to-zinc-600 flex items-center justify-center text-[10px] font-bold text-zinc-600 dark:text-zinc-300 shrink-0">
                                   {req.name.charAt(0)}
@@ -209,11 +245,7 @@ const OpsVisualization = ({ id, color }: { id: string, color: string }) => {
                       <span className="text-[10px] font-semibold text-zinc-500 uppercase tracking-wider mb-3">Upcoming Viewings</span>
                       <div className="flex-1 flex flex-col gap-3 relative">
                          <div className="absolute left-[5px] top-1 bottom-1 w-px bg-zinc-200 dark:bg-zinc-700" />
-                         {[
-                            { time: "10:00 AM", title: "Open House", loc: "Sunset Blvd" },
-                            { time: "01:30 PM", title: "Private Viewing", loc: "Park Ave" },
-                            { time: "04:00 PM", title: "Key Handover", loc: "Broadway" },
-                         ].map((evt, i) => (
+                         {upcomingViewings.map((evt, i) => (
                             <div key={i} className="flex items-start gap-3 relative">
                                <div className="w-2.5 h-2.5 rounded-full bg-blue-500 border-2 border-white dark:border-zinc-900 z-10 shrink-0 mt-1" />
                                <div className="flex-1">
@@ -302,14 +334,7 @@ const OpsVisualization = ({ id, color }: { id: string, color: string }) => {
                          <span className="bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-[9px] px-1.5 py-0.5 rounded font-bold">6 Due</span>
                       </div>
                       <div className="flex-1 flex flex-col gap-2 overflow-y-auto no-scrollbar">
-                         {[
-                            { task: "Call Mike regarding contract", due: "Today" },
-                            { task: "Email Sarah photos", due: "Today" },
-                            { task: "Update listing price", due: "Tomorrow" },
-                            { task: "Schedule viewing for 124 Main", due: "Tomorrow" },
-                            { task: "Send invoice #402", due: "Wed" },
-                            { task: "Review feedback from open house", due: "Fri" },
-                         ].map((item, i) => (
+                         {followUpItems.map((item, i) => (
                             <div key={i} className="flex items-start gap-2 group cursor-pointer">
                                <div className="mt-0.5 text-zinc-300 dark:text-zinc-600 group-hover:text-blue-500 transition-colors">
                                   <CheckCircle2 size={14} />
@@ -327,13 +352,7 @@ const OpsVisualization = ({ id, color }: { id: string, color: string }) => {
                   <div className="bg-zinc-50 dark:bg-zinc-800/30 rounded-xl border border-zinc-100 dark:border-zinc-800 p-3.5 flex flex-col h-full">
                       <span className="text-[10px] font-semibold text-zinc-500 uppercase tracking-wider mb-3">Active Offers</span>
                       <div className="flex-1 flex flex-col gap-2.5">
-                         {[
-                            { prop: "128 Golden Oak", offer: "$4.4M", status: "Countered", statusColor: "text-blue-500 bg-blue-50 dark:bg-blue-900/20" },
-                            { prop: "55 Hudson Yards", offer: "$1.2M", status: "Pending", statusColor: "text-blue-500 bg-blue-50 dark:bg-blue-900/20" },
-                            { prop: "220 Central Park", offer: "$6.8M", status: "Reviewing", statusColor: "text-blue-500 bg-blue-50 dark:bg-blue-900/20" },
-                            { prop: "15 Westfield Blvd", offer: "$950k", status: "Accepted", statusColor: "text-cyan-600 bg-cyan-50 dark:bg-cyan-900/20" },
-                            { prop: "90210 Beverly Hills", offer: "$3.1M", status: "New", statusColor: "text-blue-500 bg-blue-50 dark:bg-blue-900/20" },
-                         ].map((offer, i) => (
+                         {activeOffers.map((offer, i) => (
                             <div key={i} className="flex items-center justify-between p-2 rounded-lg bg-white dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 hover:border-blue-200 dark:hover:border-blue-900/30 transition-colors">
                                <div className="flex flex-col">
                                   <span className="text-[10px] font-bold text-zinc-700 dark:text-zinc-300 truncate max-w-[80px]">{offer.prop}</span>
@@ -412,7 +431,7 @@ const OpsVisualization = ({ id, color }: { id: string, color: string }) => {
                </div>
                <div className="flex-1 bg-zinc-50 dark:bg-zinc-800/30 rounded-xl border border-zinc-100 dark:border-zinc-800 p-6 flex items-end justify-between gap-3 relative overflow-hidden">
                   <div className="absolute inset-0 bg-grid-zinc-200/50 dark:bg-grid-zinc-700/10 [mask-image:linear-gradient(to_bottom,transparent,black)]" />
-                  {[40, 70, 50, 90, 60, 80, 50, 75, 45, 65, 85, 55].map((h, i) => (
+                  {revenueBarHeights.map((h, i) => (
                      <div key={i} className="flex-1 bg-emerald-100 dark:bg-emerald-500/20 rounded-t-md relative group transition-all hover:opacity-80" style={{ height: `${h}%` }}>
                         <div className="absolute bottom-0 left-0 right-0 bg-emerald-500 dark:bg-emerald-500 h-1.5 w-full opacity-50" />
                         <motion.div

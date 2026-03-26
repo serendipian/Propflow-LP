@@ -1,54 +1,65 @@
 import './index.css';
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import { createRoot } from 'react-dom/client';
 import { ThemeProvider } from './ThemeContext';
+import ErrorBoundary from './components/ErrorBoundary';
 import Navigation from './components/Navigation';
 import Hero from './components/Hero';
-import ProblemSection from './components/ProblemSection';
-import SolutionSection from './components/SolutionSection';
-import FeatureHighlight from './components/FeatureHighlight';
-import OperationsSection from './components/OperationsSection';
-import AISection from './components/AISection';
-import IntegrationsSection from './components/IntegrationsSection';
-import AutomationSection from './components/AutomationSection';
-import WebsiteBuilderSection from './components/WebsiteBuilderSection';
-import TeamSection from './components/TeamSection';
-import SocialProof from './components/SocialProof';
-import Pricing from './components/Pricing';
-import FAQ from './components/FAQ';
-import BlogSection from './components/BlogSection';
-import ResourcesSection from './components/ResourcesSection';
-import CTASection from './components/CTASection';
-import Footer from './components/Footer';
+
+const ProblemSection = lazy(() => import('./components/ProblemSection'));
+const SolutionSection = lazy(() => import('./components/SolutionSection'));
+const FeatureHighlight = lazy(() => import('./components/FeatureHighlight'));
+const OperationsSection = lazy(() => import('./components/OperationsSection'));
+const AISection = lazy(() => import('./components/AISection'));
+const IntegrationsSection = lazy(() => import('./components/IntegrationsSection'));
+const AutomationSection = lazy(() => import('./components/AutomationSection'));
+const WebsiteBuilderSection = lazy(() => import('./components/WebsiteBuilderSection'));
+const TeamSection = lazy(() => import('./components/TeamSection'));
+const SocialProof = lazy(() => import('./components/SocialProof'));
+const Pricing = lazy(() => import('./components/Pricing'));
+const FAQ = lazy(() => import('./components/FAQ'));
+const BlogSection = lazy(() => import('./components/BlogSection'));
+const ResourcesSection = lazy(() => import('./components/ResourcesSection'));
+const CTASection = lazy(() => import('./components/CTASection'));
+const Footer = lazy(() => import('./components/Footer'));
 
 const App = () => {
   return (
-    <ThemeProvider>
-      <div className="min-h-screen bg-white dark:bg-zinc-950 text-zinc-900 dark:text-white font-sans selection:bg-blue-100 dark:selection:bg-blue-500/30 overflow-x-hidden transition-colors duration-300">
-        <Navigation />
-        
-        <main>
-          <Hero />
-          <ProblemSection />
-          <SolutionSection />
-          <FeatureHighlight />
-          <OperationsSection />
-          <AISection />
-          <IntegrationsSection />
-          <AutomationSection />
-          <WebsiteBuilderSection />
-          <TeamSection />
-          <SocialProof />
-          <Pricing />
-          <FAQ />
-          <BlogSection />
-          <ResourcesSection />
-          <CTASection />
-        </main>
+    <ErrorBoundary>
+      <ThemeProvider>
+        <div className="min-h-screen bg-white dark:bg-zinc-950 text-zinc-900 dark:text-white font-sans selection:bg-blue-100 dark:selection:bg-blue-500/30 overflow-x-hidden transition-colors duration-300">
+          <a href="#main-content" className="skip-to-content">
+            Skip to content
+          </a>
+          <Navigation />
 
-        <Footer />
-      </div>
-    </ThemeProvider>
+          <main id="main-content">
+            <Hero />
+            <Suspense fallback={null}>
+              <ProblemSection />
+              <SolutionSection />
+              <FeatureHighlight />
+              <OperationsSection />
+              <AISection />
+              <IntegrationsSection />
+              <AutomationSection />
+              <WebsiteBuilderSection />
+              <TeamSection />
+              <SocialProof />
+              <Pricing />
+              <FAQ />
+              <BlogSection />
+              <ResourcesSection />
+              <CTASection />
+            </Suspense>
+          </main>
+
+          <Suspense fallback={null}>
+            <Footer />
+          </Suspense>
+        </div>
+      </ThemeProvider>
+    </ErrorBoundary>
   );
 };
 

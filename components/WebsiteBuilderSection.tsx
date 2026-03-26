@@ -122,10 +122,13 @@ export default function WebsiteBuilderSection() {
                          {[1, 2, 3].map((i) => (
                             <div key={i} className="flex flex-col gap-2 group/card cursor-pointer opacity-80 hover:opacity-100 transition-opacity">
                                <div className="aspect-[16/9] bg-zinc-100 dark:bg-zinc-800 rounded-lg overflow-hidden relative">
-                                  <img 
+                                  <img
                                     src={`https://images.unsplash.com/photo-${i === 1 ? '1520250497591-112f2f40a3f4' : i === 2 ? '1613977257363-707ba9348227' : '1512917774080-9991f1c4c750'}?auto=format&fit=crop&w=300&q=80`}
                                     className="w-full h-full object-cover"
                                     alt="Sample luxury property listing"
+                                    loading="lazy"
+                                    width="600"
+                                    height="400"
                                   />
                                </div>
                             </div>
@@ -207,11 +210,11 @@ export default function WebsiteBuilderSection() {
                 
                 <div className="flex flex-col items-start gap-3 mb-8 w-full">
                     <div className="flex items-center gap-2 px-3 py-1.5 rounded-md bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 shadow-sm w-full">
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/9/98/WordPress_blue_logo.svg" className="w-4 h-4 shrink-0" alt="WordPress logo" />
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/9/98/WordPress_blue_logo.svg" className="w-4 h-4 shrink-0" alt="WordPress logo" loading="lazy" width="16" height="16" />
                       <span className="text-xs font-semibold text-zinc-700 dark:text-zinc-300">WordPress</span>
                     </div>
                     <div className="flex items-center gap-2 px-3 py-1.5 rounded-md bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 shadow-sm w-full">
-                      <img src="https://cdn.prod.website-files.com/5e2d6349d44c45b85d95e263/5e2d6349d44c45664d95e28a_webflow-mark.svg" className="w-4 h-4 shrink-0" alt="Webflow logo" />
+                      <img src="https://cdn.prod.website-files.com/5e2d6349d44c45b85d95e263/5e2d6349d44c45664d95e28a_webflow-mark.svg" className="w-4 h-4 shrink-0" alt="Webflow logo" loading="lazy" width="16" height="16" />
                       <span className="text-xs font-semibold text-zinc-700 dark:text-zinc-300">Webflow</span>
                     </div>
                 </div>

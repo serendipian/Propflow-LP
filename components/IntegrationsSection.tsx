@@ -8,16 +8,16 @@ import { SectionBadge } from './UI';
 const Logos: Record<string, React.ReactNode> = {
   // --- ROW 1: Communication & Video ---
   Teams: (
-    <img src="https://cdn.prod.website-files.com/624c34ee1eb3ec0fbbc365fc/63ed2cf2e410bc2aa208f7c0_logo-teams.svg" alt="Microsoft Teams logo" className="w-full h-full object-contain" />
+    <img src="https://cdn.prod.website-files.com/624c34ee1eb3ec0fbbc365fc/63ed2cf2e410bc2aa208f7c0_logo-teams.svg" alt="Microsoft Teams logo" className="w-full h-full object-contain" loading="lazy" width="40" height="40" />
   ),
   Zoom: (
-    <img src="https://cdn.prod.website-files.com/624c34ee1eb3ec0fbbc365fc/63ed2cf3c1f58b541e55cf73_logo-zoom.svg" alt="Zoom logo" className="w-full h-full object-contain" />
+    <img src="https://cdn.prod.website-files.com/624c34ee1eb3ec0fbbc365fc/63ed2cf3c1f58b541e55cf73_logo-zoom.svg" alt="Zoom logo" className="w-full h-full object-contain" loading="lazy" width="40" height="40" />
   ),
   GoogleMeet: (
-    <img src="https://cdn.prod.website-files.com/624c34ee1eb3ec0fbbc365fc/662a79d4d28804818a2886f9_googlemeet.svg" alt="Google Meet logo" className="w-full h-full object-contain" />
+    <img src="https://cdn.prod.website-files.com/624c34ee1eb3ec0fbbc365fc/662a79d4d28804818a2886f9_googlemeet.svg" alt="Google Meet logo" className="w-full h-full object-contain" loading="lazy" width="40" height="40" />
   ),
   Slack: (
-    <img src="https://cdn.prod.website-files.com/624c34ee1eb3ec0fbbc365fc/63ed27e9885e4172cd5eca5e_logo-slack.svg" alt="Slack logo" className="w-full h-full object-contain" />
+    <img src="https://cdn.prod.website-files.com/624c34ee1eb3ec0fbbc365fc/63ed27e9885e4172cd5eca5e_logo-slack.svg" alt="Slack logo" className="w-full h-full object-contain" loading="lazy" width="40" height="40" />
   ),
   WhatsApp: (
     <svg viewBox="0 0 24 24" className="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="WhatsApp logo" role="img">
@@ -28,16 +28,16 @@ const Logos: Record<string, React.ReactNode> = {
 
   // --- ROW 2: Productivity & AI ---
   Gmail: (
-    <img src="https://cdn.prod.website-files.com/624c34ee1eb3ec0fbbc365fc/63ed2cf20935cf1fef1d3b46_logo-gmail.svg" alt="Gmail logo" className="w-full h-full object-contain" />
+    <img src="https://cdn.prod.website-files.com/624c34ee1eb3ec0fbbc365fc/63ed2cf20935cf1fef1d3b46_logo-gmail.svg" alt="Gmail logo" className="w-full h-full object-contain" loading="lazy" width="40" height="40" />
   ),
   Calendar: (
-    <img src="https://cdn.prod.website-files.com/624c34ee1eb3ec0fbbc365fc/63ed27e9ef91e965d9a0ba5e_logo-google-calendar.svg" alt="Google Calendar logo" className="w-full h-full object-contain" />
+    <img src="https://cdn.prod.website-files.com/624c34ee1eb3ec0fbbc365fc/63ed27e9ef91e965d9a0ba5e_logo-google-calendar.svg" alt="Google Calendar logo" className="w-full h-full object-contain" loading="lazy" width="40" height="40" />
   ),
   OpenAI: (
-    <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" alt="OpenAI logo" className="w-full h-full object-contain dark:invert" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" alt="OpenAI logo" className="w-full h-full object-contain dark:invert" loading="lazy" width="40" height="40" />
   ),
   Notion: (
-    <img src="https://cdn.prod.website-files.com/624c34ee1eb3ec0fbbc365fc/63ed27e9a693f25a793f0cc3_logo-notion.svg" alt="Notion logo" className="w-full h-full object-contain dark:invert" />
+    <img src="https://cdn.prod.website-files.com/624c34ee1eb3ec0fbbc365fc/63ed27e9a693f25a793f0cc3_logo-notion.svg" alt="Notion logo" className="w-full h-full object-contain dark:invert" loading="lazy" width="40" height="40" />
   ),
   Linear: (
     <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full" aria-label="Linear logo" role="img">
@@ -61,7 +61,7 @@ const Logos: Record<string, React.ReactNode> = {
     <svg viewBox="0 0 24 24" className="w-full h-full" aria-label="YouTube logo" role="img"><path fill="#FF0000" d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
   ),
   GoogleMaps: (
-    <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg" alt="Google Maps logo" className="w-full h-full object-contain" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg" alt="Google Maps logo" className="w-full h-full object-contain" loading="lazy" width="40" height="40" />
   ),
 };
 
@@ -105,11 +105,11 @@ const MarqueeRow = ({ icons, direction = 1, speed = 20 }: { icons: string[], dir
   );
 };
 
-export default function IntegrationsSection() {
-  const row1 = ['Teams', 'Zoom', 'GoogleMeet', 'Slack', 'WhatsApp'];
-  const row2 = ['Gmail', 'Calendar', 'OpenAI', 'Notion', 'Linear'];
-  const row3 = ['Instagram', 'Facebook', 'LinkedIn', 'YouTube', 'GoogleMaps'];
+const row1 = ['Teams', 'Zoom', 'GoogleMeet', 'Slack', 'WhatsApp'];
+const row2 = ['Gmail', 'Calendar', 'OpenAI', 'Notion', 'Linear'];
+const row3 = ['Instagram', 'Facebook', 'LinkedIn', 'YouTube', 'GoogleMaps'];
 
+export default function IntegrationsSection() {
   return (
     <section className="py-24 bg-zinc-50 dark:bg-[#09090b] relative overflow-hidden text-zinc-900 dark:text-white border-t border-zinc-200 dark:border-zinc-900">
         
