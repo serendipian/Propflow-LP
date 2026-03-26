@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import SmartLink from '../shared/SmartLink';
 
 export default function Footer() {
   const { t } = useTranslation();
@@ -26,20 +27,20 @@ export default function Footer() {
         <div>
           <h4 className="font-semibold text-zinc-900 dark:text-white mb-4">{t('footer.product')}</h4>
           <ul className="space-y-2 text-zinc-500">
-            <li><a href="#solutions" className="hover:text-blue-600 dark:hover:text-blue-400">{t('footer.pipeline')}</a></li>
-            <li><a href="#features" className="hover:text-blue-600 dark:hover:text-blue-400">{t('footer.listings')}</a></li>
-            <li><a href="#features" className="hover:text-blue-600 dark:hover:text-blue-400">{t('footer.automations')}</a></li>
-            <li><a href="#features" className="hover:text-blue-600 dark:hover:text-blue-400">{t('footer.mobileApp')}</a></li>
+            <li><SmartLink href="#solutions" className="hover:text-blue-600 dark:hover:text-blue-400">{t('footer.pipeline')}</SmartLink></li>
+            <li><SmartLink href="#features" className="hover:text-blue-600 dark:hover:text-blue-400">{t('footer.listings')}</SmartLink></li>
+            <li><SmartLink href="#features" className="hover:text-blue-600 dark:hover:text-blue-400">{t('footer.automations')}</SmartLink></li>
+            <li><SmartLink href="#features" className="hover:text-blue-600 dark:hover:text-blue-400">{t('footer.mobileApp')}</SmartLink></li>
           </ul>
         </div>
 
         <div>
           <h4 className="font-semibold text-zinc-900 dark:text-white mb-4">{t('footer.company')}</h4>
           <ul className="space-y-2 text-zinc-500">
-            <li><a href="#product" className="hover:text-blue-600 dark:hover:text-blue-400">{t('footer.about')}</a></li>
-            <li><a href="#product" className="hover:text-blue-600 dark:hover:text-blue-400">{t('footer.customers')}</a></li>
-            <li><a href="#product" className="hover:text-blue-600 dark:hover:text-blue-400">{t('footer.careers')}</a></li>
-            <li><a href="#faq" className="hover:text-blue-600 dark:hover:text-blue-400">{t('footer.contact')}</a></li>
+            <li><SmartLink href="#product" className="hover:text-blue-600 dark:hover:text-blue-400">{t('footer.about')}</SmartLink></li>
+            <li><SmartLink href="#product" className="hover:text-blue-600 dark:hover:text-blue-400">{t('footer.customers')}</SmartLink></li>
+            <li><SmartLink href="#product" className="hover:text-blue-600 dark:hover:text-blue-400">{t('footer.careers')}</SmartLink></li>
+            <li><SmartLink href="/contact" className="hover:text-blue-600 dark:hover:text-blue-400">{t('footer.contact')}</SmartLink></li>
           </ul>
         </div>
 

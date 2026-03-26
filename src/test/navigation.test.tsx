@@ -24,7 +24,7 @@ describe('Navigation', () => {
 
   it('renders the promo bar', () => {
     render(<Navigation />);
-    const promoLink = document.querySelector('a[href="#pricing"]');
+    const promoLink = document.querySelector('a[href="/pricing"]');
     expect(promoLink).toBeInTheDocument();
   });
 });

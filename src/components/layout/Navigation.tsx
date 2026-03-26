@@ -1,16 +1,19 @@
 
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useLocation } from 'react-router-dom';
 import { Menu, X, ArrowRight } from 'lucide-react';
 import { Button } from '../ui/UI';
 import ThemeToggle from '../ui/ThemeToggle';
 import LanguagePicker from '../landing/LanguagePicker';
+import SmartLink from '../shared/SmartLink';
 import { navLinks } from '../../data/navigation';
 
 export default function Navigation() {
   const { t } = useTranslation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 40);
@@ -22,10 +25,10 @@ export default function Navigation() {
     <div className="absolute top-0 left-0 right-0 z-50 flex flex-col font-sans pointer-events-none">
       
       {/* Promotional Topbar - Scrolls with page */}
-      <a href="#pricing" className="bg-blue-600 hover:bg-blue-700 text-white text-sm md:text-base font-medium py-2.5 px-4 text-center transition-colors flex items-center justify-center gap-2 relative z-50 group pointer-events-auto">
+      <SmartLink href="/pricing" className="bg-blue-600 hover:bg-blue-700 text-white text-sm md:text-base font-medium py-2.5 px-4 text-center transition-colors flex items-center justify-center gap-2 relative z-50 group pointer-events-auto">
         <span><span className="font-bold">{t('promo.text')}</span> • {t('promo.subtext')}</span>
         <ArrowRight size={16} className="stroke-[3px] animate-pulse" />
-      </a>
+      </SmartLink>
 
       {/* Main Navigation - Becomes fixed when scrolled */}
       <nav 
@@ -45,13 +48,17 @@ export default function Navigation() {
 
           <div className="hidden md:flex items-center gap-8 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
             {navLinks.map((item) => (
-              <a
+              <SmartLink
                 key={item.label}
                 href={item.href}
-                className="text-[15px] font-medium text-zinc-600 dark:text-zinc-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                className={`text-[15px] font-medium transition-colors ${
+                  item.href.startsWith('/') && location.pathname === item.href
+                    ? 'text-blue-600 dark:text-blue-400'
+                    : 'text-zinc-600 dark:text-zinc-400 hover:text-blue-600 dark:hover:text-blue-400'
+                }`}
               >
                 {t(`nav.${item.label.toLowerCase()}`)}
-              </a>
+              </SmartLink>
             ))}
           </div>
 
@@ -84,9 +91,9 @@ export default function Navigation() {
         {mobileMenuOpen && (
           <div id="mobile-menu" role="menu" className="absolute top-full left-0 right-0 bg-white dark:bg-zinc-950 border-b border-zinc-200 dark:border-zinc-800 p-6 flex flex-col gap-4 md:hidden animate-in slide-in-from-top-5 shadow-xl">
             {navLinks.map((item) => (
-              <a key={item.label} href={item.href} onClick={() => setMobileMenuOpen(false)} className="text-base font-medium text-zinc-600 dark:text-zinc-400 hover:text-blue-600 dark:hover:text-blue-400">
+              <SmartLink key={item.label} href={item.href} onClick={() => setMobileMenuOpen(false)} className="text-base font-medium text-zinc-600 dark:text-zinc-400 hover:text-blue-600 dark:hover:text-blue-400">
                 {t(`nav.${item.label.toLowerCase()}`)}
-              </a>
+              </SmartLink>
             ))}
             <div className="h-px bg-zinc-200 dark:bg-zinc-800 my-2" />
             <div className="flex justify-between items-center">
