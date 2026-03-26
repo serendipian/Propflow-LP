@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { 
   Calendar, MessageSquare, DollarSign, LayoutDashboard,
   TrendingUp, Briefcase, Eye, Users, MapPin, Clock, 
@@ -16,22 +17,23 @@ const modules = [
 ];
 
 export default function OperationsSection() {
+  const { t } = useTranslation();
   const [activeId, setActiveId] = useState('dashboard');
 
   const activeModule = modules.find(m => m.id === activeId) || modules[0];
 
   return (
-    <section className="py-24 bg-zinc-50 dark:bg-zinc-950 relative overflow-hidden border-t border-zinc-200 dark:border-zinc-800">
+    <section id="solutions" className="py-24 bg-zinc-50 dark:bg-zinc-950 relative overflow-hidden border-t border-zinc-200 dark:border-zinc-800">
       <div className="max-w-screen-2xl mx-auto px-6 relative z-10 flex flex-col items-center">
         
         {/* Centered Header */}
         <div className="text-center mb-12 max-w-3xl">
-           <SectionBadge color="blue">Operations Center</SectionBadge>
+           <SectionBadge color="blue">{t('operations.badge')}</SectionBadge>
            <h2 className="text-4xl md:text-7xl font-bold text-zinc-900 dark:text-white mb-6 tracking-tight">
-              Powerful Features to <br className="hidden md:block"/> <span className="text-gradient">Scale</span> Your Agency.
+              {t('operations.title')}
            </h2>
            <p className="text-zinc-600 dark:text-zinc-400 text-lg max-w-2xl mx-auto">
-              Stop switching tabs. The command center gives you full visibility over your daily operations in one unified interface.
+              {t('operations.subtitle')}
            </p>
         </div>
 

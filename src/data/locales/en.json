@@ -1,0 +1,164 @@
+{
+  "nav": {
+    "product": "Product",
+    "solutions": "Solutions",
+    "features": "Features",
+    "pricing": "Pricing",
+    "resources": "Resources",
+    "help": "Help",
+    "signIn": "Sign In",
+    "bookDemo": "Book Demo",
+    "switchLanguage": "Switch Language"
+  },
+  "promo": {
+    "text": "Free 30 Days Trial",
+    "subtext": "No Credit Card Required!"
+  },
+  "hero": {
+    "badge": "New: AI Photo Enhancement",
+    "headline1": "Property Management.",
+    "headline2": "Made Easy.",
+    "subtitle": "The secret unfair advantage for high-growth agencies. Built for professional real estate agents who work in the field, not behind a desk.",
+    "startTrial": "Start Free Trial",
+    "bookDemo": "Book Demo",
+    "trustedBy": "Trusted by",
+    "agencies": "500+ real estate agencies"
+  },
+  "problem": {
+    "title": "Your Agency is Leaking Potential Revenue.",
+    "subtitle": "You don't just lose Deals. You lose evenings, weekends and peace of mind!"
+  },
+  "solution": {
+    "badge": "The Solution",
+    "title": "Turn Complexity into Clarity. Create Order from Chaos.",
+    "subtitle": "Propflow replaces your fragmented toolset with a single intelligent operating system, designed to help you orchestrate your entire agency, close additional deals and reclaim your evenings back !"
+  },
+  "features": {
+    "badge": "10+ Connected Modules",
+    "title": "Centralize Your Agency's Database",
+    "subtitle": "Centralize Your Agency's Workflow. Link people, properties, and processes seamlessly."
+  },
+  "operations": {
+    "badge": "Operations Center",
+    "title": "Powerful Features to Scale Your Agency.",
+    "subtitle": "Stop switching tabs. The command center gives you full visibility over your daily operations in one unified interface."
+  },
+  "ai": {
+    "badge": "Artificial Intelligence",
+    "title": "Unleash the Power of AI",
+    "subtitle": "We embedded AI into the core of the database. It cleans your data, writes your copy, and finds opportunities you missed."
+  },
+  "integrations": {
+    "badge": "Integrated Workflow",
+    "title": "Connect your Favorite Tools!",
+    "subtitle": "Connect Propflow to your favorite tools and create powerful workflows for your sales and leadership teams. More than 30+ native integrations."
+  },
+  "automation": {
+    "badge": "Custom Automations",
+    "title": "Build Workflows to Automate Repetitive Tasks",
+    "subtitle": "Build powerful scenarios to put your busywork on autopilot. From lead routing to smart follow-up, if you can define it, Propflow can automate it!"
+  },
+  "website": {
+    "badge": "Digital Storefront",
+    "title": "Your Public Website, Synced Instantly.",
+    "subtitle": "Launch a stunning, SEO-optimized agency website that pulls listings directly from your Propflow database."
+  },
+  "team": {
+    "badge": "Enterprise Controls",
+    "title": "Scale your Team with confidence.",
+    "subtitle": "Whether you are a boutique agency or a nationwide franchise, Propflow gives you granular control over your data and workforce."
+  },
+  "social": {
+    "title": "They Trusted Us"
+  },
+  "pricing": {
+    "badge": "Guaranteed Positive ROI",
+    "title": "Affordable Pricing, Massive Impact",
+    "subtitle": "Propflow pays for itself in happier, more productive agents.",
+    "monthly": "Monthly",
+    "yearly": "Yearly",
+    "save": "Save {{percent}}%",
+    "perMonth": "/mo",
+    "perUser": "per user",
+    "getStarted": "Get Started",
+    "contactSales": "Contact Sales",
+    "mostPopular": "Most Popular",
+    "includes": "Includes"
+  },
+  "faq": {
+    "badge": "Support",
+    "title": "Frequently Asked Questions",
+    "subtitle": "Everything you need to know about the product and billing. Can't find the answer you're looking for?",
+    "items": [
+      {
+        "q": "How fast can we migrate from our current CRM?",
+        "a": "Most agencies are up and running within 48 hours. Our dedicated onboarding team handles the data migration from your existing spreadsheets or CRM (Salesforce, HubSpot, Pipedrive) for free on the Growth plan and above."
+      },
+      {
+        "q": "Is Propflow compliant with GDPR and data privacy laws?",
+        "a": "Yes. We are fully GDPR and SOC-2 Type II compliant. Your data is encrypted at rest and in transit using bank-grade AES-256 standards, ensuring your client information remains secure and confidential."
+      },
+      {
+        "q": "Can I customize the pipelines and workflows?",
+        "a": "Absolutely. Propflow is built to adapt to your specific agency processes. You can create custom deal stages, automated triggers, and mandatory fields to ensure your team follows your exact playbook."
+      },
+      {
+        "q": "Do you offer API access for custom integrations?",
+        "a": "Yes, our Enterprise plan includes full API access and webhooks. You can connect Propflow to your custom website, accounting software, or any other proprietary tools you use."
+      },
+      {
+        "q": "What kind of support and training is included?",
+        "a": "All plans include 24/7 email support and access to our knowledge base. Growth and Enterprise plans receive a dedicated Customer Success Manager and live video training sessions for your entire team."
+      },
+      {
+        "q": "Does Propflow work for both sales and rentals?",
+        "a": "Yes. We support separate pipelines for Sales and Rentals/Lettings. You can manage landlords, tenants, buyers, and sellers in one unified database with distinct workflows for each transaction type."
+      },
+      {
+        "q": "How does the AI matching engine work?",
+        "a": "Our AI analyzes property characteristics and buyer preferences in real-time. When a new listing triggers a match with a buyer's criteria (location, budget, features), the system automatically suggests the match and drafts a personalized email."
+      },
+      {
+        "q": "Is there a limit on the number of properties or contacts?",
+        "a": "We believe in unrestricted growth. There are no limits on the number of contacts, properties, or listings you can store, even on our Starter plan. You only pay based on your team size or active deal volume."
+      }
+    ]
+  },
+  "blog": {
+    "title": "Latest from our Blog",
+    "subtitle": "Strategies, insights, and stories from the frontlines of modern real estate.",
+    "viewAll": "View All Articles",
+    "read": "Read"
+  },
+  "resources": {
+    "title": "Resources to help you scale.",
+    "subtitle": "Explore our guides, community, and documentation to get the most out of Propflow."
+  },
+  "cta": {
+    "badge": "New: AI Photo Enhancement",
+    "headline1": "From Leads to Deals.",
+    "headline2": "Fully Orchestrated.",
+    "subtitle": "Spreadsheets weren't built to scale agencies. Neither was your brain !",
+    "startTrial": "Start Free Trial",
+    "bookDemo": "Book Demo"
+  },
+  "footer": {
+    "tagline": "The operating system for modern real estate agencies.",
+    "product": "Product",
+    "pipeline": "Pipeline",
+    "listings": "Listings",
+    "automations": "Automations",
+    "mobileApp": "Mobile App",
+    "company": "Company",
+    "about": "About",
+    "customers": "Customers",
+    "careers": "Careers",
+    "contact": "Contact",
+    "legal": "Legal",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "security": "Security",
+    "copyright": "© {{year}} Propflow Inc. All rights reserved.",
+    "designedFor": "Designed for the future."
+  }
+}

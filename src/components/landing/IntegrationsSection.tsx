@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { SectionBadge } from '../ui/UI';
 
 // --- Brand Logos Configuration ---
@@ -110,6 +111,7 @@ const row2 = ['Gmail', 'Calendar', 'OpenAI', 'Notion', 'Linear'];
 const row3 = ['Instagram', 'Facebook', 'LinkedIn', 'YouTube', 'GoogleMaps'];
 
 export default function IntegrationsSection() {
+  const { t } = useTranslation();
   return (
     <section className="py-24 bg-zinc-50 dark:bg-[#09090b] relative overflow-hidden text-zinc-900 dark:text-white border-t border-zinc-200 dark:border-zinc-900">
         
@@ -120,14 +122,14 @@ export default function IntegrationsSection() {
             
             {/* Header Content */}
             <div className="flex flex-col items-center mb-8 text-center">
-                <SectionBadge color="blue">Integrated Workflow</SectionBadge>
+                <SectionBadge color="blue">{t('integrations.badge')}</SectionBadge>
                 
                 <h2 className="text-4xl md:text-7xl font-bold text-zinc-900 dark:text-white mb-6 tracking-tight">
-                    <span className="text-gradient">Connect</span> your Favorite Tools!
+                    {t('integrations.title')}
                 </h2>
                 
                 <p className="text-xl text-zinc-600 dark:text-zinc-400 max-w-2xl leading-relaxed font-light">
-                    Connect Propflow to your favorite tools and create powerful workflows for your sales and leadership teams. More than 30+ native integrations.
+                    {t('integrations.subtitle')}
                 </p>
             </div>
 

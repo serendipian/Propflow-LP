@@ -1,24 +1,26 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { ArrowRight, Clock, Calendar } from 'lucide-react';
 import { Button } from '../ui/UI';
 import { blogPosts } from '../../data/blog';
 
 export default function BlogSection() {
+  const { t } = useTranslation();
   return (
     <section className="py-24 bg-zinc-50 dark:bg-black relative">
       <div className="max-w-[1100px] mx-auto px-6">
             
         <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
             <div>
-                <h2 className="text-3xl md:text-7xl font-bold text-zinc-900 dark:text-white mb-4 tracking-tight">Latest from our Blog</h2>
+                <h2 className="text-3xl md:text-7xl font-bold text-zinc-900 dark:text-white mb-4 tracking-tight">{t('blog.title')}</h2>
                 <p className="text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl">
-                    Strategies, insights, and stories from the frontlines of modern real estate.
+                    {t('blog.subtitle')}
                 </p>
             </div>
             <Button variant="outline" className="hidden md:flex group bg-zinc-50 dark:bg-zinc-800/50 border-zinc-200 dark:border-zinc-700">
-                View All Articles <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                {t('blog.viewAll')} <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
             </Button>
         </div>
 
@@ -75,7 +77,7 @@ export default function BlogSection() {
                                 <span className="text-xs font-semibold text-zinc-900 dark:text-zinc-200">{post.author.name}</span>
                             </div>
                             <span className="text-blue-600 dark:text-blue-400 text-sm font-semibold flex items-center gap-1 group-hover:gap-2 transition-all">
-                                Read <ArrowRight size={14} />
+                                {t('blog.read')} <ArrowRight size={14} />
                             </span>
                         </div>
                     </div>
@@ -84,7 +86,7 @@ export default function BlogSection() {
         </div>
 
         <div className="mt-8 md:hidden">
-            <Button variant="outline" className="w-full justify-center">View All Articles</Button>
+            <Button variant="outline" className="w-full justify-center">{t('blog.viewAll')}</Button>
         </div>
 
       </div>

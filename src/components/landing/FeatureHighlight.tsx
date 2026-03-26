@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { 
   Building, Users, Search,
   CheckSquare, UserCircle, Handshake,
@@ -24,12 +25,13 @@ const modules = [
 ];
 
 export default function FeatureHighlight() {
+  const { t } = useTranslation();
   const [activeId, setActiveId] = useState('properties');
 
   const activeModule = modules.find(m => m.id === activeId) || modules[0];
 
   return (
-    <section className="py-24 bg-white dark:bg-black relative overflow-hidden">
+    <section id="features" className="py-24 bg-white dark:bg-black relative overflow-hidden">
       {/* Background Decor */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-zinc-200 dark:via-zinc-800 to-transparent" />
       <div className="absolute right-0 top-1/4 w-[500px] h-[500px] bg-blue-100 dark:bg-blue-900/10 rounded-full blur-[100px] pointer-events-none" />
@@ -37,12 +39,12 @@ export default function FeatureHighlight() {
       <div className="max-w-screen-2xl mx-auto px-6 relative z-10">
         
         <div className="flex flex-col items-center mb-16 text-center">
-          <SectionBadge color="blue">10+ Connected Modules</SectionBadge>
+          <SectionBadge color="blue">{t('features.badge')}</SectionBadge>
           <h2 className="text-4xl md:text-7xl font-bold text-zinc-900 dark:text-white mb-6 tracking-tight">
-             Centralize Your <br className="hidden md:block"/> Agency's <span className="text-gradient">Database</span>
+             {t('features.title')}
           </h2>
           <p className="text-zinc-600 dark:text-zinc-400 max-w-2xl text-lg">
-             Centralize Your Agency's Workflow. Link people, properties, and processes seamlessly.
+             {t('features.subtitle')}
           </p>
         </div>
 

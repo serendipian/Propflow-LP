@@ -1,6 +1,8 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 export default function SocialProof() {
+  const { t } = useTranslation();
   return (
     <section className="py-24 bg-zinc-50 dark:bg-zinc-900 relative">
       {/* Separator */}
@@ -10,7 +12,7 @@ export default function SocialProof() {
       <div className="max-w-[1100px] mx-auto px-6">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <h2 className="text-4xl md:text-7xl font-bold text-zinc-900 dark:text-white mb-6 tracking-tight">They Trusted Us</h2>
+            <h2 className="text-4xl md:text-7xl font-bold text-zinc-900 dark:text-white mb-6 tracking-tight">{t('social.title')}</h2>
             <div className="flex flex-col gap-8">
               <div className="flex items-start gap-4 group">
                 <div className="w-14 h-14 rounded-2xl bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 flex items-center justify-center text-blue-600 dark:text-blue-500 font-bold text-xl shadow-sm group-hover:scale-105 transition-transform">

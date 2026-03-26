@@ -1,5 +1,6 @@
 
 import React, { useState, useEffect, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Sparkles, Bot, Image as ImageIcon, Zap, 
@@ -256,6 +257,7 @@ const BeforeAfterSlider = () => {
 };
 
 export default function AISection() {
+  const { t } = useTranslation();
   return (
     <section className="py-32 bg-white dark:bg-black relative overflow-hidden">
       {/* Dynamic Background */}
@@ -267,12 +269,12 @@ export default function AISection() {
       <div className="max-w-[1100px] mx-auto px-6 relative z-10">
         
         <div className="text-center mb-20">
-          <SectionBadge color="blue"><Sparkles size={12} className="mr-1" /> Artificial Intelligence</SectionBadge>
+          <SectionBadge color="blue"><Sparkles size={12} className="mr-1" /> {t('ai.badge')}</SectionBadge>
           <h2 className="text-4xl md:text-7xl font-bold text-zinc-900 dark:text-white mb-6 tracking-tight">
-            Unleash the Power of <span className="text-gradient">AI</span>
+            {t('ai.title')}
           </h2>
           <p className="text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
-            We embedded AI into the core of the database. It cleans your data, writes your copy, and finds opportunities you missed.
+            {t('ai.subtitle')}
           </p>
         </div>
 

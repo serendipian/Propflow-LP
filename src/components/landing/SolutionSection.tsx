@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { Zap, PieChart, Database, Calendar, Sparkles, Share2, Puzzle, GitBranch } from 'lucide-react';
 import { SectionBadge } from '../ui/UI';
 
@@ -45,8 +46,9 @@ const FeatureNode = ({ icon: Icon, title, desc, align = "left", delay = 0 }: { i
 );
 
 export default function SolutionSection() {
+  const { t } = useTranslation();
   return (
-    <section className="py-24 relative overflow-hidden bg-zinc-50 dark:bg-zinc-950">
+    <section id="product" className="py-24 relative overflow-hidden bg-zinc-50 dark:bg-zinc-950">
       
       {/* Background Elements */}
       <div className="absolute inset-0 pointer-events-none">
@@ -57,13 +59,12 @@ export default function SolutionSection() {
       <div className="w-full max-w-[1600px] mx-auto px-6 relative z-10">
         
         <div className="text-center mb-6">
-          <SectionBadge color="blue">The Solution</SectionBadge>
+          <SectionBadge color="blue">{t('solution.badge')}</SectionBadge>
           <h2 className="text-4xl md:text-7xl font-bold text-zinc-900 dark:text-white mb-6 tracking-tight">
-            Turn Complexity into Clarity.<br />
-            Create <span className="text-gradient">Order</span> <span className="text-zinc-900 dark:text-white">from</span> <span className="text-gradient">Chaos.</span>
+            {t('solution.title')}
           </h2>
           <p className="text-lg text-zinc-600 dark:text-zinc-400 max-w-3xl mx-auto">
-            Propflow replaces your fragmented toolset with a single intelligent operating system, designed to help you orchestrate your entire agency, close additional deals and reclaim your evenings back !
+            {t('solution.subtitle')}
           </p>
         </div>
 

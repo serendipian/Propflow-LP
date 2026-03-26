@@ -1,0 +1,164 @@
+{
+  "nav": {
+    "product": "Produit",
+    "solutions": "Solutions",
+    "features": "Fonctionnalités",
+    "pricing": "Tarifs",
+    "resources": "Ressources",
+    "help": "Aide",
+    "signIn": "Connexion",
+    "bookDemo": "Réserver une Démo",
+    "switchLanguage": "Changer de langue"
+  },
+  "promo": {
+    "text": "Essai Gratuit 30 Jours",
+    "subtext": "Sans Carte Bancaire !"
+  },
+  "hero": {
+    "badge": "Nouveau : Retouche Photo par IA",
+    "headline1": "Gestion Immobilière.",
+    "headline2": "Simplifiée.",
+    "subtitle": "L'avantage compétitif secret des agences en forte croissance. Conçu pour les agents immobiliers professionnels qui travaillent sur le terrain, pas derrière un bureau.",
+    "startTrial": "Essai Gratuit",
+    "bookDemo": "Réserver une Démo",
+    "trustedBy": "La confiance de",
+    "agencies": "500+ agences immobilières"
+  },
+  "problem": {
+    "title": "Votre Agence Perd du Chiffre d'Affaires.",
+    "subtitle": "Vous ne perdez pas que des mandats. Vous perdez vos soirées, vos week-ends et votre tranquillité d'esprit !"
+  },
+  "solution": {
+    "badge": "La Solution",
+    "title": "Transformez la Complexité en Clarté. Créez de l'Ordre à partir du Chaos.",
+    "subtitle": "Propflow remplace vos outils fragmentés par un système d'exploitation intelligent unique, conçu pour orchestrer l'ensemble de votre agence, conclure plus de mandats et retrouver vos soirées !"
+  },
+  "features": {
+    "badge": "10+ Modules Connectés",
+    "title": "Centralisez la Base de Données de Votre Agence",
+    "subtitle": "Centralisez le workflow de votre agence. Liez personnes, biens et processus de manière fluide."
+  },
+  "operations": {
+    "badge": "Centre d'Opérations",
+    "title": "Des Fonctionnalités Puissantes pour Développer Votre Agence.",
+    "subtitle": "Arrêtez de jongler entre les onglets. Le centre de commande vous offre une visibilité complète sur vos opérations quotidiennes dans une interface unifiée."
+  },
+  "ai": {
+    "badge": "Intelligence Artificielle",
+    "title": "Libérez la Puissance de l'IA",
+    "subtitle": "Nous avons intégré l'IA au cœur de la base de données. Elle nettoie vos données, rédige vos annonces et trouve les opportunités que vous avez manquées."
+  },
+  "integrations": {
+    "badge": "Workflow Intégré",
+    "title": "Connectez vos Outils Favoris !",
+    "subtitle": "Connectez Propflow à vos outils favoris et créez des workflows puissants pour vos équipes commerciales et de direction. Plus de 30 intégrations natives."
+  },
+  "automation": {
+    "badge": "Automatisations Personnalisées",
+    "title": "Créez des Workflows pour Automatiser les Tâches Répétitives",
+    "subtitle": "Construisez des scénarios puissants pour mettre votre travail routinier en pilote automatique. Du routage des leads au suivi intelligent, si vous pouvez le définir, Propflow peut l'automatiser !"
+  },
+  "website": {
+    "badge": "Vitrine Digitale",
+    "title": "Votre Site Web Public, Synchronisé Instantanément.",
+    "subtitle": "Lancez un site web d'agence élégant et optimisé pour le SEO qui affiche les annonces directement depuis votre base de données Propflow."
+  },
+  "team": {
+    "badge": "Contrôles Entreprise",
+    "title": "Développez votre Équipe en Toute Confiance.",
+    "subtitle": "Que vous soyez une agence de proximité ou une franchise nationale, Propflow vous donne un contrôle granulaire sur vos données et vos collaborateurs."
+  },
+  "social": {
+    "title": "Ils Nous Font Confiance"
+  },
+  "pricing": {
+    "badge": "ROI Positif Garanti",
+    "title": "Tarifs Abordables, Impact Massif",
+    "subtitle": "Propflow se rentabilise grâce à des agents plus heureux et plus productifs.",
+    "monthly": "Mensuel",
+    "yearly": "Annuel",
+    "save": "Économisez {{percent}}%",
+    "perMonth": "/mois",
+    "perUser": "par utilisateur",
+    "getStarted": "Commencer",
+    "contactSales": "Contacter les Ventes",
+    "mostPopular": "Le Plus Populaire",
+    "includes": "Inclut"
+  },
+  "faq": {
+    "badge": "Support",
+    "title": "Questions Fréquemment Posées",
+    "subtitle": "Tout ce que vous devez savoir sur le produit et la facturation. Vous ne trouvez pas la réponse que vous cherchez ?",
+    "items": [
+      {
+        "q": "En combien de temps pouvons-nous migrer depuis notre CRM actuel ?",
+        "a": "La plupart des agences sont opérationnelles en 48 heures. Notre équipe d'intégration dédiée gère la migration des données depuis vos tableurs ou CRM existants (Salesforce, HubSpot, Pipedrive) gratuitement à partir du plan Growth."
+      },
+      {
+        "q": "Propflow est-il conforme au RGPD et aux lois sur la protection des données ?",
+        "a": "Oui. Nous sommes entièrement conformes au RGPD et SOC-2 Type II. Vos données sont chiffrées au repos et en transit selon les standards bancaires AES-256, garantissant la sécurité et la confidentialité des informations de vos clients."
+      },
+      {
+        "q": "Puis-je personnaliser les pipelines et les workflows ?",
+        "a": "Absolument. Propflow est conçu pour s'adapter aux processus spécifiques de votre agence. Vous pouvez créer des étapes de transaction personnalisées, des déclencheurs automatisés et des champs obligatoires pour vous assurer que votre équipe suit exactement votre méthode."
+      },
+      {
+        "q": "Proposez-vous un accès API pour des intégrations personnalisées ?",
+        "a": "Oui, notre plan Enterprise inclut un accès API complet et des webhooks. Vous pouvez connecter Propflow à votre site web personnalisé, votre logiciel de comptabilité ou tout autre outil propriétaire que vous utilisez."
+      },
+      {
+        "q": "Quel type de support et de formation est inclus ?",
+        "a": "Tous les plans incluent un support par email 24h/24 et 7j/7 et l'accès à notre base de connaissances. Les plans Growth et Enterprise bénéficient d'un Customer Success Manager dédié et de sessions de formation vidéo en direct pour toute votre équipe."
+      },
+      {
+        "q": "Propflow fonctionne-t-il pour la vente et la location ?",
+        "a": "Oui. Nous supportons des pipelines séparés pour la Vente et la Location. Vous pouvez gérer propriétaires, locataires, acheteurs et vendeurs dans une base de données unifiée avec des workflows distincts pour chaque type de transaction."
+      },
+      {
+        "q": "Comment fonctionne le moteur de matching IA ?",
+        "a": "Notre IA analyse les caractéristiques des biens et les préférences des acheteurs en temps réel. Lorsqu'une nouvelle annonce correspond aux critères d'un acheteur (localisation, budget, caractéristiques), le système suggère automatiquement la correspondance et rédige un email personnalisé."
+      },
+      {
+        "q": "Y a-t-il une limite sur le nombre de biens ou de contacts ?",
+        "a": "Nous croyons en une croissance sans restriction. Il n'y a aucune limite sur le nombre de contacts, biens ou annonces que vous pouvez stocker, même sur notre plan Starter. Vous ne payez qu'en fonction de la taille de votre équipe ou du volume de transactions actives."
+      }
+    ]
+  },
+  "blog": {
+    "title": "Derniers Articles du Blog",
+    "subtitle": "Stratégies, insights et histoires depuis les premières lignes de l'immobilier moderne.",
+    "viewAll": "Voir Tous les Articles",
+    "read": "Lire"
+  },
+  "resources": {
+    "title": "Des Ressources pour Vous Aider à Grandir.",
+    "subtitle": "Explorez nos guides, notre communauté et notre documentation pour tirer le meilleur parti de Propflow."
+  },
+  "cta": {
+    "badge": "Nouveau : Retouche Photo par IA",
+    "headline1": "Du Lead au Mandat Signé.",
+    "headline2": "Entièrement Orchestré.",
+    "subtitle": "Les tableurs ne sont pas faits pour développer des agences. Votre cerveau non plus !",
+    "startTrial": "Essai Gratuit",
+    "bookDemo": "Réserver une Démo"
+  },
+  "footer": {
+    "tagline": "Le système d'exploitation pour les agences immobilières modernes.",
+    "product": "Produit",
+    "pipeline": "Pipeline",
+    "listings": "Annonces",
+    "automations": "Automatisations",
+    "mobileApp": "Application Mobile",
+    "company": "Entreprise",
+    "about": "À Propos",
+    "customers": "Clients",
+    "careers": "Carrières",
+    "contact": "Contact",
+    "legal": "Mentions Légales",
+    "privacy": "Confidentialité",
+    "terms": "Conditions",
+    "security": "Sécurité",
+    "copyright": "© {{year}} Propflow Inc. Tous droits réservés.",
+    "designedFor": "Conçu pour le futur."
+  }
+}

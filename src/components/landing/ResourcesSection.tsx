@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { BookOpen, Users, HelpCircle, Code2, ArrowRight, PlayCircle } from 'lucide-react';
 import { Button } from '../ui/UI';
 
@@ -41,17 +42,18 @@ const ResourceCard = ({ icon: Icon, title, desc, linkText, color, delay }: any) 
 };
 
 export default function ResourcesSection() {
+  const { t } = useTranslation();
   return (
-    <section className="py-24 bg-zinc-50 dark:bg-black relative overflow-hidden">
+    <section id="resources" className="py-24 bg-zinc-50 dark:bg-black relative overflow-hidden">
       <div className="max-w-[1100px] mx-auto px-6">
 
         <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-8">
             <div className="max-w-2xl">
                 <h2 className="text-3xl md:text-7xl font-bold text-zinc-900 dark:text-white mb-4 tracking-tight">
-                Resources to help you scale.
+                {t('resources.title')}
                 </h2>
                 <p className="text-lg text-zinc-600 dark:text-zinc-400">
-                Explore our guides, community, and documentation to get the most out of Propflow.
+                {t('resources.subtitle')}
                 </p>
             </div>
             <Button variant="outline" className="hidden md:flex bg-zinc-50 dark:bg-zinc-800/50 border-zinc-200 dark:border-zinc-700">

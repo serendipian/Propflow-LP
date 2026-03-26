@@ -1,4 +1,11 @@
-export const navLinks = ['Product', 'Solutions', 'Features', 'Pricing', 'Resources', 'Help'] as const;
+export const navLinks = [
+  { label: 'Product', href: '#product' },
+  { label: 'Solutions', href: '#solutions' },
+  { label: 'Features', href: '#features' },
+  { label: 'Pricing', href: '#pricing' },
+  { label: 'Resources', href: '#resources' },
+  { label: 'Help', href: '#faq' },
+] as const;
 
 export const siteConfig = {
   name: 'Propflow',

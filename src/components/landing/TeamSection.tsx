@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { Shield, Users, Trophy, Lock, Activity, Settings, Briefcase, Home, DollarSign, Eye, Plus, Check, ArrowUpRight, CheckCircle2 } from 'lucide-react';
 import { SectionBadge } from '../ui/UI';
 
@@ -52,6 +53,7 @@ const performanceKpis = [
 ];
 
 export default function TeamSection() {
+  const { t } = useTranslation();
   return (
     <section className="py-24 bg-zinc-50 dark:bg-black relative overflow-hidden border-t border-zinc-200 dark:border-zinc-900">
       
@@ -59,13 +61,12 @@ export default function TeamSection() {
         
         {/* Centered Header */}
         <div className="text-center mb-4 max-w-4xl">
-            <SectionBadge color="blue"><Shield size={14} className="mr-1"/> Enterprise Controls</SectionBadge>
+            <SectionBadge color="blue"><Shield size={14} className="mr-1"/> {t('team.badge')}</SectionBadge>
             <h2 className="text-4xl md:text-7xl font-bold text-zinc-900 dark:text-white mb-6 tracking-tight">
-              Scale your <span className="text-gradient">Team</span> <br className="hidden md:block"/>
-              with confidence.
+              {t('team.title')}
             </h2>
             <p className="text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed max-w-2xl mx-auto">
-              Whether you are a boutique agency or a nationwide franchise, Propflow gives you granular control over your data and workforce.
+              {t('team.subtitle')}
             </p>
         </div>
 

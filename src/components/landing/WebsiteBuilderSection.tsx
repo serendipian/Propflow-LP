@@ -1,24 +1,23 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { Layout, Globe, Code, Palette, ArrowRight, CheckCircle2, Layers, MessageSquare, Search, ChevronDown, Compass, Database, Link } from 'lucide-react';
 import { SectionBadge, Button, GlassPanel } from '../ui/UI';
 
 export default function WebsiteBuilderSection() {
+  const { t } = useTranslation();
   return (
     <section className="py-24 bg-white dark:bg-zinc-950 relative overflow-hidden border-t border-zinc-200 dark:border-zinc-900">
       <div className="max-w-screen-2xl mx-auto px-6 relative z-10 flex flex-col items-center">
         
         {/* Centered Header */}
         <div className="text-center mb-16 max-w-4xl">
-            <SectionBadge color="blue"><Globe size={14} className="mr-1"/> Digital Storefront</SectionBadge>
+            <SectionBadge color="blue"><Globe size={14} className="mr-1"/> {t('website.badge')}</SectionBadge>
             <h2 className="text-4xl md:text-7xl font-bold text-zinc-900 dark:text-white mb-6 tracking-tight">
-              Your Public Website,<br className="hidden md:block"/>
-              <span className="text-gradient">
-                Synced
-              </span> Instantly.
+              {t('website.title')}
             </h2>
             <p className="text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed max-w-2xl mx-auto">
-              Launch a stunning, SEO-optimized agency website that pulls listings directly from your Propflow database.
+              {t('website.subtitle')}
             </p>
         </div>
 

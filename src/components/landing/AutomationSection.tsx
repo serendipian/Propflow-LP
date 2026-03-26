@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Zap, GitBranch, Bell, Mail, CheckCircle2, Split, Clock, Home, Share2, 
@@ -147,6 +148,7 @@ const ConnectionPath = ({ d, color = "#3b82f6", delay = 0 }: { d: string, color?
 );
 
 export default function AutomationSection() {
+  const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState<WorkflowType>('leads');
 
   return (
@@ -159,12 +161,12 @@ export default function AutomationSection() {
 
            {/* Centered Header Content - Updated Spacing */}
            <div className="max-w-4xl text-center mb-12">
-             <SectionBadge color="blue"><Zap size={14} className="mr-1"/> Custom Automations</SectionBadge>
+             <SectionBadge color="blue"><Zap size={14} className="mr-1"/> {t('automation.badge')}</SectionBadge>
              <h2 className="text-4xl md:text-7xl font-bold text-zinc-900 dark:text-white mb-6 tracking-tight">
-               Build Workflows to <span className="text-gradient">Automate</span> Repetitive Tasks
+               {t('automation.title')}
              </h2>
              <p className="text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed max-w-2xl mx-auto">
-               Build powerful scenarios to put your busywork on autopilot. From lead routing to smart follow-up, if you can define it, Propflow can automate it!
+               {t('automation.subtitle')}
              </p>
            </div>
 

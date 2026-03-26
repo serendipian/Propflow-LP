@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { Brain, DatabaseZap, UserX, EyeOff, Clock, Shuffle, MessageSquareOff, AlertTriangle } from 'lucide-react';
 import RevenueLeakVisualization from './RevenueLeakVisualization';
 
@@ -16,6 +17,7 @@ const pains = [
 ];
 
 export default function ProblemSection() {
+  const { t } = useTranslation();
   return (
     <section className="py-32 md:py-48 bg-zinc-50 dark:bg-zinc-950 relative overflow-hidden flex flex-col items-center justify-center min-h-[60vh] transition-colors duration-500">
       
@@ -35,8 +37,7 @@ export default function ProblemSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          Your Agency is <span className="text-gradient">Leaking</span><br />
-          Potential Revenue.
+          {t('problem.title')}
         </motion.h2>
 
         {/* Subtitle */}
@@ -47,7 +48,7 @@ export default function ProblemSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          You don't just lose Deals. You lose evenings, weekends and peace of mind!
+          {t('problem.subtitle')}
         </motion.p>
 
         {/* Pain Points Grid */}

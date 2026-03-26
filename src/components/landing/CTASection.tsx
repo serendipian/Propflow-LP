@@ -1,10 +1,12 @@
 
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { ChevronRight, Play, Star } from 'lucide-react';
 import { Button, GlassPill } from '../ui/UI';
 
 const TrustIndicator = () => {
+  const { t } = useTranslation();
   return (
     <motion.div 
       className="flex justify-center"
@@ -41,7 +43,7 @@ const TrustIndicator = () => {
              </span>
           </div>
           <p className="text-xs text-zinc-500 dark:text-zinc-400 font-medium">
-            Trusted by <span className="text-zinc-900 dark:text-zinc-200 font-semibold">500+ real estate agencies</span>
+            {t('hero.trustedBy')} <span className="text-zinc-900 dark:text-zinc-200 font-semibold">{t('hero.agencies')}</span>
           </p>
         </div>
 
@@ -51,6 +53,7 @@ const TrustIndicator = () => {
 };
 
 export default function CTASection() {
+  const { t } = useTranslation();
   return (
     <section className="relative py-32 md:py-40 overflow-hidden flex flex-col items-center bg-white dark:bg-zinc-950">
       {/* Separator */}
@@ -76,7 +79,7 @@ export default function CTASection() {
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
           </span>
-          <span className="text-zinc-600 dark:text-zinc-300 group-hover:text-zinc-900 dark:group-hover:text-white transition-colors">New: AI Photo Enhancement</span>
+          <span className="text-zinc-600 dark:text-zinc-300 group-hover:text-zinc-900 dark:group-hover:text-white transition-colors">{t('cta.badge')}</span>
           <ChevronRight size={12} className="group-hover:translate-x-0.5 transition-transform text-zinc-400 dark:text-zinc-500 group-hover:text-blue-600 dark:group-hover:text-blue-400" />
         </motion.div>
 
@@ -88,11 +91,11 @@ export default function CTASection() {
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          From Leads to Deals.<br />
+          {t('cta.headline1')}<br />
           <span className="relative whitespace-nowrap">
              <span className="absolute -inset-1 bg-gradient-to-r from-blue-200/50 to-cyan-200/50 dark:from-blue-600/20 dark:to-cyan-600/20 blur-xl"></span>
              <span className="relative text-gradient">
-               Fully Orchestrated.
+               {t('cta.headline2')}
              </span>
           </span>
         </motion.h2>
@@ -104,7 +107,7 @@ export default function CTASection() {
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.1 }}
         >
-          Spreadsheets weren’t built to scale agencies. Neither was your brain !
+          {t('cta.subtitle')}
         </motion.p>
 
         {/* CTA Buttons */}
@@ -116,11 +119,11 @@ export default function CTASection() {
           transition={{ duration: 0.7, delay: 0.2 }}
         >
           <Button variant="primary" className="w-full sm:w-auto text-lg h-12 px-8">
-            Start Free Trial
+            {t('cta.startTrial')}
           </Button>
-          
+
           <Button variant="secondary" className="w-full sm:w-auto text-lg h-12 px-8">
-            Book Demo
+            {t('cta.bookDemo')}
           </Button>
         </motion.div>
 

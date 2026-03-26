@@ -1,11 +1,13 @@
 
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { ChevronRight, Play, Star } from 'lucide-react';
 import { Button, GlassPill } from '../ui/UI';
 import Hero3D from './Hero3D';
 
 const HeroTrustIndicator = () => {
+  const { t } = useTranslation();
   return (
     <motion.div 
       className="flex justify-center mb-24"
@@ -42,7 +44,7 @@ const HeroTrustIndicator = () => {
              </span>
           </div>
           <p className="text-xs text-zinc-500 dark:text-zinc-400 font-medium">
-            Trusted by <span className="text-zinc-900 dark:text-zinc-200 font-semibold">500+ real estate agencies</span>
+            {t('hero.trustedBy')} <span className="text-zinc-900 dark:text-zinc-200 font-semibold">{t('hero.agencies')}</span>
           </p>
         </div>
 
@@ -52,6 +54,7 @@ const HeroTrustIndicator = () => {
 };
 
 export default function Hero() {
+  const { t } = useTranslation();
   return (
     <section className="relative pt-24 pb-20 md:pt-36 md:pb-40 overflow-hidden flex flex-col items-center">
       {/* Dynamic Background */}
@@ -78,7 +81,7 @@ export default function Hero() {
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
           </span>
-          <span className="text-zinc-600 dark:text-zinc-300 group-hover:text-zinc-900 dark:group-hover:text-white transition-colors">New: AI Photo Enhancement</span>
+          <span className="text-zinc-600 dark:text-zinc-300 group-hover:text-zinc-900 dark:group-hover:text-white transition-colors">{t('hero.badge')}</span>
           <ChevronRight size={12} className="group-hover:translate-x-0.5 transition-transform text-zinc-400 dark:text-zinc-500 group-hover:text-blue-600 dark:group-hover:text-blue-400" />
         </motion.div>
 
@@ -89,11 +92,11 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1 }}
         >
-          Property Management.<br />
+          {t('hero.headline1')}<br />
           <span className="relative whitespace-nowrap">
              <span className="absolute -inset-1 bg-gradient-to-r from-blue-200/50 to-cyan-200/50 dark:from-blue-600/20 dark:to-cyan-600/20 blur-xl"></span>
              <span className="relative text-gradient">
-               Made Easy.
+               {t('hero.headline2')}
              </span>
           </span>
         </motion.h1>
@@ -104,7 +107,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2 }}
         >
-          The secret unfair advantage for high-growth agencies. Built for professional real estate agents who work in the field, not behind a desk.
+          {t('hero.subtitle')}
         </motion.p>
 
         {/* CTA Buttons */}
@@ -115,11 +118,11 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 0.3 }}
         >
           <Button variant="primary" className="w-full sm:w-auto text-lg h-12 px-8">
-            Start Free Trial
+            {t('hero.startTrial')}
           </Button>
-          
+
           <Button variant="secondary" className="w-full sm:w-auto text-lg h-12 px-8">
-            Book Demo
+            {t('hero.bookDemo')}
           </Button>
         </motion.div>
 

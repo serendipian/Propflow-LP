@@ -3,6 +3,8 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Check, X, Globe, Zap, MessageSquare, Bot, ArrowRight, Minus, Sparkles, Box, Webhook, Image as ImageIcon, Building2, Phone, Info } from 'lucide-react';
 import { Button, SectionBadge } from '../ui/UI';
+import { useTranslation } from 'react-i18next';
+import { formatPrice } from '../../lib/currency';
 
 type BillingCycle = 'monthly' | 'yearly';
 type PlanId = 'solo' | 'team' | 'enterprise';
@@ -119,6 +121,8 @@ const addonData = {
 };
 
 export default function Pricing() {
+  const { t, i18n } = useTranslation();
+  const lang = i18n.language;
   const [billing, setBilling] = useState<BillingCycle>('yearly');
   const [selectedPlan, setSelectedPlan] = useState<PlanId>('team');
 
@@ -172,13 +176,12 @@ export default function Pricing() {
         
         {/* Header */}
         <div className="text-center mb-16">
-          <SectionBadge color="blue">Guaranteed Positive ROI</SectionBadge>
+          <SectionBadge color="blue">{t('pricing.badge')}</SectionBadge>
           <h2 className="text-4xl md:text-7xl font-bold text-zinc-900 dark:text-white mb-6 tracking-tight">
-            <span className="text-gradient">Affordable</span> Pricing,<br />
-            Massive <span className="text-gradient">Impact</span>
+            {t('pricing.title')}
           </h2>
           <p className="text-lg text-zinc-600 dark:text-zinc-400 max-w-xl mx-auto mb-10">
-            Propflow pays for itself in happier, more productive agents.
+            {t('pricing.subtitle')}
           </p>
 
           {/* Billing Toggle - Bigger, cleaner design */}
@@ -193,7 +196,7 @@ export default function Pricing() {
                   : 'text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-300'
               }`}
             >
-              Monthly
+              {t('pricing.monthly')}
             </button>
             <button
               role="radio"
@@ -205,7 +208,7 @@ export default function Pricing() {
                   : 'text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-300'
               }`}
             >
-              Yearly <span className="ml-2 text-[10px] bg-white/20 text-white px-1.5 py-0.5 rounded font-medium">-20%</span>
+              {t('pricing.yearly')} <span className="ml-2 text-[10px] bg-white/20 text-white px-1.5 py-0.5 rounded font-medium">-20%</span>
             </button>
           </div>
         </div>
@@ -249,9 +252,9 @@ export default function Pricing() {
                     ) : (
                         <div className="flex items-baseline gap-1">
                             <span className="text-5xl font-bold tracking-tight text-zinc-900 dark:text-white">
-                                ${billing === 'monthly' ? plan.price.monthly : plan.price.yearly}
+                                {formatPrice(billing === 'monthly' ? plan.price.monthly : plan.price.yearly, lang)}
                             </span>
-                            <span className="text-lg text-zinc-500 dark:text-zinc-400">/mo</span>
+                            <span className="text-lg text-zinc-500 dark:text-zinc-400">{t('pricing.perMonth')}</span>
                         </div>
                     )}
                     <div className="text-sm mt-2 text-zinc-500 dark:text-zinc-400">
@@ -367,9 +370,9 @@ export default function Pricing() {
                                             {/* Right: Price */}
                                             <div className="text-right shrink-0">
                                                 <div className={`text-xl font-bold ${addons[key] ? 'text-blue-600 dark:text-blue-400' : 'text-zinc-900 dark:text-white'}`}>
-                                                    ${item.price}
+                                                    {formatPrice(item.price, lang)}
                                                 </div>
-                                                <div className="text-[10px] text-zinc-400 font-medium text-right">/mo</div>
+                                                <div className="text-[10px] text-zinc-400 font-medium text-right">{t('pricing.perMonth')}</div>
                                             </div>
                                         </div>
 
@@ -403,9 +406,9 @@ export default function Pricing() {
                                         </div>
                                         <div className="text-right">
                                             <div className="text-2xl font-bold text-cyan-600 dark:text-cyan-400">
-                                                {aiTier === 0 ? '$0' : `$${aiOptions[aiTier].price}`}
+                                                {aiTier === 0 ? formatPrice(0, lang) : formatPrice(aiOptions[aiTier].price, lang)}
                                             </div>
-                                            <div className="text-[10px] text-zinc-400 font-medium">{aiTier === 0 ? 'Included' : '/month'}</div>
+                                            <div className="text-[10px] text-zinc-400 font-medium">{aiTier === 0 ? 'Included' : t('pricing.perMonth')}</div>
                                         </div>
                                     </div>
                                     
@@ -485,8 +488,8 @@ export default function Pricing() {
                                 <div className="relative z-10 flex flex-col items-end mb-8">
                                     <span className="text-xs font-bold text-zinc-500 uppercase tracking-widest mb-2 text-right">Estimated Monthly Cost</span>
                                     <div className="flex items-baseline gap-1 justify-end">
-                                        <span className="text-5xl md:text-6xl font-extrabold tracking-tight text-zinc-900 dark:text-white">${calculateTotal()}</span>
-                                        <span className="text-lg font-medium text-zinc-400">/mo</span>
+                                        <span className="text-5xl md:text-6xl font-extrabold tracking-tight text-zinc-900 dark:text-white">{formatPrice(calculateTotal(), lang)}</span>
+                                        <span className="text-lg font-medium text-zinc-400">{t('pricing.perMonth')}</span>
                                     </div>
                                 </div>
                                 
@@ -503,7 +506,7 @@ export default function Pricing() {
                                             </div>
                                         </div>
                                         <span className="font-mono font-bold text-lg text-zinc-900 dark:text-white">
-                                            ${billing === 'monthly' ? basePlans[selectedPlan].price.monthly : basePlans[selectedPlan].price.yearly}
+                                            {formatPrice(billing === 'monthly' ? basePlans[selectedPlan].price.monthly : basePlans[selectedPlan].price.yearly, lang)}
                                         </span>
                                     </div>
 
@@ -519,7 +522,7 @@ export default function Pricing() {
                                             </div>
                                         </div>
                                         <span className="font-mono font-bold text-lg text-zinc-900 dark:text-white">
-                                            {aiTier === 0 ? 'Included' : `+$${aiOptions[aiTier].price}`}
+                                            {aiTier === 0 ? 'Included' : `+${formatPrice(aiOptions[aiTier].price, lang)}`}
                                         </span>
                                     </div>
 
@@ -530,25 +533,25 @@ export default function Pricing() {
                                             {addons.website && (
                                                 <div className="flex justify-between items-center text-sm">
                                                     <span className="text-zinc-600 dark:text-zinc-300">Website Builder</span>
-                                                    <span className="font-mono text-zinc-900 dark:text-white">+${addonData.website.price}</span>
+                                                    <span className="font-mono text-zinc-900 dark:text-white">+{formatPrice(addonData.website.price, lang)}</span>
                                                 </div>
                                             )}
                                             {addons.automation && (
                                                 <div className="flex justify-between items-center text-sm">
                                                     <span className="text-zinc-600 dark:text-zinc-300">Automations</span>
-                                                    <span className="font-mono text-zinc-900 dark:text-white">+${addonData.automation.price}</span>
+                                                    <span className="font-mono text-zinc-900 dark:text-white">+{formatPrice(addonData.automation.price, lang)}</span>
                                                 </div>
                                             )}
                                             {addons.inbox && (
                                                 <div className="flex justify-between items-center text-sm">
                                                     <span className="text-zinc-600 dark:text-zinc-300">Unified Inbox</span>
-                                                    <span className="font-mono text-zinc-900 dark:text-white">+${addonData.inbox.price}</span>
+                                                    <span className="font-mono text-zinc-900 dark:text-white">+{formatPrice(addonData.inbox.price, lang)}</span>
                                                 </div>
                                             )}
                                             {addons.api && (
                                                 <div className="flex justify-between items-center text-sm">
                                                     <span className="text-zinc-600 dark:text-zinc-300">API Access</span>
-                                                    <span className="font-mono text-zinc-900 dark:text-white">+${addonData.api.price}</span>
+                                                    <span className="font-mono text-zinc-900 dark:text-white">+{formatPrice(addonData.api.price, lang)}</span>
                                                 </div>
                                             )}
                                         </div>
