@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Propflow | The OS for Modern Real Estate</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            blue: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              200: '#bfdbfe',
+              300: '#93c5fd',
+              400: '#60a5fa',
+              500: '#3b82f6',
+              600: '#2563eb',
+              700: '#1d4ed8',
+              800: '#1e40af',
+              900: '#1e3a8a',
+            },
+            indigo: {
+              400: '#818cf8',
+              500: '#6366f1',
+              900: '#312e81',
+            },
+            zinc: {
+              800: '#27272a',
+              900: '#18181b',
+              950: '#09090b',
+            }
+          },
+          animation: {
+            'fade-in': 'fadeIn 0.5s ease-out',
+            'slide-up': 'slideUp 0.5s ease-out',
+            'blob': 'blob 7s infinite',
+            'pulse-glow': 'pulseGlow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'scan': 'scan 4s linear infinite',
+          },
+          keyframes: {
+            fadeIn: {
+              '0%': { opacity: '0' },
+              '100%': { opacity: '1' },
+            },
+            slideUp: {
+              '0%': { transform: 'translateY(20px)', opacity: '0' },
+              '100%': { transform: 'translateY(0)', opacity: '1' },
+            },
+            blob: {
+              "0%": { transform: "translate(0px, 0px) scale(1)" },
+              "33%": { transform: "translate(30px, -50px) scale(1.1)" },
+              "66%": { transform: "translate(-20px, 20px) scale(0.9)" },
+              "100%": { transform: "translate(0px, 0px) scale(1)" }
+            },
+            pulseGlow: {
+              '0%, 100%': { opacity: '1' },
+              '50%': { opacity: '.5' }
+            },
+            scan: {
+              '0%': { top: '0%' },
+              '100%': { top: '100%' }
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #ffffff;
+      color: #18181b;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    html.dark body {
+      background-color: #09090b;
+      color: #fff;
+    }
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+    /* Custom Text Gradient Class */
+    @keyframes gradient {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 200% 50%; }
+    }
+    .text-gradient {
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: transparent;
+      background-size: 200% auto;
+      animation: gradient 4s linear infinite;
+      /* Light Mode: Blue-600 -> Sky-500 -> Blue-600 */
+      background-image: linear-gradient(to right, #2563eb, #0ea5e9, #2563eb);
+    }
+    html.dark .text-gradient {
+      /* Dark Mode: Blue-400 -> Sky-400 -> Blue-400 */
+      background-image: linear-gradient(to right, #60a5fa, #38bdf8, #60a5fa);
+    }
+  </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@18.2.0",
+    "react/jsx-runtime": "https://esm.sh/react@18.2.0/jsx-runtime",
+    "react-dom/client": "https://esm.sh/react-dom@18.2.0/client?deps=react@18.2.0",
+    "lucide-react": "https://esm.sh/lucide-react@0.469.0?deps=react@18.2.0",
+    "framer-motion": "https://esm.sh/framer-motion@10.16.4?deps=react@18.2.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/"
+  }
+}
+</script>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="module" src="index.tsx"></script>
+</body>
+</html>
