@@ -8,7 +8,7 @@ export default function EnterpriseCTA() {
   const { t } = useTranslation();
 
   return (
-    <section className="py-24 bg-zinc-50 dark:bg-black relative">
+    <section className="py-24 bg-white dark:bg-zinc-950 relative">
       <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-zinc-200 dark:via-zinc-800 to-transparent" />
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -23,11 +23,13 @@ export default function EnterpriseCTA() {
         <p className="text-lg text-zinc-600 dark:text-zinc-400 mb-8 max-w-2xl mx-auto">
           {t('pricingPage.enterprise.subtitle')}
         </p>
-        <Link to="/contact">
-          <Button variant="primary" className="!h-14 !px-8 !text-lg">
-            {t('pricingPage.enterprise.cta')}
-          </Button>
-        </Link>
+        <div className="flex justify-center">
+          <Link to="/contact">
+            <Button variant="primary" className="!h-14 !px-8 !text-lg">
+              {t('pricingPage.enterprise.cta')}
+            </Button>
+          </Link>
+        </div>
       </motion.div>
     </section>
   );

@@ -17,7 +17,7 @@ export default function PlanCards({ billing, selectedPlan, onSelectPlan }: PlanC
   const lang = i18n.language;
 
   return (
-    <section className="pb-24 bg-white dark:bg-zinc-950">
+    <section className="pt-8 pb-24 bg-white dark:bg-zinc-950">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
           {(Object.entries(basePlans) as [PlanId, (typeof basePlans)['solo']][]).map(

@@ -19,7 +19,7 @@ export default function ContactPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="max-w-screen-2xl mx-auto px-6 text-center"
+          className="max-w-7xl mx-auto px-6 text-center"
         >
           <h1 className="text-4xl md:text-7xl font-bold text-zinc-900 dark:text-white mb-6 tracking-tight">
             {t('contactPage.title')}
@@ -32,7 +32,7 @@ export default function ContactPage() {
 
       {/* Form + Info */}
       <section className="pb-24 bg-white dark:bg-zinc-950">
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -55,8 +55,9 @@ export default function ContactPage() {
       </section>
 
       {/* Map Placeholder */}
-      <section className="pb-24 bg-white dark:bg-zinc-950">
-        <div className="max-w-6xl mx-auto px-6">
+      <section className="py-24 bg-zinc-50 dark:bg-black relative">
+        <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-zinc-200 dark:via-zinc-800 to-transparent" />
+        <div className="max-w-7xl mx-auto px-6">
           <GlassPanel className="w-full h-64 rounded-2xl flex items-center justify-center">
             <p className="text-zinc-400 dark:text-zinc-600 text-sm">
               Map placeholder — Casablanca, Morocco

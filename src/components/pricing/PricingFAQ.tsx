@@ -15,7 +15,8 @@ export default function PricingFAQ() {
   }));
 
   return (
-    <section className="py-24 bg-white dark:bg-zinc-950 relative">
+    <section className="py-24 bg-zinc-50 dark:bg-black relative">
+      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-zinc-200 dark:via-zinc-800 to-transparent" />
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}

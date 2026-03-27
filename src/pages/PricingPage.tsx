@@ -24,7 +24,8 @@ export default function PricingPage() {
       <PricingHero billing={billing} onBillingChange={setBilling} />
       <PlanCards billing={billing} selectedPlan={selectedPlan} onSelectPlan={setSelectedPlan} />
       <ComparisonTable />
-      <section className="py-24 bg-white dark:bg-zinc-950">
+      <section className="py-24 bg-white dark:bg-zinc-950 relative">
+        <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-zinc-200 dark:via-zinc-800 to-transparent" />
         <AddonBuilder billing={billing} selectedPlan={selectedPlan} />
       </section>
       <PricingFAQ />

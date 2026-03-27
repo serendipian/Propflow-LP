@@ -40,11 +40,11 @@ export default function AddonBuilder({ billing, selectedPlan }: AddonBuilderProp
 
   return (
     <div className="max-w-screen-2xl mx-auto px-6">
-      <div className="text-center mb-8">
-        <h3 className="text-4xl font-bold text-zinc-900 dark:text-white mb-2">
+      <div className="text-center mb-12">
+        <h2 className="text-3xl md:text-5xl font-bold text-zinc-900 dark:text-white mb-4 tracking-tight">
           Need more power?
-        </h3>
-        <p className="text-xl text-zinc-500">
+        </h2>
+        <p className="text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
           Supercharge your workflow with add-ons and AI credits.
         </p>
       </div>
