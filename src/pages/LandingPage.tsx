@@ -11,7 +11,7 @@ const AutomationSection = lazy(() => import('../components/landing/AutomationSec
 const WebsiteBuilderSection = lazy(() => import('../components/landing/WebsiteBuilderSection'));
 const TeamSection = lazy(() => import('../components/landing/TeamSection'));
 const SocialProof = lazy(() => import('../components/landing/SocialProof'));
-const Pricing = lazy(() => import('../components/landing/Pricing'));
+const PricingSection = lazy(() => import('../components/landing/PricingSection'));
 const FAQ = lazy(() => import('../components/landing/FAQ'));
 const BlogSection = lazy(() => import('../components/landing/BlogSection'));
 const ResourcesSection = lazy(() => import('../components/landing/ResourcesSection'));
@@ -32,7 +32,7 @@ export default function LandingPage() {
         <WebsiteBuilderSection />
         <TeamSection />
         <SocialProof />
-        <Pricing />
+        <PricingSection />
         <FAQ />
         <BlogSection />
         <ResourcesSection />
