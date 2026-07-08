@@ -245,5 +245,42 @@
         "cta": "Schedule Demo"
       }
     }
+  },
+  "demoPage": {
+    "badge": "Live personalized walkthrough",
+    "title": "See Propflow",
+    "titleAccent": "in action.",
+    "subtitle": "Book a 30-minute walkthrough tailored to your agency. No slides — just your workflows, running on Propflow, with an expert answering every question.",
+    "benefits": {
+      "title": "What you'll get",
+      "items": [
+        { "title": "A tour built around you", "text": "We map the demo to your agency's exact sales and rental workflows — not a generic script." },
+        { "title": "Answers, live", "text": "Bring your hardest questions on migration, pricing, and integrations. We'll answer them on the call." },
+        { "title": "Your data, your way", "text": "See how your pipeline, listings, and contacts look inside Propflow before you commit to anything." },
+        { "title": "Under 30 minutes", "text": "Focused, fast, and respectful of your time. No pressure, no obligation." }
+      ]
+    },
+    "scheduler": {
+      "title": "Pick a time that works",
+      "placeholderTitle": "Scheduler loads here",
+      "placeholderNote": "Connect your Cal.com or Calendly account to embed the live booking calendar.",
+      "fallback": "Prefer email? Contact us instead"
+    },
+    "steps": {
+      "title": "What happens next",
+      "items": [
+        { "title": "Book your slot", "text": "Choose a time above. You'll get an instant calendar invite with a video link." },
+        { "title": "30-minute walkthrough", "text": "Meet your product expert for a tailored tour of Propflow, live." },
+        { "title": "Get your plan", "text": "Leave with a clear, no-obligation rollout plan built for your agency." }
+      ]
+    },
+    "faq": {
+      "title": "Before you book",
+      "items": [
+        { "q": "How long does the demo take?", "a": "Around 30 minutes — enough to see the modules that matter to you, with time for questions. We keep it focused and never run over without asking." },
+        { "q": "Do I need to prepare anything?", "a": "No preparation required. If you'd like, bring a few example properties or contacts and we'll show you exactly how they'd live in Propflow." },
+        { "q": "Is the demo really free?", "a": "Completely free, with zero obligation. It's a conversation, not a sales pitch — you decide if and when to move forward." }
+      ]
+    }
   }
 }
