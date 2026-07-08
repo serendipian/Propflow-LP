@@ -54,7 +54,7 @@ export default function Navigation() {
             <span className="text-xl font-bold tracking-tight text-zinc-900 dark:text-white">Propflow</span>
           </div>
 
-          <div className="hidden md:flex items-center gap-8 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+          <div className="hidden lg:flex items-center gap-5 xl:gap-8 xl:absolute xl:left-1/2 xl:top-1/2 xl:-translate-x-1/2 xl:-translate-y-1/2">
             {navLinks.map((item) => (
               <SmartLink
                 key={item.label}
@@ -70,11 +70,11 @@ export default function Navigation() {
             ))}
           </div>
 
-          <div className="hidden md:flex items-center gap-4 relative z-10">
+          <div className="hidden lg:flex items-center gap-4 relative z-10">
             <LanguagePicker />
             <ThemeToggle />
             <div className="h-6 w-px bg-zinc-200 dark:bg-zinc-800 mx-1" />
-            <a href="#" className="text-[15px] font-medium text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white transition-colors">
+            <a href="#" className="hidden xl:block text-[15px] font-medium text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white transition-colors">
               {t('nav.signIn')}
             </a>
             <Button variant="primary" className="!h-10 !px-5 !text-base" onClick={() => navigate('/book-a-demo')}>
@@ -82,7 +82,7 @@ export default function Navigation() {
             </Button>
           </div>
 
-          <div className="md:hidden flex items-center gap-2 relative z-10">
+          <div className="lg:hidden flex items-center gap-2 relative z-10">
             <ThemeToggle />
             <button
               className="w-11 h-11 -mr-2 inline-flex items-center justify-center rounded-lg text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800/60 transition-colors"
@@ -97,7 +97,7 @@ export default function Navigation() {
         </div>
 
         {mobileMenuOpen && (
-          <div id="mobile-menu" role="menu" className="absolute top-full left-0 right-0 bg-white dark:bg-zinc-950 border-b border-zinc-200 dark:border-zinc-800 p-6 pt-4 flex flex-col gap-1 md:hidden animate-in slide-in-from-top-5 shadow-xl max-h-[calc(100dvh-8.5rem)] overflow-y-auto overscroll-contain">
+          <div id="mobile-menu" role="menu" className="absolute top-full left-0 right-0 bg-white dark:bg-zinc-950 border-b border-zinc-200 dark:border-zinc-800 p-6 pt-4 flex flex-col gap-1 lg:hidden animate-in slide-in-from-top-5 shadow-xl max-h-[calc(100dvh-8.5rem)] overflow-y-auto overscroll-contain">
             {navLinks.map((item) => (
               <SmartLink key={item.label} href={item.href} onClick={() => setMobileMenuOpen(false)} className="py-2.5 text-base font-medium text-zinc-600 dark:text-zinc-400 hover:text-blue-600 dark:hover:text-blue-400">
                 {t(`nav.${item.label.toLowerCase()}`)}
