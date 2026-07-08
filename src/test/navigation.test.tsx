@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { render } from './test-utils';
 import Navigation from '../components/layout/Navigation';
 
@@ -26,5 +27,13 @@ describe('Navigation', () => {
     render(<Navigation />);
     const promoLink = document.querySelector('a[href="/pricing"]');
     expect(promoLink).toBeInTheDocument();
+  });
+
+  it('navigates to /book-a-demo when Book Demo is clicked', async () => {
+    const user = userEvent.setup();
+    render(<Navigation />);
+    const buttons = screen.getAllByText(/book demo/i);
+    await user.click(buttons[0]);
+    expect(window.location.pathname).toBe('/book-a-demo');
   });
 });

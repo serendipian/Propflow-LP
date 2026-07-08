@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ChevronRight, Star } from 'lucide-react';
 import { Button, GlassPill } from '../ui/UI';
@@ -55,6 +56,7 @@ const HeroTrustIndicator = () => {
 
 export default function Hero() {
   const { t } = useTranslation();
+  const navigate = useNavigate();
   return (
     <section className="relative pt-24 pb-20 md:pt-36 md:pb-40 overflow-hidden flex flex-col items-center">
       {/* Dynamic Background */}
@@ -121,7 +123,7 @@ export default function Hero() {
             {t('hero.startTrial')}
           </Button>
 
-          <Button variant="secondary" className="w-full sm:w-auto text-lg h-12 px-8">
+          <Button variant="secondary" className="w-full sm:w-auto text-lg h-12 px-8" onClick={() => navigate('/book-a-demo')}>
             {t('hero.bookDemo')}
           </Button>
         </motion.div>
