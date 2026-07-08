@@ -3,6 +3,7 @@ import './lib/i18n';
 import React, { Suspense, lazy } from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { MotionConfig } from 'framer-motion';
 import { ThemeProvider } from './hooks/useTheme';
 import ErrorBoundary from './components/layout/ErrorBoundary';
 import MainLayout from './components/layout/MainLayout';
@@ -16,6 +17,9 @@ const App = () => {
   return (
     <ErrorBoundary>
       <ThemeProvider>
+        {/* reducedMotion="user" makes every framer-motion animation honor the OS
+            prefers-reduced-motion setting (the CSS media query can't reach JS animations) */}
+        <MotionConfig reducedMotion="user">
         <BrowserRouter>
           <Routes>
             <Route element={<MainLayout />}>
@@ -38,6 +42,7 @@ const App = () => {
             </Route>
           </Routes>
         </BrowserRouter>
+        </MotionConfig>
       </ThemeProvider>
     </ErrorBoundary>
   );
