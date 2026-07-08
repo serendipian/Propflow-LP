@@ -8,6 +8,7 @@ import ThemeToggle from '../ui/ThemeToggle';
 import LanguagePicker from '../landing/LanguagePicker';
 import SmartLink from '../shared/SmartLink';
 import { navLinks } from '../../data/navigation';
+import logo from '../../assets/logo.png';
 
 export default function Navigation() {
   const { t } = useTranslation();
@@ -49,9 +50,7 @@ export default function Navigation() {
       >
         <div className="max-w-screen-2xl mx-auto px-6 flex items-center justify-between relative">
           <div className="flex items-center gap-2 group cursor-pointer relative z-10">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center shadow-lg shadow-blue-500/20 group-hover:shadow-blue-500/40 transition-all">
-              <div className="w-4 h-4 bg-white rounded-sm opacity-90" />
-            </div>
+            <img src={logo} alt="Propflow" className="w-8 h-8 object-contain" />
             <span className="text-xl font-bold tracking-tight text-zinc-900 dark:text-white">Propflow</span>
           </div>
 
