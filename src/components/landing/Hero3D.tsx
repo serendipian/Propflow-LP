@@ -151,7 +151,7 @@ export default function Hero3D() {
         
         {/* Floating Card 1: New Lead Notification */}
         <motion.div
-          className="absolute right-3 -bottom-8 w-60 md:w-64 md:right-auto md:bottom-auto md:-right-8 md:top-20 bg-white/90 dark:bg-zinc-900/90 border border-blue-100 dark:border-blue-500/30 p-4 rounded-xl shadow-xl dark:shadow-2xl backdrop-blur-md z-30"
+          className="absolute right-3 -bottom-8 w-60 md:w-64 md:bottom-auto md:-right-8 md:top-20 bg-white/90 dark:bg-zinc-900/90 border border-blue-100 dark:border-blue-500/30 p-4 rounded-xl shadow-xl dark:shadow-2xl backdrop-blur-md z-30"
           style={{ transform: "translateZ(80px)" }}
           animate={float([0, -10, 0])}
           transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
