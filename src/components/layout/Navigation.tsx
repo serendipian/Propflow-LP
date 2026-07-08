@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X, ArrowRight } from 'lucide-react';
 import { Button } from '../ui/UI';
 import ThemeToggle from '../ui/ThemeToggle';
@@ -14,6 +14,7 @@ export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 40);
@@ -69,7 +70,7 @@ export default function Navigation() {
             <a href="#" className="text-[15px] font-medium text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white transition-colors">
               {t('nav.signIn')}
             </a>
-            <Button variant="primary" className="!h-10 !px-5 !text-base">
+            <Button variant="primary" className="!h-10 !px-5 !text-base" onClick={() => navigate('/book-a-demo')}>
               {t('nav.bookDemo')}
             </Button>
           </div>
@@ -100,7 +101,7 @@ export default function Navigation() {
               <span className="text-sm text-zinc-500">{t('nav.switchLanguage')}</span>
               <LanguagePicker />
             </div>
-            <Button variant="primary" className="w-full">
+            <Button variant="primary" className="w-full" onClick={() => { setMobileMenuOpen(false); navigate('/book-a-demo'); }}>
               {t('nav.bookDemo')}
             </Button>
           </div>
