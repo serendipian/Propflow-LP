@@ -6,10 +6,11 @@ import { useDocumentTitle } from '../hooks/useDocumentTitle';
 import { GlassPanel, GlassPill } from '../components/ui/UI';
 import Accordion from '../components/shared/Accordion';
 import SmartLink from '../components/shared/SmartLink';
+import CalendlyEmbed from '../components/demo/CalendlyEmbed';
 
-// Paste your Cal.com / Calendly embed URL here to go live, e.g.
-// 'https://cal.com/propflow/demo'. While empty, the styled placeholder shows.
-const SCHEDULER_URL = '';
+// Calendly booking link. When set, the live scheduler renders; when empty,
+// the styled placeholder shows.
+const SCHEDULER_URL = 'https://calendly.com/propflowsaas/30min';
 
 const benefitIcons = [Sparkles, MessageSquare, Database, Clock];
 
@@ -117,10 +118,9 @@ export default function DemoPage() {
                 </div>
 
                 {SCHEDULER_URL ? (
-                  <iframe
-                    src={SCHEDULER_URL}
-                    title="Booking scheduler"
-                    className="w-full min-h-[560px] rounded-xl border border-zinc-200 dark:border-zinc-800"
+                  <CalendlyEmbed
+                    url={SCHEDULER_URL}
+                    className="w-full h-[700px] overflow-hidden rounded-xl border border-zinc-200 dark:border-zinc-800"
                   />
                 ) : (
                   <div className="w-full min-h-[560px] rounded-xl border-2 border-dashed border-zinc-300 dark:border-zinc-700 bg-zinc-50/50 dark:bg-zinc-900/40 flex flex-col items-center justify-center text-center px-6">
