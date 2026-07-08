@@ -9,10 +9,11 @@ describe('DemoPage', () => {
     expect(screen.getByRole('heading', { level: 1 })).toBeInTheDocument();
   });
 
-  it('renders the scheduler placeholder', () => {
+  it('renders the Calendly scheduler container', () => {
     render(<DemoPage />);
-    // placeholderTitle copy from en.json
-    expect(screen.getByText(/scheduler loads here/i)).toBeInTheDocument();
+    // SCHEDULER_URL is set, so the live Calendly embed renders instead of the
+    // placeholder. The embed container is labelled for accessibility.
+    expect(screen.getByLabelText(/calendly scheduling/i)).toBeInTheDocument();
   });
 
   it('offers an email fallback link to /contact', () => {

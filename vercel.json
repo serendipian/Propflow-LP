@@ -5,7 +5,7 @@
       "headers": [
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://assets.calendly.com https://app.cal.com; style-src 'self' 'unsafe-inline' https://assets.calendly.com; img-src 'self' data: https://images.unsplash.com https://i.pravatar.cc https://cdn.prod.website-files.com https://upload.wikimedia.org https://*.calendly.com https://cal.com https://app.cal.com; font-src 'self' data:; connect-src 'self' https://calendly.com https://*.calendly.com https://cal.com https://app.cal.com; frame-src https://calendly.com https://*.calendly.com https://cal.com https://app.cal.com; frame-ancestors 'none'"
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://assets.calendly.com https://app.cal.com; style-src 'self' 'unsafe-inline' https://assets.calendly.com; img-src 'self' data: https://images.unsplash.com https://i.pravatar.cc https://cdn.prod.website-files.com https://upload.wikimedia.org https://*.calendly.com https://cal.com https://app.cal.com; font-src 'self' data: https://assets.calendly.com; connect-src 'self' https://calendly.com https://*.calendly.com https://cal.com https://app.cal.com; frame-src https://calendly.com https://*.calendly.com https://cal.com https://app.cal.com; frame-ancestors 'none'"
         },
         {
           "key": "X-Content-Type-Options",
