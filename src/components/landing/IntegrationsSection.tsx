@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { SectionBadge } from '../ui/UI';
 
@@ -69,7 +69,7 @@ const Logos: Record<string, React.ReactNode> = {
 // --- Marquee Components ---
 
 const IntegrationCard: React.FC<{ logoKey: string }> = ({ logoKey }) => (
-  <div className="w-28 h-28 md:w-36 md:h-36 rounded-[2rem] bg-white dark:bg-transparent backdrop-blur-md dark:backdrop-blur-none border border-zinc-200 dark:border-white/10 flex items-center justify-center p-7 md:p-8 shadow-sm dark:shadow-none relative group overflow-hidden shrink-0 transition-all duration-300 hover:border-zinc-300 dark:hover:border-white/20 hover:shadow-md dark:hover:shadow-[0_0_30px_-5px_rgba(255,255,255,0.15)]">
+  <div className="w-28 h-28 md:w-36 md:h-36 rounded-[2rem] bg-white dark:bg-transparent md:backdrop-blur-md dark:md:backdrop-blur-none border border-zinc-200 dark:border-white/10 flex items-center justify-center p-7 md:p-8 shadow-sm dark:shadow-none relative group overflow-hidden shrink-0 transition-all duration-300 hover:border-zinc-300 dark:hover:border-white/20 hover:shadow-md dark:hover:shadow-[0_0_30px_-5px_rgba(255,255,255,0.15)]">
      
      {/* Subtle Gradient Glow inside Card - Clean white/gray for light mode, transparent for dark */}
      <div className="absolute inset-0 bg-gradient-to-br from-zinc-100/50 to-transparent dark:from-white/5 dark:to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
@@ -82,19 +82,21 @@ const IntegrationCard: React.FC<{ logoKey: string }> = ({ logoKey }) => (
 );
 
 const MarqueeRow = ({ icons, direction = 1, speed = 20 }: { icons: string[], direction?: 1 | -1, speed?: number }) => {
+  const reduceMotion = useReducedMotion();
   return (
     <div className="flex overflow-hidden relative w-full">
-        {/* CSS Mask for fade edges - FIXED to have transparency in the middle for dark mode */}
-        <div className="absolute inset-0 z-20 pointer-events-none bg-gradient-to-r from-zinc-50 via-transparent via-50% to-zinc-50 dark:from-[#09090b] dark:via-transparent dark:via-50% dark:to-[#09090b] w-full h-full" />
-        
+        {/* Edge fades: narrow overlays so cards fade only at the edges instead of across the whole row */}
+        <div className="absolute left-0 top-0 bottom-0 w-10 md:w-24 z-20 pointer-events-none bg-gradient-to-r from-zinc-50 to-transparent dark:from-[#09090b]" />
+        <div className="absolute right-0 top-0 bottom-0 w-10 md:w-24 z-20 pointer-events-none bg-gradient-to-l from-zinc-50 to-transparent dark:from-[#09090b]" />
+
         <motion.div
             className="flex gap-6 shrink-0"
             initial={{ x: direction === 1 ? 0 : "-50%" }}
-            animate={{ x: direction === 1 ? "-50%" : 0 }}
-            transition={{ 
-                duration: speed, 
-                repeat: Infinity, 
-                ease: "linear" 
+            animate={reduceMotion ? undefined : { x: direction === 1 ? "-50%" : 0 }}
+            transition={{
+                duration: speed,
+                repeat: Infinity,
+                ease: "linear"
             }}
         >
             {/* Duplicate to create seamless loop. */}
@@ -124,7 +126,7 @@ export default function IntegrationsSection() {
             <div className="flex flex-col items-center mb-8 text-center">
                 <SectionBadge color="blue">{t('integrations.badge')}</SectionBadge>
                 
-                <h2 className="text-4xl md:text-7xl font-bold text-zinc-900 dark:text-white mb-6 tracking-tight">
+                <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold text-zinc-900 dark:text-white mb-6 tracking-tight">
                     {t('integrations.title')}
                 </h2>
                 

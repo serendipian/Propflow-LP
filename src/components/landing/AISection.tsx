@@ -14,7 +14,7 @@ import FeatureIcon from './ai/FeatureIcon';
 export default function AISection() {
   const { t } = useTranslation();
   return (
-    <section className="py-32 bg-white dark:bg-black relative overflow-hidden">
+    <section className="py-20 md:py-32 bg-white dark:bg-black relative overflow-hidden">
       {/* Dynamic Background */}
       <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-500/5 blur-[100px] rounded-full mix-blend-multiply dark:mix-blend-screen" />
@@ -23,9 +23,9 @@ export default function AISection() {
 
       <div className="max-w-[1100px] mx-auto px-6 relative z-10">
 
-        <div className="text-center mb-20">
+        <div className="text-center mb-12 md:mb-20">
           <SectionBadge color="blue"><Sparkles size={12} className="mr-1" /> {t('ai.badge')}</SectionBadge>
-          <h2 className="text-4xl md:text-7xl font-bold text-zinc-900 dark:text-white mb-6 tracking-tight">
+          <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold text-zinc-900 dark:text-white mb-6 tracking-tight">
             {t('ai.title')}
           </h2>
           <p className="text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
