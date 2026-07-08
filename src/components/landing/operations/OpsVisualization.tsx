@@ -14,7 +14,7 @@ const OpsVisualization = ({ id, color: _color }: { id: string; color: string }) 
          return (
             <div className="flex flex-col gap-4 h-full">
                {/* Top KPIs - Compact */}
-               <div className="grid grid-cols-4 gap-3 shrink-0">
+               <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-3 shrink-0">
                   {dashboardStats.map((stat, i) => (
                     <div key={i} className="bg-zinc-50 dark:bg-zinc-800/50 p-3 rounded-xl border border-zinc-100 dark:border-zinc-800 flex flex-col justify-between">
                         <div className="flex justify-between items-start mb-1">
@@ -29,8 +29,8 @@ const OpsVisualization = ({ id, color: _color }: { id: string; color: string }) 
                   ))}
                </div>
 
-               {/* Main Viz Area - 6 Cards (3x2 Grid) */}
-               <div className="flex-1 grid grid-cols-1 md:grid-cols-3 grid-rows-2 gap-3 min-h-0">
+               {/* Main Viz Area - 6 Cards (3x2 Grid at md+, natural stack on mobile) */}
+               <div className="flex-1 grid grid-cols-1 md:grid-cols-3 auto-rows-[180px] md:auto-rows-auto md:grid-rows-2 gap-3 min-h-0">
 
                   {/* 1. High Priority Listing */}
                   <div className="bg-zinc-50 dark:bg-zinc-800/30 rounded-xl border border-zinc-100 dark:border-zinc-800 relative overflow-hidden group flex flex-col h-full">

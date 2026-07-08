@@ -208,10 +208,29 @@ const ModuleVisualization = ({ id, color }: ModuleVisualizationProps) => {
                <ModuleFilters filters={['Agent', 'Date', 'Status']} />
 
                <div className="p-4 flex flex-col h-full overflow-y-auto custom-scrollbar bg-zinc-50/30 dark:bg-black/20">
-                  <div className="grid grid-cols-7 gap-1 mb-2 text-center text-[9px] text-zinc-400 font-bold uppercase tracking-wider">
+                  {/* Mobile: a 7-col month grid is unreadable below ~640px, show an agenda list instead */}
+                  <div className="flex flex-col gap-2 sm:hidden">
+                      {[
+                        { day: '13', weekday: 'Wed', time: '14:30', title: 'Skyline Loft', agent: 'Sarah M.' },
+                        { day: '23', weekday: 'Sat', time: '10:00', title: '128 Golden Oak', agent: 'David R.' },
+                      ].map((v, i) => (
+                        <div key={i} className="flex items-center gap-3 p-3 bg-white dark:bg-zinc-900 rounded-lg border border-zinc-200 dark:border-zinc-700 shadow-sm">
+                            <div className="w-10 h-10 rounded-lg bg-blue-50 dark:bg-blue-900/20 border border-blue-100 dark:border-blue-800 flex flex-col items-center justify-center shrink-0">
+                                <span className="text-[8px] uppercase text-blue-500 font-bold leading-none">{v.weekday}</span>
+                                <span className="text-sm font-bold text-blue-600 dark:text-blue-400 leading-tight">{v.day}</span>
+                            </div>
+                            <div className="min-w-0 flex-1">
+                                <p className="text-xs font-semibold text-zinc-800 dark:text-white truncate">{v.title}</p>
+                                <p className="text-[10px] text-zinc-500">{v.agent}</p>
+                            </div>
+                            <span className="text-[10px] font-medium text-zinc-500 bg-zinc-100 dark:bg-zinc-800 px-1.5 py-0.5 rounded shrink-0">{v.time}</span>
+                        </div>
+                      ))}
+                  </div>
+                  <div className="hidden sm:grid grid-cols-7 gap-1 mb-2 text-center text-[9px] text-zinc-400 font-bold uppercase tracking-wider">
                       {['Mon','Tue','Wed','Thu','Fri','Sat','Sun'].map(d => <span key={d}>{d}</span>)}
                   </div>
-                  <div className="flex-1 grid grid-cols-7 grid-rows-4 gap-1">
+                  <div className="flex-1 hidden sm:grid grid-cols-7 grid-rows-4 gap-1">
                       {Array.from({length: 28}).map((_, i) => (
                         <div key={i} className={`rounded-md border relative transition-colors ${i === 12 || i === 22 ? `bg-blue-50 dark:bg-blue-900/20 border-blue-200 dark:border-blue-800` : 'bg-white dark:bg-zinc-900 border-zinc-100 dark:border-zinc-800 hover:bg-zinc-50 dark:hover:bg-zinc-800'}`}>
                             <span className="absolute top-1 left-1 text-[8px] text-zinc-400">{i + 1}</span>
