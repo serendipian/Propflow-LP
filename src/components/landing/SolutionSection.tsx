@@ -1,17 +1,18 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import type { LucideIcon } from 'lucide-react';
 import { Zap, PieChart, Database, Calendar, Sparkles, Share2, Puzzle, GitBranch } from 'lucide-react';
 import { SectionBadge } from '../ui/UI';
 
 const ConnectionLine = ({ direction = "left", delay = 0 }) => {
+  const reduceMotion = useReducedMotion();
   return (
     <div className={`hidden lg:block absolute top-1/2 -translate-y-1/2 h-px bg-zinc-200 dark:bg-zinc-800 w-12 lg:w-16 xl:w-24 -z-10 ${direction === "left" ? "right-0 translate-x-full" : "left-0 -translate-x-full"}`}>
-      <motion.div 
+      <motion.div
         className="absolute top-0 bottom-0 w-1/2 bg-gradient-to-r from-transparent via-blue-500 to-transparent"
         initial={{ x: direction === "left" ? "-100%" : "100%" }}
-        animate={{ x: direction === "left" ? "200%" : "-200%" }}
+        animate={reduceMotion ? undefined : { x: direction === "left" ? "200%" : "-200%" }}
         transition={{ duration: 2, repeat: Infinity, ease: "linear", delay }}
       />
       {/* Dot at the end touching the core */}
@@ -23,7 +24,7 @@ const ConnectionLine = ({ direction = "left", delay = 0 }) => {
 const FeatureNode = ({ icon: Icon, title, desc, align = "left", delay = 0 }: { icon: LucideIcon, title: string, desc: string, align?: "left" | "right", delay?: number }) => (
   <motion.div 
     className={`relative flex items-center gap-4 p-4 rounded-2xl border border-zinc-100 dark:border-zinc-800 bg-white/80 dark:bg-zinc-900/80 backdrop-blur-sm shadow-sm hover:border-blue-200 dark:hover:border-blue-500/30 transition-all duration-300 group z-10 w-full max-w-[380px]
-    ${align === "left" ? "flex-row-reverse text-right" : "flex-row text-left"}
+    flex-row text-left ${align === "left" ? "lg:flex-row-reverse lg:text-right" : ""}
     `}
     initial={{ opacity: 0, x: align === "left" ? -20 : 20 }}
     whileInView={{ opacity: 1, x: 0 }}
@@ -48,6 +49,8 @@ const FeatureNode = ({ icon: Icon, title, desc, align = "left", delay = 0 }: { i
 
 export default function SolutionSection() {
   const { t } = useTranslation();
+  const reduceMotion = useReducedMotion();
+  const spin = (deg: number) => (reduceMotion ? undefined : { rotate: deg });
   return (
     <section id="product" className="py-24 relative overflow-hidden bg-zinc-50 dark:bg-zinc-950">
       
@@ -61,7 +64,7 @@ export default function SolutionSection() {
         
         <div className="text-center mb-6">
           <SectionBadge color="blue">{t('solution.badge')}</SectionBadge>
-          <h2 className="text-4xl md:text-7xl font-bold text-zinc-900 dark:text-white mb-6 tracking-tight">
+          <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold text-zinc-900 dark:text-white mb-6 tracking-tight">
             {t('solution.title')}
           </h2>
           <p className="text-lg text-zinc-600 dark:text-zinc-400 max-w-3xl mx-auto">
@@ -104,57 +107,58 @@ export default function SolutionSection() {
           </div>
 
           {/* Center Column - THE CORE ENGINE - EXPANDED */}
-          <div className="relative h-[400px] md:h-[500px] lg:h-[580px] flex items-center justify-center py-8 lg:py-0">
-             
+          <div className="relative h-[340px] sm:h-[400px] md:h-[500px] lg:h-[580px] flex items-center justify-center py-8 lg:py-0">
+
              {/* Main Core Container - Responsive Sizing to prevent distortion on iPad/Small screens */}
-             <div className="relative shrink-0 w-72 h-72 md:w-96 md:h-96 lg:w-80 lg:h-80 xl:w-[480px] xl:h-[480px]">
+             {/* scale keeps the orbiting satellites inside a 320px viewport without breaking ring insets */}
+             <div className="relative shrink-0 w-72 h-72 md:w-96 md:h-96 lg:w-80 lg:h-80 xl:w-[480px] xl:h-[480px] scale-[0.8] sm:scale-100">
                 
                 {/* 1. Outer Ring - Slow Rotation */}
                 <motion.div 
                   className="absolute inset-0 rounded-full border border-dashed border-zinc-300 dark:border-zinc-800"
-                  animate={{ rotate: 360 }}
+                  animate={spin(360)}
                   transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
                 />
 
                 {/* NEW: Ring 1 - Between Outer and Middle - Enhanced Visibility */}
                 <motion.div 
                   className="absolute inset-8 rounded-full border border-zinc-200 dark:border-zinc-700/40"
-                  animate={{ rotate: -360 }}
+                  animate={spin(-360)}
                   transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
                 />
 
                 {/* 2. Middle Ring - Medium Rotation */}
                 <motion.div 
                   className="absolute inset-16 rounded-full border border-zinc-300 dark:border-zinc-700 border-t-blue-500/50 dark:border-t-blue-500/50"
-                  animate={{ rotate: -360 }}
+                  animate={spin(-360)}
                   transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
                 />
 
                 {/* NEW: Ring 2 - Inner Dashed - Enhanced Visibility */}
                 <motion.div 
                   className="absolute inset-24 rounded-full border border-dashed border-blue-300/40 dark:border-blue-500/30"
-                  animate={{ rotate: 360 }}
+                  animate={spin(360)}
                   transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
                 />
 
                 {/* NEW: Ring 3 - Deep Inner Solid - Responsive Insets */}
                 <motion.div 
                   className="absolute inset-28 md:inset-32 lg:inset-28 xl:inset-32 rounded-full border border-zinc-200 dark:border-zinc-800/60"
-                  animate={{ rotate: -360 }}
+                  animate={spin(-360)}
                   transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
                 />
 
                 {/* NEW: Ring 4 - Deepest Dotted - Responsive Insets */}
                 <motion.div 
                   className="absolute inset-[7.5rem] md:inset-[9.5rem] lg:inset-[7.5rem] xl:inset-[9.5rem] rounded-full border border-dotted border-blue-400/40 dark:border-blue-400/30"
-                  animate={{ rotate: 360 }}
+                  animate={spin(360)}
                   transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
                 />
 
                 {/* 3. Outer Orbiting Satellites (4 Icons) - Matched to Solution Cards */}
                 <motion.div 
                    className="absolute inset-0"
-                   animate={{ rotate: 360 }}
+                   animate={spin(360)}
                    transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
                 >
                    {/* Top - Database */}
@@ -178,7 +182,7 @@ export default function SolutionSection() {
                 {/* 4. Inner Orbiting Satellites (4 Icons) - Matched to Solution Cards */}
                 <motion.div 
                    className="absolute inset-16"
-                   animate={{ rotate: -360 }}
+                   animate={spin(-360)}
                    transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
                 >
                    {/* Top - Calendar */}

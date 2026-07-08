@@ -19,7 +19,7 @@ const pains = [
 export default function ProblemSection() {
   const { t } = useTranslation();
   return (
-    <section className="py-32 md:py-48 bg-zinc-50 dark:bg-zinc-950 relative overflow-hidden flex flex-col items-center justify-center min-h-[60vh] transition-colors duration-500">
+    <section className="py-20 md:py-48 bg-zinc-50 dark:bg-zinc-950 relative overflow-hidden flex flex-col items-center justify-center min-h-[60vh] transition-colors duration-500">
       
       {/* Top Separator */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-zinc-300 dark:via-zinc-700 to-transparent opacity-50" />
@@ -31,7 +31,7 @@ export default function ProblemSection() {
         
         {/* Title */}
         <motion.h2 
-          className="text-4xl md:text-7xl font-bold text-zinc-900 dark:text-white mb-6 tracking-tight text-center max-w-5xl"
+          className="text-4xl md:text-5xl lg:text-7xl font-bold text-zinc-900 dark:text-white mb-6 tracking-tight text-center max-w-5xl"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -42,7 +42,7 @@ export default function ProblemSection() {
 
         {/* Subtitle */}
         <motion.p
-          className="text-lg md:text-xl text-zinc-600 dark:text-zinc-400 mb-16 text-center max-w-2xl mx-auto leading-relaxed"
+          className="text-lg md:text-xl text-zinc-600 dark:text-zinc-400 mb-10 md:mb-16 text-center max-w-2xl mx-auto leading-relaxed"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -53,7 +53,7 @@ export default function ProblemSection() {
 
         {/* Pain Points Grid */}
         <motion.div 
-          className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-24 max-w-5xl w-full"
+          className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mb-16 md:mb-24 max-w-5xl w-full"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
