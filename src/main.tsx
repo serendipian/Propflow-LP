@@ -10,6 +10,7 @@ import LandingPage from './pages/LandingPage';
 
 const PricingPage = lazy(() => import('./pages/PricingPage'));
 const ContactPage = lazy(() => import('./pages/ContactPage'));
+const DemoPage = lazy(() => import('./pages/DemoPage'));
 
 const App = () => {
   return (
@@ -27,6 +28,11 @@ const App = () => {
               <Route path="contact" element={
                 <Suspense fallback={<div className="min-h-screen bg-white dark:bg-zinc-950" />}>
                   <ContactPage />
+                </Suspense>
+              } />
+              <Route path="book-a-demo" element={
+                <Suspense fallback={<div className="min-h-screen bg-white dark:bg-zinc-950" />}>
+                  <DemoPage />
                 </Suspense>
               } />
             </Route>
