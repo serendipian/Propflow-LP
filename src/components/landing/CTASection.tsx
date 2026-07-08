@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ChevronRight, Star } from 'lucide-react';
 import { Button, GlassPill } from '../ui/UI';
@@ -54,6 +55,7 @@ const TrustIndicator = () => {
 
 export default function CTASection() {
   const { t } = useTranslation();
+  const navigate = useNavigate();
   return (
     <section className="relative py-32 md:py-40 overflow-hidden flex flex-col items-center bg-white dark:bg-zinc-950">
       {/* Separator */}
@@ -122,7 +124,7 @@ export default function CTASection() {
             {t('cta.startTrial')}
           </Button>
 
-          <Button variant="secondary" className="w-full sm:w-auto text-lg h-12 px-8">
+          <Button variant="secondary" className="w-full sm:w-auto text-lg h-12 px-8" onClick={() => navigate('/book-a-demo')}>
             {t('cta.bookDemo')}
           </Button>
         </motion.div>

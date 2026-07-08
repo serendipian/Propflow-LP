@@ -1,10 +1,12 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
 import { Mail, Phone, MapPin, Clock, Calendar } from 'lucide-react';
 import { Button } from '../ui/UI';
 
 export default function ContactInfo() {
   const { t } = useTranslation();
+  const navigate = useNavigate();
 
   return (
     <div className="space-y-6">
@@ -70,6 +72,7 @@ export default function ContactInfo() {
           <Button
             variant="secondary"
             className="w-full !bg-white !text-blue-600 hover:!bg-blue-50"
+            onClick={() => navigate('/book-a-demo')}
           >
             {t('contactPage.info.demo.cta')}
           </Button>
