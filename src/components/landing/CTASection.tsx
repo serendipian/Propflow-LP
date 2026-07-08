@@ -16,15 +16,15 @@ const TrustIndicator = () => {
       viewport={{ once: true }}
       transition={{ duration: 0.8 }}
     >
-      <GlassPill className="rounded-full p-2 pl-3 pr-6 flex items-center gap-4 hover:bg-zinc-50 dark:hover:bg-blue-900/20 transition-all duration-300 group cursor-default">
+      <GlassPill className="rounded-full p-2 pl-3 pr-4 sm:pr-6 flex items-center gap-3 sm:gap-4 hover:bg-zinc-50 dark:hover:bg-blue-900/20 transition-all duration-300 group cursor-default">
         {/* Animated Avatar Stack */}
         <div className="flex -space-x-3">
           {[1, 2, 3, 4].map((i) => (
-            <div key={i} className="relative w-10 h-10 rounded-full border-2 border-white dark:border-zinc-950 overflow-hidden ring-2 ring-transparent group-hover:ring-blue-200 dark:group-hover:ring-blue-500/30 transition-all duration-500 bg-zinc-200 dark:bg-zinc-800 shadow-sm">
+            <div key={i} className="relative w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-white dark:border-zinc-950 overflow-hidden ring-2 ring-transparent group-hover:ring-blue-200 dark:group-hover:ring-blue-500/30 transition-all duration-500 bg-zinc-200 dark:bg-zinc-800 shadow-sm">
               <img src={`https://i.pravatar.cc/100?img=${i + 10}`} alt="" role="presentation" className="w-full h-full object-cover" loading="lazy" width="40" height="40" />
             </div>
           ))}
-          <div className="w-10 h-10 rounded-full border-2 border-white dark:border-zinc-950 bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center text-xs font-bold text-white relative z-10 shadow-lg shadow-blue-500/20">
+          <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-white dark:border-zinc-950 bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center text-[10px] sm:text-xs font-bold text-white relative z-10 shadow-lg shadow-blue-500/20">
             500+
           </div>
         </div>
@@ -57,7 +57,7 @@ export default function CTASection() {
   const { t } = useTranslation();
   const navigate = useNavigate();
   return (
-    <section className="relative py-32 md:py-40 overflow-hidden flex flex-col items-center bg-white dark:bg-zinc-950">
+    <section className="relative py-24 md:py-40 overflow-hidden flex flex-col items-center bg-white dark:bg-zinc-950">
       {/* Separator */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-zinc-200 dark:via-zinc-800 to-transparent" />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/4 h-[1px] bg-gradient-to-r from-transparent via-blue-500/30 to-transparent blur-[1px]" />
@@ -87,14 +87,15 @@ export default function CTASection() {
 
         {/* Main Headline */}
         <motion.h2 
-          className="text-4xl md:text-7xl font-bold tracking-tight text-zinc-900 dark:text-white mb-6 max-w-4xl mx-auto leading-[1.1]"
+          className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight text-zinc-900 dark:text-white mb-6 max-w-4xl mx-auto leading-[1.1]"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          {t('cta.headline1')}<br />
-          <span className="relative whitespace-nowrap">
+          {t('cta.headline1')}
+          <br className="hidden sm:inline" />{' '}
+          <span className="relative sm:whitespace-nowrap">
              <span className="absolute -inset-1 bg-gradient-to-r from-blue-200/50 to-cyan-200/50 dark:from-blue-600/20 dark:to-cyan-600/20 blur-xl"></span>
              <span className="relative text-gradient">
                {t('cta.headline2')}

@@ -24,7 +24,7 @@ export default function PricingSection() {
         {/* Header */}
         <div className="text-center mb-16">
           <SectionBadge color="blue">{t('pricing.badge')}</SectionBadge>
-          <h2 className="text-4xl md:text-7xl font-bold text-zinc-900 dark:text-white mb-6 tracking-tight">
+          <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold text-zinc-900 dark:text-white mb-6 tracking-tight">
             {t('pricing.title')}
           </h2>
           <p className="text-lg text-zinc-600 dark:text-zinc-400 max-w-xl mx-auto mb-10">
@@ -37,7 +37,7 @@ export default function PricingSection() {
               role="radio"
               aria-checked={billing === 'monthly'}
               onClick={() => setBilling('monthly')}
-              className={`px-8 py-3 rounded-lg text-base font-bold transition-all duration-300 ${
+              className={`px-5 sm:px-8 py-3 rounded-lg text-base font-bold transition-all duration-300 ${
                   billing === 'monthly'
                   ? 'bg-zinc-100 dark:bg-zinc-800 text-zinc-900 dark:text-white shadow-inner'
                   : 'text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-300'
@@ -49,7 +49,7 @@ export default function PricingSection() {
               role="radio"
               aria-checked={billing === 'yearly'}
               onClick={() => setBilling('yearly')}
-              className={`px-8 py-3 rounded-lg text-base font-bold transition-all duration-300 relative ${
+              className={`px-5 sm:px-8 py-3 rounded-lg text-base font-bold transition-all duration-300 relative ${
                   billing === 'yearly'
                   ? 'bg-blue-600 text-white shadow-lg shadow-blue-500/30'
                   : 'text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-300'
@@ -61,14 +61,14 @@ export default function PricingSection() {
         </div>
 
         {/* Plan Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl mx-auto mb-20 px-4 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl mx-auto mb-20 px-0 md:px-4 items-start">
           {(Object.entries(basePlans) as [PlanId, typeof basePlans['solo']][]).map(([id, plan]) => (
             <div
                 key={id}
                 onClick={() => setSelectedPlan(id)}
                 className={`flex flex-col p-6 md:p-8 rounded-xl border transition-all duration-300 relative group cursor-pointer
                 ${selectedPlan === id
-                    ? 'bg-white dark:bg-zinc-950 border-blue-600 ring-2 ring-blue-600 shadow-2xl scale-[1.01] z-10'
+                    ? 'bg-white dark:bg-zinc-950 border-blue-600 ring-2 ring-blue-600 shadow-2xl md:scale-[1.01] z-10'
                     : 'bg-white dark:bg-zinc-950 border-zinc-200 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700'
                 }`}
             >
@@ -126,17 +126,18 @@ export default function PricingSection() {
                             </h4>
                             <ul className="space-y-4">
                                 {cat.items.map((item, j) => (
-                                    <li key={j} className="flex items-center justify-between text-lg group/item">
+                                    <li key={j} className="flex items-center justify-between text-base md:text-lg gap-2 group/item">
                                         <span className="text-zinc-700 dark:text-zinc-300">
                                             {item.text}
                                         </span>
-                                        <div className="relative group/icon cursor-help">
+                                        {/* button so the hint is reachable by tap/focus on touch devices, not hover-only */}
+                                        <button type="button" aria-label={item.hint} className="relative group/icon cursor-help p-2 -m-2 shrink-0 focus:outline-none">
                                             <Info size={16} className="text-zinc-300 dark:text-zinc-600 group-hover/item:text-zinc-400 transition-colors" />
-                                            <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-48 p-2.5 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 text-xs font-medium rounded-xl opacity-0 group-hover/icon:opacity-100 transition-all duration-200 pointer-events-none z-50 shadow-xl text-center transform translate-y-2 group-hover/icon:translate-y-0">
+                                            <div className="absolute bottom-full right-0 md:right-auto md:left-1/2 md:-translate-x-1/2 mb-2 w-48 p-2.5 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 text-xs font-medium rounded-xl opacity-0 group-hover/icon:opacity-100 group-focus-within/icon:opacity-100 transition-all duration-200 pointer-events-none z-50 shadow-xl text-center transform translate-y-2 group-hover/icon:translate-y-0 group-focus-within/icon:translate-y-0">
                                                 {item.hint}
-                                                <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-zinc-900 dark:border-t-white" />
+                                                <div className="absolute top-full right-4 md:right-auto md:left-1/2 md:-translate-x-1/2 border-4 border-transparent border-t-zinc-900 dark:border-t-white" />
                                             </div>
-                                        </div>
+                                        </button>
                                     </li>
                                 ))}
                             </ul>
