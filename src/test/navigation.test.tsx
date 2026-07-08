@@ -36,4 +36,14 @@ describe('Navigation', () => {
     await user.click(buttons[0]);
     expect(window.location.pathname).toBe('/book-a-demo');
   });
+
+  it('locks body scroll while the mobile menu is open', async () => {
+    const user = userEvent.setup();
+    render(<Navigation />);
+    const toggle = screen.getByLabelText(/open menu/i);
+    await user.click(toggle);
+    expect(document.body.style.overflow).toBe('hidden');
+    await user.click(screen.getByLabelText(/close menu/i));
+    expect(document.body.style.overflow).toBe('');
+  });
 });

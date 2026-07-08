@@ -16,7 +16,7 @@ export default function FAQ() {
           {/* Left Column: Context (Sticky) */}
           <div className="lg:col-span-5 lg:sticky lg:top-32 self-start">
             <SectionBadge color="blue"><HelpCircle size={14} className="mr-1"/> Support</SectionBadge>
-            <h2 className="text-3xl md:text-7xl font-bold text-zinc-900 dark:text-white mb-6 tracking-tight">
+            <h2 className="text-3xl md:text-5xl lg:text-7xl font-bold text-zinc-900 dark:text-white mb-6 tracking-tight">
               Frequently Asked Questions
             </h2>
             <p className="text-zinc-600 dark:text-zinc-400 mb-8 leading-relaxed text-lg">

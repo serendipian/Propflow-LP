@@ -12,9 +12,9 @@ export default function BlogSection() {
     <section className="py-24 bg-zinc-50 dark:bg-black relative">
       <div className="max-w-[1100px] mx-auto px-6">
             
-        <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6">
             <div>
-                <h2 className="text-3xl md:text-7xl font-bold text-zinc-900 dark:text-white mb-4 tracking-tight">{t('blog.title')}</h2>
+                <h2 className="text-3xl md:text-5xl lg:text-7xl font-bold text-zinc-900 dark:text-white mb-4 tracking-tight">{t('blog.title')}</h2>
                 <p className="text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl">
                     {t('blog.subtitle')}
                 </p>

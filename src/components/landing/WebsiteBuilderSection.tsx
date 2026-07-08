@@ -13,7 +13,7 @@ export default function WebsiteBuilderSection() {
         {/* Centered Header */}
         <div className="text-center mb-16 max-w-4xl">
             <SectionBadge color="blue"><Globe size={14} className="mr-1"/> {t('website.badge')}</SectionBadge>
-            <h2 className="text-4xl md:text-7xl font-bold text-zinc-900 dark:text-white mb-6 tracking-tight">
+            <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold text-zinc-900 dark:text-white mb-6 tracking-tight">
               {t('website.title')}
             </h2>
             <p className="text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed max-w-2xl mx-auto">
@@ -47,8 +47,8 @@ export default function WebsiteBuilderSection() {
                    </div>
                 </div>
 
-                {/* Website Preview Content - Increased Height to 750px */}
-                <div className="relative h-[750px] bg-zinc-50 dark:bg-zinc-950 overflow-hidden group flex flex-col">
+                {/* Website Preview Content */}
+                <div className="relative h-[540px] sm:h-[640px] md:h-[750px] bg-zinc-50 dark:bg-zinc-950 overflow-hidden group flex flex-col">
                    
                    {/* Mock Navigation Bar - Centered Layout */}
                    <div className="absolute top-0 left-0 right-0 p-6 z-30 flex items-center justify-center">
@@ -83,24 +83,24 @@ export default function WebsiteBuilderSection() {
                    {/* Mock Hero Section (Top 80% - Increased) */}
                    <div className="h-[80%] w-full bg-[url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80')] bg-cover bg-center relative">
                       <div className="absolute inset-0 bg-black/40" />
-                      <div className="absolute inset-0 flex flex-col justify-center items-center px-12 text-white text-center pt-20">
-                         <p className="text-5xl md:text-7xl font-serif mb-8 leading-tight drop-shadow-lg">Luxury Living in<br/>Los Angeles.</p>
-                         
-                         {/* Search Filter Bar */}
-                         <div className="bg-white p-4 rounded-lg flex items-center gap-2 shadow-2xl mt-8 w-full max-w-[600px] mx-auto transform transition-transform hover:scale-105">
-                            <div className="flex-1 px-4 border-r border-zinc-100 text-left">
+                      <div className="absolute inset-0 flex flex-col justify-center items-center px-5 sm:px-12 text-white text-center pt-16 sm:pt-20">
+                         <p className="text-3xl sm:text-5xl md:text-7xl font-serif mb-4 sm:mb-8 leading-tight drop-shadow-lg">Luxury Living in<br/>Los Angeles.</p>
+
+                         {/* Search Filter Bar - stacks vertically on phones */}
+                         <div className="bg-white p-3 sm:p-4 rounded-lg flex flex-col sm:flex-row items-stretch sm:items-center gap-2 shadow-2xl mt-4 sm:mt-8 w-full max-w-[600px] mx-auto transform transition-transform sm:hover:scale-105">
+                            <div className="flex-1 px-3 sm:px-4 py-1.5 sm:py-0 border-b sm:border-b-0 sm:border-r border-zinc-100 text-left">
                                <div className="text-[10px] text-zinc-400 uppercase font-bold tracking-wider mb-1">Location</div>
                                <div className="text-sm font-semibold text-zinc-900">Beverly Hills</div>
                             </div>
-                            <div className="flex-1 px-4 border-r border-zinc-100 text-left">
+                            <div className="flex-1 px-3 sm:px-4 py-1.5 sm:py-0 border-b sm:border-b-0 sm:border-r border-zinc-100 text-left">
                                <div className="text-[10px] text-zinc-400 uppercase font-bold tracking-wider mb-1">Property Type</div>
                                <div className="text-sm font-semibold text-zinc-900">Villas</div>
                             </div>
-                            <div className="flex-1 px-4 border-r border-zinc-100 text-left">
+                            <div className="flex-1 px-3 sm:px-4 py-1.5 sm:py-0 sm:border-r border-zinc-100 text-left">
                                <div className="text-[10px] text-zinc-400 uppercase font-bold tracking-wider mb-1">Bedrooms</div>
                                <div className="text-sm font-semibold text-zinc-900">3+ Beds</div>
                             </div>
-                            <div className="w-12 h-12 bg-zinc-900 rounded flex items-center justify-center text-white shrink-0 cursor-pointer hover:bg-blue-600 transition-colors shadow-lg">
+                            <div className="w-full sm:w-12 h-11 sm:h-12 bg-zinc-900 rounded flex items-center justify-center text-white shrink-0 cursor-pointer hover:bg-blue-600 transition-colors shadow-lg">
                                <Search size={20} />
                             </div>
                          </div>
@@ -117,9 +117,9 @@ export default function WebsiteBuilderSection() {
                       </div>
                       
                       {/* Listing Grid - Just minimal view since height is reduced */}
-                      <div className="grid grid-cols-3 gap-4 h-full overflow-hidden">
+                      <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-4 h-full overflow-hidden">
                          {[1, 2, 3].map((i) => (
-                            <div key={i} className="flex flex-col gap-2 group/card cursor-pointer opacity-80 hover:opacity-100 transition-opacity">
+                            <div key={i} className={`flex flex-col gap-2 group/card cursor-pointer opacity-80 hover:opacity-100 transition-opacity ${i === 3 ? 'hidden sm:flex' : ''}`}>
                                <div className="aspect-[16/9] bg-zinc-100 dark:bg-zinc-800 rounded-lg overflow-hidden relative">
                                   <img
                                     src={`https://images.unsplash.com/photo-${i === 1 ? '1520250497591-112f2f40a3f4' : i === 2 ? '1613977257363-707ba9348227' : '1512917774080-9991f1c4c750'}?auto=format&fit=crop&w=300&q=80`}
@@ -162,7 +162,7 @@ export default function WebsiteBuilderSection() {
              
              {/* Public Website Status Card */}
              <motion.div 
-               className="absolute -left-4 md:-left-8 bottom-8 md:bottom-16 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 p-4 rounded-xl shadow-xl z-20 max-w-[200px]"
+               className="absolute left-2 -bottom-5 md:-left-8 md:bottom-16 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 p-4 rounded-xl shadow-xl z-20 max-w-[200px]"
                initial={{ opacity: 0, x: -20 }}
                whileInView={{ opacity: 1, x: 0 }}
                viewport={{ once: true }}

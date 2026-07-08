@@ -191,9 +191,9 @@ export default function RevenueLeakVisualization() {
        </div>
 
        {/* Minimal Caption */}
-       <div className="mt-6 flex justify-between items-start w-full px-4 text-[10px] md:text-xs font-mono uppercase tracking-[0.2em] text-zinc-400 dark:text-zinc-600">
+       <div className="mt-6 flex justify-between items-start w-full px-4 text-[10px] md:text-xs font-mono uppercase tracking-widest md:tracking-[0.2em] text-zinc-400 dark:text-zinc-600">
            <span className="mt-1">Leads</span>
-           <div className="flex flex-col items-center pl-12">
+           <div className="flex flex-col items-center md:pl-12">
              <span className="text-red-500/80 dark:text-red-900 animate-pulse">Missed</span>
              <span className="text-red-500/80 dark:text-red-900 animate-pulse">Opportunities</span>
            </div>

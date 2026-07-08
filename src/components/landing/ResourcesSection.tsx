@@ -57,9 +57,9 @@ export default function ResourcesSection() {
     <section id="resources" className="py-24 bg-zinc-50 dark:bg-black relative overflow-hidden">
       <div className="max-w-[1100px] mx-auto px-6">
 
-        <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-8">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-8">
             <div className="max-w-2xl">
-                <h2 className="text-3xl md:text-7xl font-bold text-zinc-900 dark:text-white mb-4 tracking-tight">
+                <h2 className="text-3xl md:text-5xl lg:text-7xl font-bold text-zinc-900 dark:text-white mb-4 tracking-tight">
                 {t('resources.title')}
                 </h2>
                 <p className="text-lg text-zinc-600 dark:text-zinc-400">
@@ -108,7 +108,7 @@ export default function ResourcesSection() {
 
         {/* Featured Resource - Full Width */}
         <motion.div 
-            className="mt-6 rounded-2xl bg-zinc-900 dark:bg-zinc-950 border border-zinc-800 p-8 md:p-10 relative overflow-hidden flex flex-col md:flex-row items-center gap-10 group"
+            className="mt-6 rounded-2xl bg-zinc-900 dark:bg-zinc-950 border border-zinc-800 p-6 sm:p-8 md:p-10 relative overflow-hidden flex flex-col md:flex-row items-center gap-6 md:gap-10 group"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -125,13 +125,13 @@ export default function ResourcesSection() {
                 <p className="text-zinc-400 mb-6 max-w-xl text-base leading-relaxed">
                     A 50-page guide on how top agencies are using automation to scale their revenue without increasing headcount.
                 </p>
-                <div className="flex flex-wrap gap-3">
-                    <Button variant="primary">Download Free Copy</Button>
-                    <Button variant="secondary" className="bg-transparent border-zinc-700 text-white hover:bg-zinc-800">Read Preview</Button>
+                <div className="flex flex-col sm:flex-row flex-wrap gap-3">
+                    <Button variant="primary" className="w-full sm:w-auto">Download Free Copy</Button>
+                    <Button variant="secondary" className="w-full sm:w-auto bg-transparent border-zinc-700 text-white hover:bg-zinc-800">Read Preview</Button>
                 </div>
             </div>
 
-            <div className="relative w-full md:w-1/3 aspect-[3/4] md:aspect-square flex items-center justify-center">
+            <div className="relative w-full md:w-1/3 h-64 md:h-auto md:aspect-square flex items-center justify-center">
                 {/* Abstract Book Cover Representation */}
                 <div className="w-40 h-56 bg-gradient-to-br from-blue-600 to-indigo-700 rounded-lg shadow-2xl relative rotate-[-12deg] group-hover:rotate-[-6deg] group-hover:scale-105 transition-all duration-500 border-l-4 border-blue-400">
                     <div className="absolute inset-0 bg-gradient-to-tr from-black/20 to-transparent" />

@@ -10,22 +10,22 @@ import Hero3D from './Hero3D';
 const HeroTrustIndicator = () => {
   const { t } = useTranslation();
   return (
-    <motion.div 
-      className="flex justify-center mb-24"
+    <motion.div
+      className="flex justify-center mb-12 md:mb-24"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, delay: 0.5 }}
     >
-      <GlassPill className="rounded-full p-2 pl-3 pr-6 flex items-center gap-4 hover:bg-zinc-50 dark:hover:bg-blue-900/20 transition-all duration-300 group cursor-default">
+      <GlassPill className="rounded-full p-2 pl-3 pr-4 sm:pr-6 flex items-center gap-3 sm:gap-4 hover:bg-zinc-50 dark:hover:bg-blue-900/20 transition-all duration-300 group cursor-default">
         
         {/* Animated Avatar Stack */}
         <div className="flex -space-x-3">
           {[1, 2, 3, 4].map((i) => (
-            <div key={i} className="relative w-10 h-10 rounded-full border-2 border-white dark:border-zinc-950 overflow-hidden ring-2 ring-transparent group-hover:ring-blue-200 dark:group-hover:ring-blue-500/30 transition-all duration-500 bg-zinc-200 dark:bg-zinc-800 shadow-sm">
+            <div key={i} className="relative w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-white dark:border-zinc-950 overflow-hidden ring-2 ring-transparent group-hover:ring-blue-200 dark:group-hover:ring-blue-500/30 transition-all duration-500 bg-zinc-200 dark:bg-zinc-800 shadow-sm">
               <img src={`https://i.pravatar.cc/100?img=${i + 10}`} alt="" role="presentation" className="w-full h-full object-cover" loading="lazy" width="40" height="40" />
             </div>
           ))}
-          <div className="w-10 h-10 rounded-full border-2 border-white dark:border-zinc-950 bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center text-xs font-bold text-white relative z-10 shadow-lg shadow-blue-500/20">
+          <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-white dark:border-zinc-950 bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center text-[10px] sm:text-xs font-bold text-white relative z-10 shadow-lg shadow-blue-500/20">
             500+
           </div>
         </div>
@@ -58,7 +58,7 @@ export default function Hero() {
   const { t } = useTranslation();
   const navigate = useNavigate();
   return (
-    <section className="relative pt-24 pb-20 md:pt-36 md:pb-40 overflow-hidden flex flex-col items-center">
+    <section className="relative pt-32 pb-20 md:pt-36 md:pb-40 overflow-hidden flex flex-col items-center">
       {/* Dynamic Background */}
       <div className="absolute inset-0 bg-white dark:bg-zinc-950 pointer-events-none transition-colors duration-500">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
@@ -89,13 +89,13 @@ export default function Hero() {
 
         {/* Main Headline */}
         <motion.h1 
-          className="text-5xl md:text-8xl font-bold tracking-tight text-zinc-900 dark:text-white mb-6 max-w-5xl mx-auto leading-[1.1] md:leading-[1.05]"
+          className="text-4xl sm:text-5xl md:text-8xl font-bold tracking-tight text-zinc-900 dark:text-white mb-6 max-w-5xl mx-auto leading-[1.1] md:leading-[1.05]"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1 }}
         >
           {t('hero.headline1')}<br />
-          <span className="relative whitespace-nowrap">
+          <span className="relative sm:whitespace-nowrap">
              <span className="absolute -inset-1 bg-gradient-to-r from-blue-200/50 to-cyan-200/50 dark:from-blue-600/20 dark:to-cyan-600/20 blur-xl"></span>
              <span className="relative text-gradient">
                {t('hero.headline2')}

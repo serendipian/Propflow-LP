@@ -91,7 +91,7 @@ const BeforeAfterSlider = () => {
           className="absolute top-0 bottom-0 w-1 bg-white cursor-ew-resize shadow-[0_0_15px_rgba(0,0,0,0.5)] z-20"
           style={{ left: `${sliderPosition}%` }}
         >
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-white rounded-full shadow-lg flex items-center justify-center text-blue-600 border border-blue-50 dark:border-zinc-800">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-11 h-11 md:w-8 md:h-8 bg-white rounded-full shadow-lg flex items-center justify-center text-blue-600 border border-blue-50 dark:border-zinc-800">
              <MoveHorizontal size={16} />
           </div>
         </div>

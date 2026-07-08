@@ -30,7 +30,7 @@ export default function LanguagePicker() {
     <div className="relative" ref={containerRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-zinc-100 dark:bg-zinc-800/50 hover:bg-zinc-200 dark:hover:bg-zinc-800 transition-all border border-zinc-200 dark:border-zinc-700"
+        className="flex items-center gap-2 px-3 min-h-[44px] md:min-h-0 py-1.5 rounded-lg bg-zinc-100 dark:bg-zinc-800/50 hover:bg-zinc-200 dark:hover:bg-zinc-800 transition-all border border-zinc-200 dark:border-zinc-700"
         aria-label="Select language"
       >
         <span className="text-sm">{selected.flag}</span>
@@ -54,7 +54,7 @@ export default function LanguagePicker() {
                   i18n.changeLanguage(lang.code);
                   setIsOpen(false);
                 }}
-                className={`w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm transition-colors ${
+                className={`w-full flex items-center justify-between px-3 py-2.5 md:py-2 rounded-lg text-sm transition-colors ${
                   selected.code === lang.code
                     ? 'bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400'
                     : 'text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800'

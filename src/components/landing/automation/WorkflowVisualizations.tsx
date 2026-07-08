@@ -87,7 +87,7 @@ const WorkflowVisualizations = ({ activeTab }: WorkflowVisualizationsProps) => (
               <ConnectionPath d="M 400 380 C 460 380, 460 280, 500 280" delay={0.6} />
 
               {/* Final Output */}
-              <ConnectionPath d="M 640 280 L 720 280" delay={0.9} />
+              <ConnectionPath d="M 596 325 L 596 390" delay={0.9} />
 
               {/* Particles */}
               <motion.circle r="4" fill="#3b82f6" animate={{ offsetDistance: "100%" }} transition={{ duration: 1.5, repeat: Infinity, delay: 0.5, repeatDelay: 1 }} style={{ offsetPath: 'path("M 120 280 C 180 280, 180 180, 240 180")' }} />
@@ -109,7 +109,7 @@ const WorkflowVisualizations = ({ activeTab }: WorkflowVisualizationsProps) => (
           <WorkflowNode x="500px" y="255px" icon={BrainCircuit} label="AI Analysis" subLabel="Generate Insights" color="indigo" delay={0.6} />
 
           {/* Step 4: Final Action */}
-          <WorkflowNode x="740px" y="255px" icon={Mail} label="Send Report" subLabel="To: Board of Directors" color="cyan" delay={0.8} />
+          <WorkflowNode x="500px" y="395px" icon={Mail} label="Send Report" subLabel="To: Board of Directors" color="cyan" delay={0.8} />
 
       </motion.div>
     )}

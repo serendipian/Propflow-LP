@@ -25,35 +25,35 @@ export default function Footer() {
         
         <div>
           <h4 className="font-semibold text-zinc-900 dark:text-white mb-4">{t('footer.product')}</h4>
-          <ul className="space-y-2 text-zinc-500">
-            <li><SmartLink href="#solutions" className="hover:text-blue-600 dark:hover:text-blue-400">{t('footer.pipeline')}</SmartLink></li>
-            <li><SmartLink href="#features" className="hover:text-blue-600 dark:hover:text-blue-400">{t('footer.listings')}</SmartLink></li>
-            <li><SmartLink href="#features" className="hover:text-blue-600 dark:hover:text-blue-400">{t('footer.automations')}</SmartLink></li>
-            <li><SmartLink href="#features" className="hover:text-blue-600 dark:hover:text-blue-400">{t('footer.mobileApp')}</SmartLink></li>
+          <ul className="space-y-1 text-zinc-500">
+            <li><SmartLink href="#solutions" className="inline-block py-1 hover:text-blue-600 dark:hover:text-blue-400">{t('footer.pipeline')}</SmartLink></li>
+            <li><SmartLink href="#features" className="inline-block py-1 hover:text-blue-600 dark:hover:text-blue-400">{t('footer.listings')}</SmartLink></li>
+            <li><SmartLink href="#features" className="inline-block py-1 hover:text-blue-600 dark:hover:text-blue-400">{t('footer.automations')}</SmartLink></li>
+            <li><SmartLink href="#features" className="inline-block py-1 hover:text-blue-600 dark:hover:text-blue-400">{t('footer.mobileApp')}</SmartLink></li>
           </ul>
         </div>
 
         <div>
           <h4 className="font-semibold text-zinc-900 dark:text-white mb-4">{t('footer.company')}</h4>
-          <ul className="space-y-2 text-zinc-500">
-            <li><SmartLink href="#product" className="hover:text-blue-600 dark:hover:text-blue-400">{t('footer.about')}</SmartLink></li>
-            <li><SmartLink href="#product" className="hover:text-blue-600 dark:hover:text-blue-400">{t('footer.customers')}</SmartLink></li>
-            <li><SmartLink href="#product" className="hover:text-blue-600 dark:hover:text-blue-400">{t('footer.careers')}</SmartLink></li>
-            <li><SmartLink href="/contact" className="hover:text-blue-600 dark:hover:text-blue-400">{t('footer.contact')}</SmartLink></li>
+          <ul className="space-y-1 text-zinc-500">
+            <li><SmartLink href="#product" className="inline-block py-1 hover:text-blue-600 dark:hover:text-blue-400">{t('footer.about')}</SmartLink></li>
+            <li><SmartLink href="#product" className="inline-block py-1 hover:text-blue-600 dark:hover:text-blue-400">{t('footer.customers')}</SmartLink></li>
+            <li><SmartLink href="#product" className="inline-block py-1 hover:text-blue-600 dark:hover:text-blue-400">{t('footer.careers')}</SmartLink></li>
+            <li><SmartLink href="/contact" className="inline-block py-1 hover:text-blue-600 dark:hover:text-blue-400">{t('footer.contact')}</SmartLink></li>
           </ul>
         </div>
 
         <div>
           <h4 className="font-semibold text-zinc-900 dark:text-white mb-4">{t('footer.legal')}</h4>
-          <ul className="space-y-2 text-zinc-500">
-            <li><a href="/privacy" className="hover:text-blue-600 dark:hover:text-blue-400">{t('footer.privacy')}</a></li>
-            <li><a href="/terms" className="hover:text-blue-600 dark:hover:text-blue-400">{t('footer.terms')}</a></li>
-            <li><a href="/security" className="hover:text-blue-600 dark:hover:text-blue-400">{t('footer.security')}</a></li>
+          <ul className="space-y-1 text-zinc-500">
+            <li><a href="/privacy" className="inline-block py-1 hover:text-blue-600 dark:hover:text-blue-400">{t('footer.privacy')}</a></li>
+            <li><a href="/terms" className="inline-block py-1 hover:text-blue-600 dark:hover:text-blue-400">{t('footer.terms')}</a></li>
+            <li><a href="/security" className="inline-block py-1 hover:text-blue-600 dark:hover:text-blue-400">{t('footer.security')}</a></li>
           </ul>
         </div>
       </div>
       
-      <div className="max-w-screen-2xl mx-auto px-6 pt-8 border-t border-zinc-200 dark:border-zinc-900 flex flex-col md:flex-row justify-between items-center text-zinc-500">
+      <div className="max-w-screen-2xl mx-auto px-6 pt-8 border-t border-zinc-200 dark:border-zinc-900 flex flex-col md:flex-row justify-between items-center gap-2 text-center text-zinc-500">
         <p>{t('footer.copyright', { year: new Date().getFullYear() })}</p>
         <p>{t('footer.designedFor')}</p>
       </div>

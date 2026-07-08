@@ -18,7 +18,7 @@ export default function OperationsSection() {
         {/* Centered Header */}
         <div className="text-center mb-12 max-w-3xl">
            <SectionBadge color="blue">{t('operations.badge')}</SectionBadge>
-           <h2 className="text-4xl md:text-7xl font-bold text-zinc-900 dark:text-white mb-6 tracking-tight">
+           <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold text-zinc-900 dark:text-white mb-6 tracking-tight">
               {t('operations.title')}
            </h2>
            <p className="text-zinc-600 dark:text-zinc-400 text-lg max-w-2xl mx-auto">
@@ -26,8 +26,8 @@ export default function OperationsSection() {
            </p>
         </div>
 
-        {/* Tabs - Single Row */}
-        <div role="tablist" aria-label="Operations modules" className="flex flex-wrap justify-center gap-3 mb-12 w-full max-w-4xl">
+        {/* Tabs - scrollable strip on mobile, centered wrap at md+ */}
+        <div role="tablist" aria-label="Operations modules" className="flex flex-nowrap md:flex-wrap justify-start md:justify-center gap-2 md:gap-3 mb-8 md:mb-12 w-full max-w-4xl overflow-x-auto md:overflow-x-visible no-scrollbar snap-x -mx-6 px-6 md:mx-0 md:px-0">
            {modules.map((module) => {
              const isActive = activeId === module.id;
              return (
@@ -38,7 +38,7 @@ export default function OperationsSection() {
                  aria-controls={`ops-panel-${module.id}`}
                  id={`ops-tab-${module.id}`}
                  onClick={() => setActiveId(module.id)}
-                 className={`flex items-center gap-2.5 px-5 py-3 rounded-md text-sm font-semibold transition-all duration-300 border relative overflow-hidden group ${
+                 className={`shrink-0 snap-start flex items-center gap-2.5 px-4 md:px-5 py-3 rounded-md text-sm font-semibold transition-all duration-300 border relative overflow-hidden group ${
                    isActive
                      ? 'bg-white dark:bg-zinc-900 border-blue-500 shadow-lg shadow-blue-500/10 ring-1 ring-blue-500/20 text-zinc-900 dark:text-white'
                      : 'bg-zinc-100 dark:bg-zinc-900/50 border-transparent text-zinc-500 dark:text-zinc-400 hover:bg-zinc-200 dark:hover:bg-zinc-800 hover:text-zinc-900 dark:hover:text-zinc-200'
@@ -65,7 +65,7 @@ export default function OperationsSection() {
         {/* Centered Preview Pane - Height Increased to 850px to fit content */}
         <div className="w-full max-w-[1100px]">
            <div className="bg-white dark:bg-zinc-900 rounded-2xl p-2 border border-zinc-200 dark:border-zinc-800 shadow-2xl">
-              <GlassPanel className="w-full h-[850px] rounded-xl overflow-hidden flex flex-col relative bg-zinc-50 dark:bg-black">
+              <GlassPanel className="w-full h-[560px] sm:h-[700px] lg:h-[850px] rounded-xl overflow-hidden flex flex-col relative bg-zinc-50 dark:bg-black">
                  {/* Top Bar */}
                  <div className="h-10 border-b border-zinc-200 dark:border-zinc-800 flex items-center justify-between px-4 bg-white dark:bg-zinc-900/50">
                     <div className="flex items-center gap-2">
@@ -80,7 +80,7 @@ export default function OperationsSection() {
                     <div className="w-12" /> {/* Spacer for balance */}
                  </div>
 
-                 <div className="flex-1 p-6 md:p-8 relative overflow-hidden">
+                 <div className="flex-1 p-3 sm:p-6 md:p-8 relative overflow-hidden">
                     <AnimatePresence mode="wait">
                        <motion.div
                           key={activeId}
@@ -93,10 +93,10 @@ export default function OperationsSection() {
                           transition={{ duration: 0.25 }}
                           className="h-full"
                        >
-                          <div className="mb-6 flex items-center justify-between">
+                          <div className="mb-4 md:mb-6 flex items-center justify-between">
                              <div>
-                                <h3 className="text-2xl font-bold text-zinc-900 dark:text-white mb-1">{activeModule.label}</h3>
-                                <p className="text-sm text-zinc-500 dark:text-zinc-400">{activeModule.desc}</p>
+                                <h3 className="text-lg sm:text-2xl font-bold text-zinc-900 dark:text-white mb-1">{activeModule.label}</h3>
+                                <p className="text-xs sm:text-sm text-zinc-500 dark:text-zinc-400">{activeModule.desc}</p>
                              </div>
                              <div className={`p-2 rounded-lg hidden sm:block ${activeModule.color === 'emerald' ? 'bg-emerald-50 dark:bg-emerald-900/20 text-emerald-600 dark:text-emerald-400' : 'bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400'}`}>
                                 <activeModule.icon size={20} />

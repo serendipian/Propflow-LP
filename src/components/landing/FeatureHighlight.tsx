@@ -19,9 +19,9 @@ export default function FeatureHighlight() {
 
       <div className="max-w-screen-2xl mx-auto px-6 relative z-10">
 
-        <div className="flex flex-col items-center mb-16 text-center">
+        <div className="flex flex-col items-center mb-10 md:mb-16 text-center">
           <SectionBadge color="blue">{t('features.badge')}</SectionBadge>
-          <h2 className="text-4xl md:text-7xl font-bold text-zinc-900 dark:text-white mb-6 tracking-tight">
+          <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold text-zinc-900 dark:text-white mb-6 tracking-tight">
              {t('features.title')}
           </h2>
           <p className="text-zinc-600 dark:text-zinc-400 max-w-2xl text-lg">
@@ -32,28 +32,32 @@ export default function FeatureHighlight() {
         {/* BOXED LAYOUT CONTAINER - Width Reduced to 1100px */}
         <div className="max-w-[1100px] mx-auto bg-white dark:bg-zinc-900 rounded-2xl border border-zinc-200 dark:border-zinc-800 shadow-2xl overflow-hidden flex flex-col lg:flex-row h-auto lg:h-[600px]">
 
-            {/* SIDEBAR (TABS) - Evenly Distributed */}
-            <div className="lg:w-64 bg-zinc-50/50 dark:bg-zinc-950/50 border-r border-zinc-200 dark:border-zinc-800 flex flex-col h-full shrink-0">
-                <div className="p-4 border-b border-zinc-200 dark:border-zinc-800 lg:hidden">
+            {/* SIDEBAR (TABS) - horizontal snap strip on mobile, evenly distributed column at lg+ */}
+            <div className="lg:w-64 bg-zinc-50/50 dark:bg-zinc-950/50 border-b lg:border-b-0 lg:border-r border-zinc-200 dark:border-zinc-800 flex flex-col lg:h-full shrink-0">
+                <div className="p-4 pb-2 lg:pb-4 lg:border-b border-zinc-200 dark:border-zinc-800 lg:hidden">
                     <span className="text-xs font-bold text-zinc-400 uppercase tracking-wider">Select Module</span>
                 </div>
-                {/* Removed padding and gap, added flex-1 to buttons to distribute height evenly */}
-                <div className="flex-1 overflow-y-auto lg:overflow-hidden custom-scrollbar flex flex-col h-full">
+                <div className="flex flex-row lg:flex-col lg:flex-1 overflow-x-auto lg:overflow-x-visible lg:overflow-y-auto no-scrollbar snap-x lg:h-full" role="tablist" aria-label="Modules">
                     {modules.map((module) => {
                     const isActive = activeId === module.id;
                     return (
                         <button
                         key={module.id}
                         onClick={() => setActiveId(module.id)}
-                        className={`flex-1 flex items-center gap-3 px-6 text-left transition-all duration-200 group relative border-b border-zinc-100/50 dark:border-zinc-800/50 last:border-0 ${
+                        role="tab"
+                        aria-selected={isActive}
+                        className={`shrink-0 snap-start flex items-center gap-2 lg:gap-3 px-4 py-3 lg:flex-1 lg:px-6 lg:py-0 text-left transition-all duration-200 group relative lg:border-b border-zinc-100/50 dark:border-zinc-800/50 lg:last:border-0 ${
                             isActive
                             ? 'bg-white dark:bg-zinc-900 z-10'
                             : 'hover:bg-zinc-100 dark:hover:bg-zinc-900/50 text-zinc-500 dark:text-zinc-400'
                         }`}
                         >
-                        {/* Active Indicator Line */}
+                        {/* Active Indicator Line: underline on mobile, left bar at lg+ */}
                         {isActive && (
-                            <div className={`absolute left-0 top-0 bottom-0 w-1 bg-blue-500`} />
+                            <>
+                              <div className="absolute bottom-0 left-2 right-2 h-0.5 rounded-full bg-blue-500 lg:hidden" />
+                              <div className="absolute left-0 top-0 bottom-0 w-1 bg-blue-500 hidden lg:block" />
+                            </>
                         )}
 
                         <div className={`w-5 h-5 flex-shrink-0 flex items-center justify-center transition-colors ${
@@ -63,8 +67,7 @@ export default function FeatureHighlight() {
                         }`}>
                             <module.icon size={18} />
                         </div>
-                        {/* Increased font size to text-base */}
-                        <span className={`block font-medium text-base ${isActive ? 'text-zinc-900 dark:text-white' : 'text-zinc-600 dark:text-zinc-400'}`}>
+                        <span className={`block font-medium text-sm lg:text-base whitespace-nowrap ${isActive ? 'text-zinc-900 dark:text-white' : 'text-zinc-600 dark:text-zinc-400'}`}>
                             {module.label}
                         </span>
                         </button>
@@ -74,7 +77,7 @@ export default function FeatureHighlight() {
             </div>
 
             {/* PREVIEW CONTENT */}
-            <div className="flex-1 bg-white dark:bg-zinc-900 relative flex flex-col min-w-0 h-[600px] lg:h-auto">
+            <div className="flex-1 bg-white dark:bg-zinc-900 relative flex flex-col min-w-0 h-[520px] sm:h-[600px] lg:h-auto">
 
                 {/* Header - Compact Version */}
                 <div className="p-5 border-b border-zinc-100 dark:border-zinc-800 shrink-0">

@@ -70,7 +70,7 @@ export default function TeamSection() {
         {/* Centered Header */}
         <div className="text-center mb-4 max-w-4xl">
             <SectionBadge color="blue"><Shield size={14} className="mr-1"/> {t('team.badge')}</SectionBadge>
-            <h2 className="text-4xl md:text-7xl font-bold text-zinc-900 dark:text-white mb-6 tracking-tight">
+            <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold text-zinc-900 dark:text-white mb-6 tracking-tight">
               {t('team.title')}
             </h2>
             <p className="text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed max-w-2xl mx-auto">
@@ -78,8 +78,8 @@ export default function TeamSection() {
             </p>
         </div>
 
-        {/* Visual Area - Performance Card Centered & Big */}
-        <div className="relative w-full max-w-[1100px] mb-6 h-[580px] flex items-center justify-center">
+        {/* Visual Area - Performance Card Centered & Big; height only fixed at lg where the side panels float */}
+        <div className="relative w-full max-w-[1100px] mb-6 py-6 lg:py-0 h-auto lg:h-[580px] flex items-center justify-center">
              {/* Background Effects */}
              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-500/5 rounded-full blur-[80px]" />
 
@@ -156,23 +156,23 @@ export default function TeamSection() {
                  {/* Top Decor Bar - Matching Text Gradient (Blue-600 -> Sky-500 -> Blue-600) */}
                  <div className="h-1.5 w-full bg-gradient-to-r from-blue-600 via-sky-500 to-blue-600" />
                  
-                 <div className="p-8 md:p-10">
+                 <div className="p-5 sm:p-8 md:p-10">
                      {/* Header */}
-                     <div className="flex justify-between items-start mb-8">
-                        <div className="flex items-center gap-5">
-                            <div className="relative">
-                                <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-zinc-100 dark:border-zinc-800 shadow-lg relative z-10">
+                     <div className="flex flex-wrap justify-between items-start gap-y-3 mb-6 sm:mb-8">
+                        <div className="flex items-center gap-3 sm:gap-5 min-w-0">
+                            <div className="relative shrink-0">
+                                <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full overflow-hidden border-2 border-zinc-100 dark:border-zinc-800 shadow-lg relative z-10">
                                     <img src="https://i.pravatar.cc/150?img=11" className="w-full h-full object-cover" alt="" role="presentation" loading="lazy" width="64" height="64" />
                                 </div>
                                 <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-blue-600 border-2 border-white dark:border-zinc-900 rounded-full flex items-center justify-center z-20">
                                     <Check size={12} className="text-white stroke-[3px]" />
                                 </div>
                             </div>
-                            <div>
-                                <h3 className="text-2xl font-bold text-zinc-900 dark:text-white tracking-tight">David Ross</h3>
-                                <div className="flex items-center gap-2 mt-1">
-                                    <span className="text-sm font-medium text-zinc-500">Senior Sales Director</span>
-                                    <span className="w-1 h-1 rounded-full bg-zinc-300 dark:bg-zinc-700" />
+                            <div className="min-w-0">
+                                <h3 className="text-xl sm:text-2xl font-bold text-zinc-900 dark:text-white tracking-tight">David Ross</h3>
+                                <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5 mt-1">
+                                    <span className="text-xs sm:text-sm font-medium text-zinc-500">Senior Sales Director</span>
+                                    <span className="w-1 h-1 rounded-full bg-zinc-300 dark:bg-zinc-700 hidden sm:block" />
                                     <span className="text-xs text-blue-600 dark:text-blue-400 font-semibold">NYC Office</span>
                                 </div>
                             </div>

@@ -10,7 +10,7 @@ export default function ThemeToggle() {
   return (
     <button 
       onClick={toggleTheme}
-      className="w-9 h-9 rounded-lg bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center text-zinc-600 dark:text-zinc-400 hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-colors relative overflow-hidden"
+      className="w-11 h-11 md:w-9 md:h-9 rounded-lg bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center text-zinc-600 dark:text-zinc-400 hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-colors relative overflow-hidden"
       aria-label="Toggle theme"
     >
       <div className="relative w-5 h-5">
