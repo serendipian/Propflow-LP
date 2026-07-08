@@ -245,5 +245,42 @@
         "cta": "Planifier une Démo"
       }
     }
+  },
+  "demoPage": {
+    "badge": "Démonstration personnalisée en direct",
+    "title": "Découvrez Propflow",
+    "titleAccent": "en action.",
+    "subtitle": "Réservez une démonstration de 30 minutes adaptée à votre agence. Pas de diapositives — vos flux de travail, sur Propflow, avec un expert qui répond à toutes vos questions.",
+    "benefits": {
+      "title": "Ce que vous obtiendrez",
+      "items": [
+        { "title": "Une visite conçue pour vous", "text": "Nous adaptons la démonstration aux flux de vente et de location précis de votre agence — pas un script générique." },
+        { "title": "Des réponses, en direct", "text": "Posez vos questions les plus difficiles sur la migration, les tarifs et les intégrations. Nous y répondrons pendant l'appel." },
+        { "title": "Vos données, à votre façon", "text": "Voyez à quoi ressemblent votre pipeline, vos annonces et vos contacts dans Propflow avant de vous engager." },
+        { "title": "En moins de 30 minutes", "text": "Concis, rapide et respectueux de votre temps. Sans pression, sans engagement." }
+      ]
+    },
+    "scheduler": {
+      "title": "Choisissez un créneau",
+      "placeholderTitle": "Le planificateur s'affiche ici",
+      "placeholderNote": "Connectez votre compte Cal.com ou Calendly pour intégrer le calendrier de réservation en direct.",
+      "fallback": "Vous préférez l'e-mail ? Contactez-nous"
+    },
+    "steps": {
+      "title": "Et ensuite ?",
+      "items": [
+        { "title": "Réservez votre créneau", "text": "Choisissez un horaire ci-dessus. Vous recevrez une invitation immédiate avec un lien visio." },
+        { "title": "Démonstration de 30 minutes", "text": "Rencontrez votre expert produit pour une visite personnalisée de Propflow, en direct." },
+        { "title": "Recevez votre plan", "text": "Repartez avec un plan de déploiement clair et sans engagement, conçu pour votre agence." }
+      ]
+    },
+    "faq": {
+      "title": "Avant de réserver",
+      "items": [
+        { "q": "Combien de temps dure la démonstration ?", "a": "Environ 30 minutes — assez pour voir les modules qui comptent pour vous, avec du temps pour les questions. Nous restons concentrés et ne dépassons jamais sans vous demander." },
+        { "q": "Dois-je préparer quelque chose ?", "a": "Aucune préparation requise. Si vous le souhaitez, apportez quelques exemples de biens ou de contacts et nous vous montrerons exactement comment ils vivraient dans Propflow." },
+        { "q": "La démonstration est-elle vraiment gratuite ?", "a": "Entièrement gratuite et sans engagement. C'est une conversation, pas un argumentaire de vente — vous décidez si et quand aller plus loin." }
+      ]
+    }
   }
 }

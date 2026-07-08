@@ -34,3 +34,22 @@ describe('i18n', () => {
     expect(i18n.t('pricing.title')).not.toBe('pricing.title');
   });
 });
+
+describe('demoPage i18n', () => {
+  it('exposes demoPage keys in English', () => {
+    i18n.changeLanguage('en');
+    expect(i18n.t('demoPage.title')).not.toBe('demoPage.title');
+    expect(i18n.t('demoPage.scheduler.placeholderTitle')).not.toBe('demoPage.scheduler.placeholderTitle');
+    const items = i18n.t('demoPage.benefits.items', { returnObjects: true }) as unknown[];
+    expect(Array.isArray(items)).toBe(true);
+    expect(items.length).toBe(4);
+  });
+
+  it('exposes demoPage keys in French', () => {
+    i18n.changeLanguage('fr');
+    expect(i18n.t('demoPage.title')).not.toBe('demoPage.title');
+    const steps = i18n.t('demoPage.steps.items', { returnObjects: true }) as unknown[];
+    expect(steps.length).toBe(3);
+    i18n.changeLanguage('en');
+  });
+});
