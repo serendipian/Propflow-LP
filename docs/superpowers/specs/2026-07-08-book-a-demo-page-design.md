@@ -37,25 +37,46 @@ Follows the established page pattern (`ContactPage.tsx` is the reference):
   `ContactPage`.
 - **SEO:** `useDocumentTitle('Book a Demo — Propflow', <subtitle>)`.
 
+## Design Bar: Best-in-class / SOTA
+
+Not just "matches the design system" — it extends the landing page's **signature visual
+moves** at Linear/Attio/Vercel tier, staying 100% within Propflow's blue/zinc glassmorphic
+vocabulary. The signature moves to reuse (all already in `Hero.tsx` / `CTASection.tsx`):
+
+- **Atmospheric hero backdrop:** the grid-lines layer
+  `bg-[linear-gradient(...)] bg-[size:24px_24px]` with a radial `[mask-image]`, plus
+  `animate-blob` blur orbs (`animation-delay-2000`) and a soft spotlight. Not a flat white
+  section.
+- **`text-gradient` headline** with the blur-glow pseudo layer behind the emphasized words.
+- **Notification badge** with the pinging dot (`animate-ping`).
+- **Choreographed staggered motion:** Framer Motion reveals with incremental
+  `delay` (0.1 → 0.5), matching Hero's rhythm — not everything fading in at once.
+- **Glass trust pill** (avatar stack + 4.9/5 + "500+ agencies").
+
 ## Page Structure (`DemoPage.tsx`)
 
-1. **Hero** — `SectionBadge` + `h1` headline + subtitle. Same spacing/typography as
-   `ContactPage` hero (`pt-32 pb-16`, `text-4xl md:text-7xl font-bold`).
-2. **Two-column body** (`grid lg:grid-cols-5`, mirrors ContactPage):
-   - **Left (`lg:col-span-2`) — "What you'll get":** 3–4 value bullets, each with a Lucide
-     icon in the blue icon-chip style from `ContactInfo` (e.g. personalized walkthrough,
-     tailored to your agency, live Q&A, ~30 minutes). Plus a trust line.
-   - **Right (`lg:col-span-3`) — Scheduler card:** a `GlassPanel` with a clearly-labelled
-     **placeholder** block ("Scheduler embed — paste your Cal.com / Calendly link here"),
-     a dashed-border framed area sized like a real embed (~`min-h-[560px]`), and a fallback
-     `SmartLink` to `/contact` ("Prefer email? Contact us instead").
-     - Placeholder is isolated so swapping in `<iframe src="https://cal.com/...">` later is a
-       one-spot change. A `SCHEDULER_URL` const at the top of the file, `''` by default,
-       documents where the link goes.
-3. **Trust strip** — avatar stack + 4.9/5 + "Trusted by 500+ agencies", reusing the
-   `TrustIndicator` visual pattern from `CTASection` (inline, not extracted — keep it simple).
-4. **Mini FAQ** — 3 reassurance items via `Accordion` (`items: {question, answer}[]`):
-   how long, what to prepare, is it free.
+1. **Hero (atmospheric):** full backdrop (grid + orbs + spotlight) like `Hero.tsx`.
+   `SectionBadge` (or the pinging notification badge) + `h1` with a `text-gradient` emphasis
+   span + subtitle. Staggered reveals. Sits above a two-column booking layout.
+2. **Booking layout — scheduler is the centerpiece** (`grid lg:grid-cols-5`):
+   - **Right / primary (`lg:col-span-3`) — Scheduler card:** a prominent `GlassPanel`
+     (elevated shadow, blue ring accent) that reads as the hero of the page. Contains a
+     clearly-labelled **placeholder** embed — a dashed-border framed area sized like a real
+     widget (~`min-h-[560px]`) with a calendar-glyph, "Scheduler embed" title, and a note to
+     paste the Cal.com/Calendly link. Isolated so swapping in
+     `<iframe src={SCHEDULER_URL}>` later is a one-line change (`SCHEDULER_URL` const at top,
+     `''` by default). Fallback `SmartLink` to `/contact` ("Prefer email? Contact us").
+   - **Left / supporting (`lg:col-span-2`) — "What you'll get":** 3–4 value bullets, each a
+     Lucide icon in the blue icon-chip style from `ContactInfo` (personalized walkthrough,
+     tailored to your agency, live Q&A, ~30 minutes), on subtle glass cards.
+3. **"What happens next" step strip** — a 3-step horizontal strip (Book → 30-min call →
+   Tailored plan) with numbered blue chips and a connecting line. New micro-section that
+   lifts perceived quality; built from existing tokens.
+4. **Logo / trust bar** — a slim row reusing the trust-pill pattern (avatar stack + 4.9/5 +
+   "Trusted by 500+ agencies"), self-contained (not imported from `CTASection`).
+5. **Mini FAQ** — 3 reassurance items via `Accordion` (`items: {question, answer}[]`):
+   how long, what to prepare, is it free. Wrapped in a section with the same grid/orb
+   ambient treatment (subtler) so the page closes cohesively.
 
 ## CTA Wiring
 
@@ -75,10 +96,11 @@ Each file adds `useNavigate` from `react-router-dom` (already a dependency).
 ## i18n
 
 Add a `demoPage` block to **both** `src/data/locales/en.json` and `fr.json` (fr mirrors en —
-translate). Keys: `title`, `subtitle`, `badge`, `benefits.title`, `benefits.items[]` (icon +
-title + text), `scheduler.placeholderTitle`, `scheduler.placeholderNote`,
-`scheduler.fallback`, `trust.*` (reuse hero trust strings where possible), `faq.title`,
-`faq.items[]`. No hardcoded copy in JSX.
+translate). Keys: `title`, `titleAccent` (the `text-gradient` span), `subtitle`, `badge`,
+`benefits.title`, `benefits.items[]` (title + text), `scheduler.title`,
+`scheduler.placeholderTitle`, `scheduler.placeholderNote`, `scheduler.fallback`,
+`steps.title`, `steps.items[]` (title + text), `faq.title`, `faq.items[]`. Trust strings
+reuse existing `hero.trustedBy` / `hero.agencies`. No hardcoded copy in JSX.
 
 ## Verification
 
