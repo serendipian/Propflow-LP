@@ -26,6 +26,12 @@ export const ROUTES = [
       'See Propflow in action with a personalized 30-minute walkthrough tailored to your agency. Book your demo and get 3 months free.',
   },
   {
+    path: 'features',
+    title: 'Features | Propflow',
+    description:
+      'Explore every Propflow module — properties, requests, owners, offers, and more — connected in one AI-powered operating system for real estate.',
+  },
+  {
     path: 'contact',
     title: 'Contact | Propflow',
     description:

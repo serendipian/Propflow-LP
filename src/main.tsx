@@ -12,6 +12,7 @@ import LandingPage from './pages/LandingPage';
 const PricingPage = lazy(() => import('./pages/PricingPage'));
 const ContactPage = lazy(() => import('./pages/ContactPage'));
 const DemoPage = lazy(() => import('./pages/DemoPage'));
+const FeaturesPage = lazy(() => import('./pages/FeaturesPage'));
 const PrivacyPage = lazy(() => import('./pages/legal/PrivacyPage'));
 const TermsPage = lazy(() => import('./pages/legal/TermsPage'));
 const SecurityPage = lazy(() => import('./pages/legal/SecurityPage'));
@@ -40,6 +41,11 @@ const App = () => {
               <Route path="book-a-demo" element={
                 <Suspense fallback={<div className="min-h-screen bg-white dark:bg-zinc-950" />}>
                   <DemoPage />
+                </Suspense>
+              } />
+              <Route path="features" element={
+                <Suspense fallback={<div className="min-h-screen bg-white dark:bg-zinc-950" />}>
+                  <FeaturesPage />
                 </Suspense>
               } />
               <Route path="privacy" element={
