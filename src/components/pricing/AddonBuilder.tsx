@@ -39,7 +39,8 @@ export default function AddonBuilder({ billing, selectedPlan }: AddonBuilderProp
   };
 
   return (
-    <div className="max-w-screen-2xl mx-auto px-6">
+    // Same container pattern as PlanCards/ComparisonTable so all three share identical content edges
+    <div className="max-w-7xl mx-auto px-6">
       <div className="text-center mb-12">
         <h2 className="text-3xl md:text-5xl font-bold text-zinc-900 dark:text-white mb-4 tracking-tight">
           Need more power?
@@ -56,7 +57,6 @@ export default function AddonBuilder({ billing, selectedPlan }: AddonBuilderProp
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
           transition={{ duration: 0.3 }}
-          className="max-w-7xl mx-auto"
         >
           {isEnterprise ? (
             <div className="text-center p-12 bg-zinc-50 dark:bg-zinc-900 rounded-2xl border border-zinc-200 dark:border-zinc-800">

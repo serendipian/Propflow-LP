@@ -16,7 +16,8 @@ const TrustIndicator = () => {
       viewport={{ once: true }}
       transition={{ duration: 0.8 }}
     >
-      <GlassPill className="rounded-full p-2 pl-3 pr-4 sm:pr-6 flex items-center gap-3 sm:gap-4 hover:bg-zinc-50 dark:hover:bg-blue-900/20 transition-all duration-300 group cursor-default">
+      {/* Mobile: two centered rows (avatars + rating, then text); sm+ keeps the original single-row layout */}
+      <GlassPill className="rounded-full px-5 py-3 sm:p-2 sm:pl-3 sm:pr-6 flex flex-wrap sm:flex-nowrap items-center justify-center gap-x-3 gap-y-1.5 sm:gap-4 hover:bg-zinc-50 dark:hover:bg-blue-900/20 transition-all duration-300 group cursor-default">
         {/* Animated Avatar Stack */}
         <div className="flex -space-x-3">
           {[1, 2, 3, 4].map((i) => (
@@ -29,11 +30,12 @@ const TrustIndicator = () => {
           </div>
         </div>
 
-        <div className="h-8 w-px bg-zinc-200 dark:bg-zinc-800" />
+        <div className="hidden sm:block h-8 w-px bg-zinc-200 dark:bg-zinc-800" />
 
-        {/* Text & Rating */}
-        <div className="flex flex-col">
-          <div className="flex items-center gap-1.5 mb-0.5">
+        {/* Text & Rating — display:contents on mobile lets the rating join the avatar row
+            while the text wraps to its own centered line */}
+        <div className="contents sm:flex sm:flex-col">
+          <div className="flex items-center gap-1.5 sm:mb-0.5">
              <div className="flex gap-0.5">
                 {[1,2,3,4,5].map(i => (
                   <Star key={i} size={12} fill="#3b82f6" className="text-blue-500 drop-shadow-[0_0_8px_rgba(59,130,246,0.3)] dark:drop-shadow-[0_0_8px_rgba(59,130,246,0.6)]" />
@@ -43,7 +45,7 @@ const TrustIndicator = () => {
                4.9/5
              </span>
           </div>
-          <p className="text-xs text-zinc-500 dark:text-zinc-400 font-medium">
+          <p className="w-full sm:w-auto text-center sm:text-left text-xs text-zinc-500 dark:text-zinc-400 font-medium">
             {t('hero.trustedBy')} <span className="text-zinc-900 dark:text-zinc-200 font-semibold">{t('hero.agencies')}</span>
           </p>
         </div>
