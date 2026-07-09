@@ -113,7 +113,8 @@ export default function DemoPage() {
               {SCHEDULER_URL ? (
                 <CalendlyEmbed
                   url={SCHEDULER_URL}
-                  className="w-full h-[680px] overflow-hidden rounded-2xl shadow-[0_30px_60px_-20px_rgba(59,130,246,0.15)]"
+                  cropTop={24}
+                  className="w-full h-[640px] overflow-hidden rounded-2xl shadow-[0_30px_60px_-20px_rgba(59,130,246,0.15)]"
                 />
               ) : (
                 <GlassPanel className="rounded-2xl p-6 md:p-8 ring-1 ring-blue-500/10 shadow-[0_30px_60px_-20px_rgba(59,130,246,0.15)]">

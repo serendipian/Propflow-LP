@@ -38,6 +38,9 @@ const PRIMARY = '3b82f6';
 function buildUrl(baseUrl: string, theme: 'dark' | 'light'): string {
   const url = new URL(baseUrl);
   url.searchParams.set('hide_gdpr_banner', '1');
+  // Drop Calendly's event-type header block so the calendar starts at the top,
+  // removing most of the widget's built-in top whitespace.
+  url.searchParams.set('hide_event_type_details', '1');
   if (theme === 'dark') {
     url.searchParams.set('background_color', '18181b'); // zinc-900
     url.searchParams.set('text_color', 'e4e4e7'); // zinc-200
@@ -49,6 +52,12 @@ function buildUrl(baseUrl: string, theme: 'dark' | 'light'): string {
 interface CalendlyEmbedProps {
   url: string;
   className?: string;
+  /**
+   * Pixels to crop off the top of the widget, pulling Calendly's content up
+   * inside the clipped container to remove its built-in top padding. The
+   * container must clip overflow (the className should include overflow-hidden).
+   */
+  cropTop?: number;
 }
 
 /**
@@ -59,7 +68,7 @@ interface CalendlyEmbedProps {
  * `window.Calendly.initInlineWidget` (falling back to a data-url div that the
  * script auto-initializes on load).
  */
-export default function CalendlyEmbed({ url, className = '' }: CalendlyEmbedProps) {
+export default function CalendlyEmbed({ url, className = '', cropTop = 0 }: CalendlyEmbedProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const { theme } = useTheme();
 
@@ -70,16 +79,27 @@ export default function CalendlyEmbed({ url, className = '' }: CalendlyEmbedProp
 
     const themedUrl = buildUrl(url, theme === 'dark' ? 'dark' : 'light');
 
+    // Inner wrapper is pulled up by `cropTop` and grown by the same amount so
+    // the visible calendar still fills the clipped container height. The outer
+    // container stays put (top-aligned with siblings); only Calendly's content
+    // shifts up under the clip.
     loadCalendlyScript()
       .then(() => {
         if (cancelled || !containerRef.current) return;
         const node = containerRef.current;
         node.innerHTML = '';
+
+        const inner = document.createElement('div');
+        inner.style.width = '100%';
+        inner.style.height = cropTop ? `calc(100% + ${cropTop}px)` : '100%';
+        inner.style.marginTop = cropTop ? `-${cropTop}px` : '0';
+        node.appendChild(inner);
+
         const calendly = (window as unknown as { Calendly?: {
           initInlineWidget: (opts: { url: string; parentElement: HTMLElement }) => void;
         } }).Calendly;
         if (calendly?.initInlineWidget) {
-          calendly.initInlineWidget({ url: themedUrl, parentElement: node });
+          calendly.initInlineWidget({ url: themedUrl, parentElement: inner });
         } else {
           // Fallback: the widget.js auto-scans for this class on load.
           const widget = document.createElement('div');
@@ -87,7 +107,7 @@ export default function CalendlyEmbed({ url, className = '' }: CalendlyEmbedProp
           widget.dataset.url = themedUrl;
           widget.style.minWidth = '320px';
           widget.style.height = '100%';
-          node.appendChild(widget);
+          inner.appendChild(widget);
         }
       })
       .catch(() => {
@@ -99,7 +119,7 @@ export default function CalendlyEmbed({ url, className = '' }: CalendlyEmbedProp
       cancelled = true;
       if (container) container.innerHTML = '';
     };
-  }, [url, theme]);
+  }, [url, theme, cropTop]);
 
   return (
     <div
