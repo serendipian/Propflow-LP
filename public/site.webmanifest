@@ -1,0 +1,16 @@
+{
+  "name": "Propflow",
+  "short_name": "Propflow",
+  "description": "The operating system for modern real estate agencies.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#09090b",
+  "theme_color": "#3b82f6",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
