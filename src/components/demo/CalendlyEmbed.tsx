@@ -38,9 +38,6 @@ const PRIMARY = '3b82f6';
 function buildUrl(baseUrl: string, theme: 'dark' | 'light'): string {
   const url = new URL(baseUrl);
   url.searchParams.set('hide_gdpr_banner', '1');
-  // Drop Calendly's event-type header block so the calendar starts at the top,
-  // removing most of the widget's built-in top whitespace.
-  url.searchParams.set('hide_event_type_details', '1');
   if (theme === 'dark') {
     url.searchParams.set('background_color', '18181b'); // zinc-900
     url.searchParams.set('text_color', 'e4e4e7'); // zinc-200
