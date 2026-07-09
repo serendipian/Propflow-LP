@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import { Calendar, Sparkles, MessageSquare, Database, Clock, Star, ArrowRight } from 'lucide-react';
+import { Calendar, Sparkles, MessageSquare, Database, Clock, Star, ArrowRight, Gift } from 'lucide-react';
 import { useDocumentTitle } from '../hooks/useDocumentTitle';
 import { GlassPanel, GlassPill } from '../components/ui/UI';
 import Accordion from '../components/shared/Accordion';
@@ -37,19 +37,6 @@ export default function DemoPage() {
         <div className="relative z-10 max-w-7xl mx-auto px-6">
           {/* Heading block */}
           <div className="text-center max-w-3xl mx-auto mb-14">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-50/80 dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800 text-xs font-medium text-blue-600 dark:text-blue-400 mb-8 backdrop-blur-sm"
-            >
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75" />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500" />
-              </span>
-              <span className="text-zinc-600 dark:text-zinc-300">{t('demoPage.badge')}</span>
-            </motion.div>
-
             <motion.h1
               className="text-4xl md:text-7xl font-bold tracking-tight text-zinc-900 dark:text-white mb-6 leading-[1.05]"
               initial={{ opacity: 0, y: 30 }}
@@ -71,16 +58,26 @@ export default function DemoPage() {
             >
               {t('demoPage.subtitle')}
             </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.3 }}
+              className="mt-6 inline-flex items-center gap-2 rounded-full border border-blue-200 dark:border-blue-500/30 bg-blue-50 dark:bg-blue-500/10 px-4 py-1.5 text-sm font-semibold text-blue-700 dark:text-blue-300"
+            >
+              <Gift size={15} />
+              {t('demoPage.offer.hero')}
+            </motion.div>
           </div>
 
-          {/* Booking grid: scheduler (primary) + benefits (supporting) */}
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
+          {/* Booking grid: scheduler (primary, 2/3) + benefits (supporting, 1/3) */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
             {/* Supporting: benefits */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="lg:col-span-2 space-y-4"
+              className="lg:col-span-1 space-y-4"
             >
               <h2 className="text-sm font-semibold uppercase tracking-widest text-zinc-500 dark:text-zinc-400 mb-2">
                 {t('demoPage.benefits.title')}
@@ -109,18 +106,13 @@ export default function DemoPage() {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.35 }}
-              className="lg:col-span-3"
+              className="lg:col-span-2"
             >
               <GlassPanel className="rounded-2xl p-6 md:p-8 ring-1 ring-blue-500/10 shadow-[0_30px_60px_-20px_rgba(59,130,246,0.15)]">
-                <div className="flex items-center gap-2 mb-6">
-                  <Calendar size={20} className="text-blue-600 dark:text-blue-400" />
-                  <h2 className="text-lg font-bold text-zinc-900 dark:text-white">{t('demoPage.scheduler.title')}</h2>
-                </div>
-
                 {SCHEDULER_URL ? (
                   <CalendlyEmbed
                     url={SCHEDULER_URL}
-                    className="w-full h-[700px] overflow-hidden rounded-xl border border-zinc-200 dark:border-zinc-800"
+                    className="w-full h-[680px] -mt-4 overflow-hidden rounded-xl"
                   />
                 ) : (
                   <div className="w-full min-h-[560px] rounded-xl border-2 border-dashed border-zinc-300 dark:border-zinc-700 bg-zinc-50/50 dark:bg-zinc-900/40 flex flex-col items-center justify-center text-center px-6">

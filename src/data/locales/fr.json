@@ -251,6 +251,11 @@
     "title": "Découvrez Propflow",
     "titleAccent": "en action.",
     "subtitle": "Réservez une démonstration de 30 minutes adaptée à votre agence. Pas de diapositives — vos flux de travail, sur Propflow, avec un expert qui répond à toutes vos questions.",
+    "offer": {
+      "hero": "Réservez une démo, obtenez 3 mois gratuits",
+      "title": "3 mois offerts",
+      "subtitle": "Réservez votre démo ci-dessous pour en profiter."
+    },
     "benefits": {
       "title": "Ce que vous obtiendrez",
       "items": [
@@ -277,9 +282,11 @@
     "faq": {
       "title": "Avant de réserver",
       "items": [
-        { "q": "Combien de temps dure la démonstration ?", "a": "Environ 30 minutes — assez pour voir les modules qui comptent pour vous, avec du temps pour les questions. Nous restons concentrés et ne dépassons jamais sans vous demander." },
-        { "q": "Dois-je préparer quelque chose ?", "a": "Aucune préparation requise. Si vous le souhaitez, apportez quelques exemples de biens ou de contacts et nous vous montrerons exactement comment ils vivraient dans Propflow." },
-        { "q": "La démonstration est-elle vraiment gratuite ?", "a": "Entièrement gratuite et sans engagement. C'est une conversation, pas un argumentaire de vente — vous décidez si et quand aller plus loin." }
+        { "q": "Comment obtenir les 3 mois gratuits ?", "a": "Il suffit de réserver et de participer à votre démo. Après votre visite personnalisée, nous appliquons 3 mois gratuits à votre compte lors de votre démarrage — aucun code promo à chercher." },
+        { "q": "Y a-t-il un piège avec les 3 mois gratuits ?", "a": "Aucun. C'est notre façon de vous laisser découvrir toute la plateforme sans risque. Vous profitez de toutes les fonctionnalités pendant trois mois, sans frais et sans obligation de continuer ensuite." },
+        { "q": "Combien de temps dure la démo, et qui doit y participer ?", "a": "Environ 30 minutes. Elle est plus utile avec la personne responsable de vos ventes ou de vos opérations — un dirigeant d'agence, un agent clé ou votre responsable des opérations. Invitez toute personne utile à la décision." },
+        { "q": "Est-ce un argumentaire de vente ?", "a": "Non. C'est une session de travail adaptée à vos flux réels. Nous vous montrons comment vos biens, contacts et pipeline fonctionnent dans Propflow, et répondons en direct à vos questions les plus difficiles." },
+        { "q": "Que se passe-t-il après les 3 mois gratuits ?", "a": "Vous continuez sur le forfait adapté à votre équipe — à un prix vite rentabilisé. Sans engagement de longue durée, et résiliable à tout moment. Nous ne débiterons jamais sans vous prévenir." }
       ]
     }
   }

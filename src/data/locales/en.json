@@ -251,6 +251,11 @@
     "title": "See Propflow",
     "titleAccent": "in action.",
     "subtitle": "Book a 30-minute walkthrough tailored to your agency. No slides — just your workflows, running on Propflow, with an expert answering every question.",
+    "offer": {
+      "hero": "Book a demo, get 3 months free",
+      "title": "Get 3 months free",
+      "subtitle": "Book your demo below to claim the offer."
+    },
     "benefits": {
       "title": "What you'll get",
       "items": [
@@ -277,9 +282,11 @@
     "faq": {
       "title": "Before you book",
       "items": [
-        { "q": "How long does the demo take?", "a": "Around 30 minutes — enough to see the modules that matter to you, with time for questions. We keep it focused and never run over without asking." },
-        { "q": "Do I need to prepare anything?", "a": "No preparation required. If you'd like, bring a few example properties or contacts and we'll show you exactly how they'd live in Propflow." },
-        { "q": "Is the demo really free?", "a": "Completely free, with zero obligation. It's a conversation, not a sales pitch — you decide if and when to move forward." }
+        { "q": "How do I get the 3 months free?", "a": "Just book and attend your demo. Once you've had your personalized walkthrough, we'll apply 3 months free to your account when you get started — no promo codes to hunt for." },
+        { "q": "Is there a catch with the free 3 months?", "a": "None. It's our way of letting you experience the full platform risk-free. You get every feature for three months at no cost, and there's no obligation to continue afterward." },
+        { "q": "How long does the demo take, and who should join?", "a": "About 30 minutes. It's most valuable with whoever owns your sales or operations — an agency lead, a top agent, or your ops manager. Bring anyone who'd help decide." },
+        { "q": "Is this a sales pitch?", "a": "No. It's a working session mapped to your actual workflows. We show you how your properties, contacts, and pipeline run inside Propflow, and answer your hardest questions live." },
+        { "q": "What happens after the 3 free months?", "a": "You continue on the plan that fits your team — starting at a price that pays for itself. No long-term contract, and you can cancel anytime. We'll never auto-charge without telling you first." }
       ]
     }
   }
