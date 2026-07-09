@@ -46,9 +46,9 @@ export default function Footer() {
         <div>
           <h4 className="font-semibold text-zinc-900 dark:text-white mb-4">{t('footer.legal')}</h4>
           <ul className="space-y-1 text-zinc-500">
-            <li><a href="/privacy" className="inline-block py-1 hover:text-blue-600 dark:hover:text-blue-400">{t('footer.privacy')}</a></li>
-            <li><a href="/terms" className="inline-block py-1 hover:text-blue-600 dark:hover:text-blue-400">{t('footer.terms')}</a></li>
-            <li><a href="/security" className="inline-block py-1 hover:text-blue-600 dark:hover:text-blue-400">{t('footer.security')}</a></li>
+            <li><SmartLink href="/privacy" className="inline-block py-1 hover:text-blue-600 dark:hover:text-blue-400">{t('footer.privacy')}</SmartLink></li>
+            <li><SmartLink href="/terms" className="inline-block py-1 hover:text-blue-600 dark:hover:text-blue-400">{t('footer.terms')}</SmartLink></li>
+            <li><SmartLink href="/security" className="inline-block py-1 hover:text-blue-600 dark:hover:text-blue-400">{t('footer.security')}</SmartLink></li>
           </ul>
         </div>
       </div>
