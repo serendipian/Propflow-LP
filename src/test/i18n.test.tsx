@@ -42,7 +42,7 @@ describe('demoPage i18n', () => {
     expect(i18n.t('demoPage.scheduler.placeholderTitle')).not.toBe('demoPage.scheduler.placeholderTitle');
     const items = i18n.t('demoPage.benefits.items', { returnObjects: true }) as unknown[];
     expect(Array.isArray(items)).toBe(true);
-    expect(items.length).toBe(4);
+    expect(items.length).toBe(5);
   });
 
   it('exposes demoPage keys in French', () => {

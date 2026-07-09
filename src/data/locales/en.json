@@ -262,7 +262,8 @@
         { "title": "A tour built around you", "text": "We map the demo to your agency's exact sales and rental workflows — not a generic script." },
         { "title": "Answers, live", "text": "Bring your hardest questions on migration, pricing, and integrations. We'll answer them on the call." },
         { "title": "Your data, your way", "text": "See how your pipeline, listings, and contacts look inside Propflow before you commit to anything." },
-        { "title": "Under 30 minutes", "text": "Focused, fast, and respectful of your time. No pressure, no obligation." }
+        { "title": "Under 30 minutes", "text": "Focused, fast, and respectful of your time. No pressure, no obligation." },
+        { "title": "Enjoy 3 months free", "text": "Book and attend your demo to unlock 3 months of Propflow on us — every feature, zero cost." }
       ]
     },
     "scheduler": {
@@ -272,11 +273,11 @@
       "fallback": "Prefer email? Contact us instead"
     },
     "steps": {
-      "title": "What happens next",
+      "title": "What Happens Next?",
       "items": [
         { "title": "Book your slot", "text": "Choose a time above. You'll get an instant calendar invite with a video link." },
         { "title": "30-minute walkthrough", "text": "Meet your product expert for a tailored tour of Propflow, live." },
-        { "title": "Get your plan", "text": "Leave with a clear, no-obligation rollout plan built for your agency." }
+        { "title": "Enjoy 3 months free", "text": "Love what you see? Get started and your first 3 months are on us — no obligation." }
       ]
     },
     "faq": {

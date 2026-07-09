@@ -12,7 +12,7 @@ import CalendlyEmbed from '../components/demo/CalendlyEmbed';
 // the styled placeholder shows.
 const SCHEDULER_URL = 'https://calendly.com/propflowsaas/30min';
 
-const benefitIcons = [Sparkles, MessageSquare, Database, Clock];
+const benefitIcons = [Sparkles, MessageSquare, Database, Clock, Gift];
 
 export default function DemoPage() {
   const { t } = useTranslation();
@@ -101,20 +101,22 @@ export default function DemoPage() {
               })}
             </motion.div>
 
-            {/* Primary: scheduler card */}
+            {/* Primary: scheduler. The live Calendly widget carries its own
+                card frame, so it renders bare (no wrapping panel) to avoid a
+                double border. The placeholder/fallback state keeps a panel. */}
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.35 }}
               className="lg:col-span-2"
             >
-              <GlassPanel className="rounded-2xl p-6 md:p-8 ring-1 ring-blue-500/10 shadow-[0_30px_60px_-20px_rgba(59,130,246,0.15)]">
-                {SCHEDULER_URL ? (
-                  <CalendlyEmbed
-                    url={SCHEDULER_URL}
-                    className="w-full h-[680px] -mt-4 overflow-hidden rounded-xl"
-                  />
-                ) : (
+              {SCHEDULER_URL ? (
+                <CalendlyEmbed
+                  url={SCHEDULER_URL}
+                  className="w-full h-[680px] overflow-hidden rounded-2xl shadow-[0_30px_60px_-20px_rgba(59,130,246,0.15)]"
+                />
+              ) : (
+                <GlassPanel className="rounded-2xl p-6 md:p-8 ring-1 ring-blue-500/10 shadow-[0_30px_60px_-20px_rgba(59,130,246,0.15)]">
                   <div className="w-full min-h-[560px] rounded-xl border-2 border-dashed border-zinc-300 dark:border-zinc-700 bg-zinc-50/50 dark:bg-zinc-900/40 flex flex-col items-center justify-center text-center px-6">
                     <div className="w-14 h-14 rounded-2xl bg-blue-600/10 dark:bg-blue-500/10 flex items-center justify-center text-blue-600 dark:text-blue-400 mb-4">
                       <Calendar size={26} />
@@ -122,18 +124,18 @@ export default function DemoPage() {
                     <p className="text-base font-semibold text-zinc-700 dark:text-zinc-200">{t('demoPage.scheduler.placeholderTitle')}</p>
                     <p className="text-sm text-zinc-500 dark:text-zinc-400 max-w-xs mt-2">{t('demoPage.scheduler.placeholderNote')}</p>
                   </div>
-                )}
+                </GlassPanel>
+              )}
 
-                <div className="mt-5 text-center">
-                  <SmartLink
-                    href="/contact"
-                    className="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-500 dark:text-zinc-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-                  >
-                    {t('demoPage.scheduler.fallback')}
-                    <ArrowRight size={14} />
-                  </SmartLink>
-                </div>
-              </GlassPanel>
+              <div className="mt-5 text-center">
+                <SmartLink
+                  href="/contact"
+                  className="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-500 dark:text-zinc-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                >
+                  {t('demoPage.scheduler.fallback')}
+                  <ArrowRight size={14} />
+                </SmartLink>
+              </div>
             </motion.div>
           </div>
         </div>

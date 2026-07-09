@@ -262,7 +262,8 @@
         { "title": "Une visite conçue pour vous", "text": "Nous adaptons la démonstration aux flux de vente et de location précis de votre agence — pas un script générique." },
         { "title": "Des réponses, en direct", "text": "Posez vos questions les plus difficiles sur la migration, les tarifs et les intégrations. Nous y répondrons pendant l'appel." },
         { "title": "Vos données, à votre façon", "text": "Voyez à quoi ressemblent votre pipeline, vos annonces et vos contacts dans Propflow avant de vous engager." },
-        { "title": "En moins de 30 minutes", "text": "Concis, rapide et respectueux de votre temps. Sans pression, sans engagement." }
+        { "title": "En moins de 30 minutes", "text": "Concis, rapide et respectueux de votre temps. Sans pression, sans engagement." },
+        { "title": "Profitez de 3 mois gratuits", "text": "Réservez et participez à votre démo pour débloquer 3 mois de Propflow offerts — toutes les fonctionnalités, sans frais." }
       ]
     },
     "scheduler": {
@@ -276,7 +277,7 @@
       "items": [
         { "title": "Réservez votre créneau", "text": "Choisissez un horaire ci-dessus. Vous recevrez une invitation immédiate avec un lien visio." },
         { "title": "Démonstration de 30 minutes", "text": "Rencontrez votre expert produit pour une visite personnalisée de Propflow, en direct." },
-        { "title": "Recevez votre plan", "text": "Repartez avec un plan de déploiement clair et sans engagement, conçu pour votre agence." }
+        { "title": "Profitez de 3 mois gratuits", "text": "Vous êtes convaincu ? Démarrez et vos 3 premiers mois sont offerts — sans engagement." }
       ]
     },
     "faq": {
