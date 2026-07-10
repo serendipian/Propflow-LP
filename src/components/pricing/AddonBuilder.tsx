@@ -39,8 +39,9 @@ export default function AddonBuilder({ billing, selectedPlan }: AddonBuilderProp
   };
 
   return (
-    // Same container pattern as PlanCards/ComparisonTable so all three share identical content edges
-    <div className="max-w-7xl mx-auto px-6">
+    // Container-less on purpose: each page wraps this in the same container as its
+    // sibling sections, so edges always align (landing nests it in an already-padded div)
+    <div className="w-full">
       <div className="text-center mb-12">
         <h2 className="text-3xl md:text-5xl font-bold text-zinc-900 dark:text-white mb-4 tracking-tight">
           Need more power?

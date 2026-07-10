@@ -149,8 +149,10 @@ export default function PricingSection() {
           ))}
         </div>
 
-        {/* Add-on Builder */}
-        <AddonBuilder billing={billing} selectedPlan={selectedPlan} />
+        {/* Add-on Builder — same wrapper geometry as the plan-cards grid above */}
+        <div className="max-w-7xl mx-auto px-0 md:px-4">
+          <AddonBuilder billing={billing} selectedPlan={selectedPlan} />
+        </div>
 
         {/* See full pricing link */}
         <div className="text-center mt-12">

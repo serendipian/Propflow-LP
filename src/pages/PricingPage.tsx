@@ -26,7 +26,9 @@ export default function PricingPage() {
       <ComparisonTable />
       <section className="py-24 bg-white dark:bg-zinc-950 relative">
         <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-zinc-200 dark:via-zinc-800 to-transparent" />
-        <AddonBuilder billing={billing} selectedPlan={selectedPlan} />
+        <div className="max-w-7xl mx-auto px-6">
+          <AddonBuilder billing={billing} selectedPlan={selectedPlan} />
+        </div>
       </section>
       <PricingFAQ />
       <EnterpriseCTA />
