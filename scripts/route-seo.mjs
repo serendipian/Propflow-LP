@@ -32,6 +32,12 @@ export const ROUTES = [
       'Explore every Propflow module — properties, requests, owners, offers, and more — connected in one AI-powered operating system for real estate.',
   },
   {
+    path: 'solutions',
+    title: 'Solutions | Propflow',
+    description:
+      'Propflow for agency owners, agents, and operations managers — the operating system built around how your real estate team actually works.',
+  },
+  {
     path: 'contact',
     title: 'Contact | Propflow',
     description:

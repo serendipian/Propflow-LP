@@ -13,6 +13,7 @@ const PricingPage = lazy(() => import('./pages/PricingPage'));
 const ContactPage = lazy(() => import('./pages/ContactPage'));
 const DemoPage = lazy(() => import('./pages/DemoPage'));
 const FeaturesPage = lazy(() => import('./pages/FeaturesPage'));
+const SolutionsPage = lazy(() => import('./pages/SolutionsPage'));
 const PrivacyPage = lazy(() => import('./pages/legal/PrivacyPage'));
 const TermsPage = lazy(() => import('./pages/legal/TermsPage'));
 const SecurityPage = lazy(() => import('./pages/legal/SecurityPage'));
@@ -47,6 +48,11 @@ const App = () => {
               <Route path="features" element={
                 <Suspense fallback={<div className="min-h-screen bg-white dark:bg-zinc-950" />}>
                   <FeaturesPage />
+                </Suspense>
+              } />
+              <Route path="solutions" element={
+                <Suspense fallback={<div className="min-h-screen bg-white dark:bg-zinc-950" />}>
+                  <SolutionsPage />
                 </Suspense>
               } />
               <Route path="privacy" element={
