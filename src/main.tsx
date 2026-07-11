@@ -16,6 +16,7 @@ const FeaturesPage = lazy(() => import('./pages/FeaturesPage'));
 const PrivacyPage = lazy(() => import('./pages/legal/PrivacyPage'));
 const TermsPage = lazy(() => import('./pages/legal/TermsPage'));
 const SecurityPage = lazy(() => import('./pages/legal/SecurityPage'));
+const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
 
 const App = () => {
   return (
@@ -61,6 +62,14 @@ const App = () => {
               <Route path="security" element={
                 <Suspense fallback={<div className="min-h-screen bg-white dark:bg-zinc-950" />}>
                   <SecurityPage />
+                </Suspense>
+              } />
+              {/* Catch-all: direct hits on unknown URLs are served dist/404.html
+                  (real 404 status) by Vercel; this route covers client-side
+                  navigation to broken in-app links. */}
+              <Route path="*" element={
+                <Suspense fallback={<div className="min-h-screen bg-white dark:bg-zinc-950" />}>
+                  <NotFoundPage />
                 </Suspense>
               } />
             </Route>

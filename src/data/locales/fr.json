@@ -290,5 +290,10 @@
         { "q": "Que se passe-t-il après les 3 mois gratuits ?", "a": "Vous continuez sur le forfait adapté à votre équipe — à un prix vite rentabilisé. Sans engagement de longue durée, et résiliable à tout moment. Nous ne débiterons jamais sans vous prévenir." }
       ]
     }
+  },
+  "notFound": {
+    "title": "Cette page n'existe pas",
+    "subtitle": "L'adresse est peut-être mal saisie, ou la page a été déplacée. Revenons sur la bonne voie.",
+    "cta": "Retour à l'accueil"
   }
 }

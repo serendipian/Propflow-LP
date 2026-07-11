@@ -4,8 +4,12 @@
 //
 // Why: this is a client-rendered SPA. Without per-route HTML, every path
 // serves the homepage's meta to crawlers that don't run JS (all social
-// scrapers, and more reliably for search engines). Vercel's filesystem takes
-// precedence over the SPA rewrite, so dist/<route>.html is served directly.
+// scrapers, and more reliably for search engines). With cleanUrls, Vercel
+// serves dist/<route>.html directly at /<route>. There is deliberately no SPA
+// rewrite: unknown paths fall through to dist/404.html (emitted below), which
+// Vercel serves with a real 404 status — otherwise every bad URL returns 200
+// (soft 404s). New routes MUST be added to route-seo.mjs or they 404 on
+// direct load.
 //
 // Run after `vite build`: node scripts/prerender.mjs
 
@@ -50,26 +54,18 @@ const softwareLd = {
     priceCurrency: 'USD',
     description: 'Free 30-day trial — no credit card required.',
   },
-  aggregateRating: {
-    '@type': 'AggregateRating',
-    ratingValue: '4.9',
-    ratingCount: '500',
-  },
+  // No aggregateRating until real, on-site customer reviews exist: Google's
+  // structured-data policy requires ratings to reflect genuine user reviews,
+  // and fabricated ones risk a manual action against the whole domain.
 };
 
 function ldScript(obj) {
   return `<script type="application/ld+json">${JSON.stringify(obj)}</script>`;
 }
 
-// hreflang alternates. Same URL serves en/fr (client-side i18n), so we point
-// both language tags at the canonical URL plus an x-default.
-function hreflangTags(url) {
-  return [
-    `<link rel="alternate" hreflang="en" href="${url}">`,
-    `<link rel="alternate" hreflang="fr" href="${url}">`,
-    `<link rel="alternate" hreflang="x-default" href="${url}">`,
-  ].join('\n  ');
-}
+// No hreflang tags: French only exists via client-side i18n on the same URL,
+// and hreflang requires a distinct URL per language. Reintroduce them when
+// real /fr/ routes exist, with bidirectional en<->fr pairs.
 
 function buildHead(route) {
   const url = route.path ? `${SITE_URL}/${route.path}` : `${SITE_URL}/`;
@@ -80,7 +76,6 @@ function buildHead(route) {
     `<title>${title}</title>`,
     `<meta name="description" content="${desc}">`,
     `<link rel="canonical" href="${url}">`,
-    hreflangTags(url),
     `<meta property="og:title" content="${title}">`,
     `<meta property="og:description" content="${desc}">`,
     `<meta property="og:url" content="${url}">`,
@@ -133,4 +128,29 @@ for (const route of ROUTES) {
   console.log(`  prerendered /${route.path} -> ${outPath.replace(distDir, 'dist')}`);
 }
 
-console.log(`Prerendered ${count} routes.`);
+// 404 page: same app shell (React mounts and renders the catch-all route),
+// but noindex and no canonical/OG — error pages must never be indexed or
+// claim a canonical URL.
+function render404() {
+  let html = template;
+  html = html
+    .replace(/<title>[\s\S]*?<\/title>/i, '')
+    .replace(/<meta\s+name="description"[^>]*>/gi, '')
+    .replace(/<link\s+rel="canonical"[^>]*>/gi, '')
+    .replace(/<link\s+rel="alternate"[^>]*>/gi, '')
+    .replace(/<meta\s+property="og:(title|description|url|image)"[^>]*>/gi, '')
+    .replace(/<meta\s+name="twitter:(title|description|image)"[^>]*>/gi, '');
+  const headBlock = [
+    '',
+    '  <!-- prerendered SEO: 404 -->',
+    '  <title>Page Not Found | Propflow</title>',
+    '  <meta name="robots" content="noindex">',
+    '',
+  ].join('\n');
+  return html.replace('</head>', `${headBlock}</head>`);
+}
+
+writeFileSync(join(distDir, '404.html'), render404(), 'utf8');
+console.log('  prerendered 404 -> dist/404.html');
+
+console.log(`Prerendered ${count} routes + 404.`);

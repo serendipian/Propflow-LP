@@ -290,5 +290,10 @@
         { "q": "What happens after the 3 free months?", "a": "You continue on the plan that fits your team — starting at a price that pays for itself. No long-term contract, and you can cancel anytime. We'll never auto-charge without telling you first." }
       ]
     }
+  },
+  "notFound": {
+    "title": "This page doesn't exist",
+    "subtitle": "The address may be mistyped, or the page may have moved. Let's get you back on track.",
+    "cta": "Back to homepage"
   }
 }
