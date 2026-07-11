@@ -14,13 +14,24 @@
 // Run after `vite build`: node scripts/prerender.mjs
 
 import { readFileSync, writeFileSync } from 'node:fs';
-import { fileURLToPath } from 'node:url';
+import { fileURLToPath, pathToFileURL } from 'node:url';
 import { dirname, join } from 'node:path';
 import { ROUTES, SITE_URL, OG_IMAGE } from './route-seo.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const distDir = join(__dirname, '..', 'dist');
 const template = readFileSync(join(distDir, 'index.html'), 'utf8');
+
+// SSR bundle built by `vite build --ssr src/entry-server.tsx` (see package.json).
+// Renders a route's full body HTML so crawlers that don't run JS — all social
+// scrapers and most AI-search crawlers — see the actual page content.
+const { render: renderBody } = await import(
+  pathToFileURL(join(__dirname, '..', 'dist-server', 'entry-server.js')).href
+);
+
+function injectBody(html, appHtml) {
+  return html.replace('<div id="root"></div>', `<div id="root">${appHtml}</div>`);
+}
 
 function esc(s) {
   return s
@@ -96,8 +107,8 @@ function buildHead(route) {
 // Replace the template's existing per-page tags with the route's. The template
 // already contains a <title>, description, canonical, and OG/Twitter tags from
 // index.html; we strip those and inject fresh ones so nothing is duplicated.
-function render(route) {
-  let html = template;
+async function render(route) {
+  let html = injectBody(template, await renderBody(route.path ? `/${route.path}` : '/'));
 
   // Remove tags we are going to re-emit (title, description, canonical,
   // og:*, twitter:*, existing hreflang) so there are no duplicates.
@@ -117,7 +128,7 @@ function render(route) {
 
 let count = 0;
 for (const route of ROUTES) {
-  const html = render(route);
+  const html = await render(route);
   // Home -> dist/index.html (overwrite with structured data + hreflang added).
   // Others -> dist/<path>.html (cleanUrls serves them at /<path>).
   const outPath = route.path
@@ -131,8 +142,8 @@ for (const route of ROUTES) {
 // 404 page: same app shell (React mounts and renders the catch-all route),
 // but noindex and no canonical/OG — error pages must never be indexed or
 // claim a canonical URL.
-function render404() {
-  let html = template;
+async function render404() {
+  let html = injectBody(template, await renderBody('/__not_found__'));
   html = html
     .replace(/<title>[\s\S]*?<\/title>/i, '')
     .replace(/<meta\s+name="description"[^>]*>/gi, '')
@@ -150,7 +161,7 @@ function render404() {
   return html.replace('</head>', `${headBlock}</head>`);
 }
 
-writeFileSync(join(distDir, '404.html'), render404(), 'utf8');
+writeFileSync(join(distDir, '404.html'), await render404(), 'utf8');
 console.log('  prerendered 404 -> dist/404.html');
 
 console.log(`Prerendered ${count} routes + 404.`);

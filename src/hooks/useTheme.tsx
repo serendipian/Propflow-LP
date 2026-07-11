@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect, createContext, useContext } from 'react';
 
-function getInitialTheme(): string {
+export function getInitialTheme(): string {
   if (typeof window === 'undefined') return 'dark';
   const saved = localStorage.getItem('theme');
   if (saved) return saved;
