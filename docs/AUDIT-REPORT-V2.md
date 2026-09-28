@@ -1,4 +1,4 @@
-# Propflow Landing Page — Audit Report v2
+# Propareto Landing Page — Audit Report v2
 
 **Date:** 2026-03-26
 **Scope:** Full codebase after completing all 31 items from Audit v1

@@ -1,4 +1,4 @@
-# Propflow Landing Page — Full Codebase Audit
+# Propareto Landing Page — Full Codebase Audit
 
 **Date:** 2026-03-26
 **Auditor:** Senior Frontend/Backend Architect
@@ -380,21 +380,21 @@ The page has only a `<title>` tag. Missing:
 
 ```html
 <!-- Add to <head>: -->
-<meta name="description" content="Propflow is the operating system for modern real estate agencies. Manage properties, automate workflows, and close deals faster.">
-<link rel="canonical" href="https://propflow.io/">
+<meta name="description" content="Propareto is the operating system for modern real estate agencies. Manage properties, automate workflows, and close deals faster.">
+<link rel="canonical" href="https://propareto.com/">
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="Propflow | The OS for Modern Real Estate">
+<meta property="og:title" content="Propareto | The OS for Modern Real Estate">
 <meta property="og:description" content="Manage properties, automate workflows, and close deals faster.">
-<meta property="og:image" content="https://propflow.io/og-image.png">
-<meta property="og:url" content="https://propflow.io/">
+<meta property="og:image" content="https://propareto.com/og-image.png">
+<meta property="og:url" content="https://propareto.com/">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Propflow | The OS for Modern Real Estate">
+<meta name="twitter:title" content="Propareto | The OS for Modern Real Estate">
 <meta name="twitter:description" content="The operating system for modern real estate agencies.">
-<meta name="twitter:image" content="https://propflow.io/og-image.png">
+<meta name="twitter:image" content="https://propareto.com/og-image.png">
 
 <!-- Favicon -->
 <link rel="icon" href="/favicon.ico">
@@ -833,7 +833,7 @@ Only EN, ES, FR, DE are listed. Arabic (AR) is not included despite being critic
 | 4 | **Add alt text** to all images (~30 instances) | All components with images | 1h |
 | 5 | **Fix dev server host** — change `0.0.0.0` to `localhost` | vite.config.ts | 1m |
 | 6 | **Delete stub files** | FracturedPipeline.tsx, EntropyEstate.tsx | 1m |
-| 7 | **Fix package.json** — rename to `propflow-lp`, bump version, add metadata | package.json | 5m |
+| 7 | **Fix package.json** — rename to `propareto-lp`, bump version, add metadata | package.json | 5m |
 
 ### FIX BEFORE LAUNCH
 

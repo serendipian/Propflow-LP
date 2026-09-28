@@ -37,8 +37,8 @@ const stats = [
 
 export default function FeaturesPage() {
   useDocumentTitle(
-    'Features | Propflow',
-    'Explore every Propflow module — properties, requests, owners, offers, and more — connected in one AI-powered operating system.',
+    'Features | Propareto',
+    'Explore every Propareto module — properties, requests, owners, offers, and more — connected in one AI-powered operating system.',
   );
   const reduce = useReducedMotion();
   const navigate = useNavigate();
@@ -81,7 +81,7 @@ export default function FeaturesPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
           >
-            Propflow replaces your fragmented toolset with ten connected modules and AI at the core — so people, properties, and processes finally work as one.
+            Propareto replaces your fragmented toolset with ten connected modules and AI at the core — so people, properties, and processes finally work as one.
           </motion.p>
 
           <motion.div

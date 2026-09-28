@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://propflowcrm.com/sitemap.xml
+Sitemap: https://propareto.com/sitemap.xml

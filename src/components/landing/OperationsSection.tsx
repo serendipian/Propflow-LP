@@ -75,7 +75,7 @@ export default function OperationsSection() {
                     </div>
                     <div className="flex items-center gap-2 text-[10px] font-medium text-zinc-400 bg-zinc-100 dark:bg-zinc-800 px-3 py-1 rounded-md">
                        <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse" />
-                       propflow.app/ops/{activeId}
+                       app.propareto.com/ops/{activeId}
                     </div>
                     <div className="w-12" /> {/* Spacer for balance */}
                  </div>

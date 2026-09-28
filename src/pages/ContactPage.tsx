@@ -9,7 +9,7 @@ import ContactInfo from '../components/contact/ContactInfo';
 export default function ContactPage() {
   const { t } = useTranslation();
 
-  useDocumentTitle('Contact — Propflow', t('contactPage.subtitle'));
+  useDocumentTitle('Contact — Propareto', t('contactPage.subtitle'));
 
   return (
     <>

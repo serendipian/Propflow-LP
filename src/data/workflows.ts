@@ -63,7 +63,7 @@ export const workflows: Record<WorkflowType, {
   priceupdate: {
     label: "Price Updates",
     title: "Sync changes instantly.",
-    desc: "Every time a property price is updated in Propflow, the automation updates price on MLS, republishes listing with new price on social media and informs partners.",
+    desc: "Every time a property price is updated in Propareto, the automation updates price on MLS, republishes listing with new price on social media and informs partners.",
     icon: RefreshCw
   },
   reviews: {

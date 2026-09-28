@@ -5,9 +5,9 @@ import { render } from './test-utils';
 import Navigation from '../components/layout/Navigation';
 
 describe('Navigation', () => {
-  it('renders the Propflow brand name', () => {
+  it('renders the Propareto logo', () => {
     render(<Navigation />);
-    expect(screen.getByText('Propflow')).toBeInTheDocument();
+    expect(screen.getByRole('img', { name: 'Propareto' })).toBeInTheDocument();
   });
 
   it('renders navigation links', () => {

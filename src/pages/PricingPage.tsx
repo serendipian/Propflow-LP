@@ -15,7 +15,7 @@ export default function PricingPage() {
   const [selectedPlan, setSelectedPlan] = useState<PlanId>('team');
 
   useDocumentTitle(
-    t('pricingPage.title') + ' — Propflow',
+    t('pricingPage.title') + ' — Propareto',
     t('pricingPage.subtitle')
   );
 

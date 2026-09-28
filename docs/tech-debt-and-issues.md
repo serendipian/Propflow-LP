@@ -1,4 +1,4 @@
-# Propflow Landing Page - Tech Debt & Known Issues
+# Propareto Landing Page - Tech Debt & Known Issues
 
 ## Critical Issues
 

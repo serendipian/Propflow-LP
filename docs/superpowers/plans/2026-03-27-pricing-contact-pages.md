@@ -2,7 +2,7 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Add `/pricing` and `/contact` pages to the Propflow marketing site with shared infrastructure (SmartLink, ScrollToTop, Accordion), pricing configurator, feature comparison table, contact form, and full EN/FR i18n.
+**Goal:** Add `/pricing` and `/contact` pages to the Propareto marketing site with shared infrastructure (SmartLink, ScrollToTop, Accordion), pricing configurator, feature comparison table, contact form, and full EN/FR i18n.
 
 **Architecture:** Pages are lazy-loaded via `React.lazy` inside the existing `MainLayout` (Navigation + Outlet + Footer). Pricing page reuses data from `src/data/pricing.ts` and extracts the add-on builder from the homepage `Pricing.tsx` into a shared component. Contact page uses a custom `useContactForm` hook for validation with frontend-only submission. A `SmartLink` component handles SPA navigation for both hash anchors and route links.
 
@@ -89,8 +89,8 @@ describe('ScrollToTop', () => {
 
 describe('useDocumentTitle', () => {
   it('sets document title', () => {
-    render(<TitleTestComponent title="Pricing — Propflow" />);
-    expect(document.title).toBe('Pricing — Propflow');
+    render(<TitleTestComponent title="Pricing — Propareto" />);
+    expect(document.title).toBe('Pricing — Propareto');
   });
 
   it('sets meta description', () => {
@@ -561,14 +561,14 @@ Add these keys under the existing `"pricing"` section and add new sections:
     },
     "info": {
       "title": "Contact Information",
-      "email": "hello@propflow.app",
+      "email": "hello@propareto.com",
       "phone": "+212 5XX-XXXXXX",
       "address": "Casablanca, Morocco",
       "hours": "Mon–Fri, 9:00 AM – 6:00 PM (GMT+1)",
       "hoursLabel": "Business Hours",
       "demo": {
         "title": "Book a Demo",
-        "description": "See Propflow in action with a personalized walkthrough for your agency.",
+        "description": "See Propareto in action with a personalized walkthrough for your agency.",
         "cta": "Schedule Demo"
       }
     }
@@ -662,14 +662,14 @@ Merge these into `en.json` alongside the existing keys (do NOT replace existing 
     },
     "info": {
       "title": "Informations de Contact",
-      "email": "hello@propflow.app",
+      "email": "hello@propareto.com",
       "phone": "+212 5XX-XXXXXX",
       "address": "Casablanca, Maroc",
       "hours": "Lun–Ven, 9h00 – 18h00 (GMT+1)",
       "hoursLabel": "Horaires d'Ouverture",
       "demo": {
         "title": "Réserver une Démo",
-        "description": "Découvrez Propflow en action avec une présentation personnalisée pour votre agence.",
+        "description": "Découvrez Propareto en action avec une présentation personnalisée pour votre agence.",
         "cta": "Planifier une Démo"
       }
     }
@@ -2024,7 +2024,7 @@ export default function PricingPage() {
   const [selectedPlan, setSelectedPlan] = useState<PlanId>('team');
 
   useDocumentTitle(
-    t('pricingPage.title') + ' — Propflow',
+    t('pricingPage.title') + ' — Propareto',
     t('pricingPage.subtitle')
   );
 
@@ -2622,7 +2622,7 @@ import ContactInfo from '../components/contact/ContactInfo';
 export default function ContactPage() {
   const { t } = useTranslation();
 
-  useDocumentTitle('Contact — Propflow', t('contactPage.subtitle'));
+  useDocumentTitle('Contact — Propareto', t('contactPage.subtitle'));
 
   return (
     <>
@@ -2708,7 +2708,7 @@ describe('ContactPage', () => {
 
   it('renders contact info sidebar', () => {
     render(<ContactPage />);
-    expect(screen.getByText('hello@propflow.app')).toBeInTheDocument();
+    expect(screen.getByText('hello@propareto.com')).toBeInTheDocument();
     expect(screen.getByText('Casablanca, Morocco')).toBeInTheDocument();
   });
 

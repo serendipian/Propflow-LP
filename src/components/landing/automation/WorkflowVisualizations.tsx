@@ -166,7 +166,7 @@ const WorkflowVisualizations = ({ activeTab }: WorkflowVisualizationsProps) => (
               <motion.circle r="4" fill="#ec4899" animate={{ offsetDistance: "100%" }} transition={{ duration: 1.5, repeat: Infinity, delay: 1.5, repeatDelay: 1 }} style={{ offsetPath: 'path("M 380 280 C 440 280, 440 280, 500 280")' }} />
               <motion.circle r="4" fill="#06b6d4" animate={{ offsetDistance: "100%" }} transition={{ duration: 1.5, repeat: Infinity, delay: 1.5, repeatDelay: 1 }} style={{ offsetPath: 'path("M 380 280 C 440 280, 440 420, 500 420")' }} />
           </svg>
-          <WorkflowNode x="40px" y="255px" icon={DollarSign} label="Price Update" subLabel="Changed in Propflow" color="green" delay={0.2} />
+          <WorkflowNode x="40px" y="255px" icon={DollarSign} label="Price Update" subLabel="Changed in Propareto" color="green" delay={0.2} />
           <WorkflowNode x="260px" y="255px" icon={Zap} label="Auto-Sync" subLabel="Triggered" color="blue" delay={0.4} />
 
           <WorkflowNode x="500px" y="115px" icon={Globe} label="Update MLS" subLabel="Portal Sync" color="indigo" delay={0.6} />

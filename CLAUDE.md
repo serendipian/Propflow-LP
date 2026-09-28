@@ -1,10 +1,12 @@
-# Propflow Landing Page
+# Propareto Landing Page
 
 ## Project Overview
 
-Propflow is a SaaS platform for real estate agencies - "The OS for Modern Real Estate." This repo contains the **public-facing marketing website**, starting with a landing page and expanding to include blog, features, pricing, help pages, and authentication flows.
+Propareto is a SaaS platform for real estate agencies - "The OS for Modern Real Estate." This repo contains the **public-facing marketing website**, starting with a landing page and expanding to include blog, features, pricing, help pages, and authentication flows.
 
 **Live dev server:** `npm run dev` -> http://localhost:3000
+
+**Brand:** renamed from Propflow to Propareto (Sept 2026); site is https://propareto.com. The logo is vector in `src/components/ui/Logo.tsx` (`Logo` lockup, `LogoMark` badge): a #155DFC rounded-square badge with a white p and raised 20% slice; the wordmark follows `currentColor`. Master SVGs live in `public/brand/`. The repo and folder keep the old `Propflow-LP` name.
 
 ## Tech Stack
 

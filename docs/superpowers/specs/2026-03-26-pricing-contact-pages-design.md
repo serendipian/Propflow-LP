@@ -2,13 +2,13 @@
 
 **Date:** 2026-03-26
 **Status:** Draft
-**Scope:** Add `/pricing` and `/contact` pages to Propflow marketing site
+**Scope:** Add `/pricing` and `/contact` pages to Propareto marketing site
 
 ---
 
 ## 1. Overview
 
-Add two new pages to the Propflow marketing website:
+Add two new pages to the Propareto marketing website:
 - **Pricing Page** (`/pricing`) — Full pricing experience with plan configurator, feature comparison, FAQ, and enterprise CTA
 - **Contact Page** (`/contact`) — Sales/demo request form with company info sidebar
 
@@ -143,7 +143,7 @@ Subject options: General Inquiry, Book a Demo, Sales Question, Partnership
 
 **Right Column — ContactInfo:**
 - Office address card (placeholder content)
-- Email contact: hello@propflow.app (placeholder)
+- Email contact: hello@propareto.com (placeholder)
 - Phone number (placeholder)
 - Business hours
 - "Book a Demo" CTA card with description + button
@@ -211,9 +211,9 @@ src/
 
 Add a `useDocumentTitle` hook (simple `useEffect` setting `document.title`):
 
-- `/pricing` → "Pricing — Propflow" / "Tarifs — Propflow"
-- `/contact` → "Contact — Propflow"
-- `/` → "Propflow — The OS for Modern Real Estate" (existing, add if missing)
+- `/pricing` → "Pricing — Propareto" / "Tarifs — Propareto"
+- `/contact` → "Contact — Propareto"
+- `/` → "Propareto — The OS for Modern Real Estate" (existing, add if missing)
 
 Meta descriptions set via direct DOM manipulation in the same hook (avoids adding react-helmet dependency).
 

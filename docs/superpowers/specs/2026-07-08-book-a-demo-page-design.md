@@ -35,12 +35,12 @@ Follows the established page pattern (`ContactPage.tsx` is the reference):
   `components/ui/UI.tsx`, `SmartLink`, and `Accordion` from `components/shared/`.
 - **Animations:** Framer Motion `initial/whileInView` (or `animate` for the hero), matching
   `ContactPage`.
-- **SEO:** `useDocumentTitle('Book a Demo — Propflow', <subtitle>)`.
+- **SEO:** `useDocumentTitle('Book a Demo — Propareto', <subtitle>)`.
 
 ## Design Bar: Best-in-class / SOTA
 
 Not just "matches the design system" — it extends the landing page's **signature visual
-moves** at Linear/Attio/Vercel tier, staying 100% within Propflow's blue/zinc glassmorphic
+moves** at Linear/Attio/Vercel tier, staying 100% within Propareto's blue/zinc glassmorphic
 vocabulary. The signature moves to reuse (all already in `Hero.tsx` / `CTASection.tsx`):
 
 - **Atmospheric hero backdrop:** the grid-lines layer

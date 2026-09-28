@@ -9,7 +9,7 @@ export default function NotFoundPage() {
   const { t } = useTranslation();
   const navigate = useNavigate();
 
-  useDocumentTitle('Page Not Found — Propflow');
+  useDocumentTitle('Page Not Found — Propareto');
 
   return (
     <section className="pt-40 pb-32 bg-white dark:bg-zinc-950 min-h-[70vh] flex items-center">

@@ -137,7 +137,7 @@ export default function WebsiteBuilderSection() {
                       {/* Floating CMS Connection Badge - Top Right of Listings Section */}
                       <div className="absolute top-6 right-6 bg-white/90 dark:bg-zinc-900/90 backdrop-blur-md px-3 py-1.5 rounded-full border border-zinc-200 dark:border-zinc-700 shadow-lg flex items-center gap-2 z-30">
                          <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                         <span className="text-[10px] font-bold text-zinc-800 dark:text-zinc-200">Connected to Propflow DB</span>
+                         <span className="text-[10px] font-bold text-zinc-800 dark:text-zinc-200">Connected to Propareto DB</span>
                       </div>
                    </div>
 
@@ -225,7 +225,7 @@ export default function WebsiteBuilderSection() {
               <div className="lg:col-span-1 bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800 p-8 rounded-2xl flex flex-col items-start hover:border-blue-300 dark:hover:border-blue-500/30 transition-colors group">
                 <h3 className="text-xl font-bold text-zinc-900 dark:text-white mb-2">Connect MLS Accounts</h3>
                 <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed mb-6 flex-1">
-                    Automatically sync your Propflow listings to major MLS platforms.
+                    Automatically sync your Propareto listings to major MLS platforms.
                 </p>
                 
                 <div className="flex flex-col items-start gap-3 mb-8 w-full">

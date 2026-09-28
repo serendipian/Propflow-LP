@@ -20,7 +20,7 @@ describe('ContactPage', () => {
 
   it('renders contact info sidebar', () => {
     render(<ContactPage />);
-    expect(screen.getByText('hello@propflow.app')).toBeInTheDocument();
+    expect(screen.getByText('hello@propareto.com')).toBeInTheDocument();
     expect(screen.getByText('Casablanca, Morocco')).toBeInTheDocument();
   });
 

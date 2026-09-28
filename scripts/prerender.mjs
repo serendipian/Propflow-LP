@@ -45,9 +45,9 @@ function esc(s) {
 const organizationLd = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
-  name: 'Propflow',
+  name: 'Propareto',
   url: SITE_URL,
-  logo: `${SITE_URL}/favicon.png`,
+  logo: `${SITE_URL}/icon-512.png`,
   description:
     'The operating system for modern real estate agencies. Manage properties, automate workflows, and close deals faster with AI-powered tools.',
 };
@@ -55,7 +55,7 @@ const organizationLd = {
 const softwareLd = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
-  name: 'Propflow',
+  name: 'Propareto',
   applicationCategory: 'BusinessApplication',
   operatingSystem: 'Web',
   url: SITE_URL,
@@ -154,7 +154,7 @@ async function render404() {
   const headBlock = [
     '',
     '  <!-- prerendered SEO: 404 -->',
-    '  <title>Page Not Found | Propflow</title>',
+    '  <title>Page Not Found | Propareto</title>',
     '  <meta name="robots" content="noindex">',
     '',
   ].join('\n');

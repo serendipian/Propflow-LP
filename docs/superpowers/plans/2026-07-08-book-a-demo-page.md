@@ -16,7 +16,7 @@
 - `UI.tsx` `Button` renders a `<button>` (accepts only `onClick`, not `href`) — navigation must use `useNavigate()` from `react-router-dom`.
 - Tailwind utilities only; dark mode via `dark:` on all new UI; mobile-first responsive.
 - Tests use `render` from `src/test/test-utils.tsx` (wraps `BrowserRouter` + `ThemeProvider` + i18n).
-- Run commands from repo root `/Users/sims/Propflow/Propflow-LP`.
+- Run commands from repo root `/Users/sims/Propareto/Propflow-LP`.
 - Commit message trailer on every commit:
   `Co-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>`
 
@@ -77,15 +77,15 @@ Insert as a new top-level key (after the closing `}` of `contactPage`, before th
 ```json
   "demoPage": {
     "badge": "Live personalized walkthrough",
-    "title": "See Propflow",
+    "title": "See Propareto",
     "titleAccent": "in action.",
-    "subtitle": "Book a 30-minute walkthrough tailored to your agency. No slides — just your workflows, running on Propflow, with an expert answering every question.",
+    "subtitle": "Book a 30-minute walkthrough tailored to your agency. No slides — just your workflows, running on Propareto, with an expert answering every question.",
     "benefits": {
       "title": "What you'll get",
       "items": [
         { "title": "A tour built around you", "text": "We map the demo to your agency's exact sales and rental workflows — not a generic script." },
         { "title": "Answers, live", "text": "Bring your hardest questions on migration, pricing, and integrations. We'll answer them on the call." },
-        { "title": "Your data, your way", "text": "See how your pipeline, listings, and contacts look inside Propflow before you commit to anything." },
+        { "title": "Your data, your way", "text": "See how your pipeline, listings, and contacts look inside Propareto before you commit to anything." },
         { "title": "Under 30 minutes", "text": "Focused, fast, and respectful of your time. No pressure, no obligation." }
       ]
     },
@@ -99,7 +99,7 @@ Insert as a new top-level key (after the closing `}` of `contactPage`, before th
       "title": "What happens next",
       "items": [
         { "title": "Book your slot", "text": "Choose a time above. You'll get an instant calendar invite with a video link." },
-        { "title": "30-minute walkthrough", "text": "Meet your product expert for a tailored tour of Propflow, live." },
+        { "title": "30-minute walkthrough", "text": "Meet your product expert for a tailored tour of Propareto, live." },
         { "title": "Get your plan", "text": "Leave with a clear, no-obligation rollout plan built for your agency." }
       ]
     },
@@ -107,7 +107,7 @@ Insert as a new top-level key (after the closing `}` of `contactPage`, before th
       "title": "Before you book",
       "items": [
         { "q": "How long does the demo take?", "a": "Around 30 minutes — enough to see the modules that matter to you, with time for questions. We keep it focused and never run over without asking." },
-        { "q": "Do I need to prepare anything?", "a": "No preparation required. If you'd like, bring a few example properties or contacts and we'll show you exactly how they'd live in Propflow." },
+        { "q": "Do I need to prepare anything?", "a": "No preparation required. If you'd like, bring a few example properties or contacts and we'll show you exactly how they'd live in Propareto." },
         { "q": "Is the demo really free?", "a": "Completely free, with zero obligation. It's a conversation, not a sales pitch — you decide if and when to move forward." }
       ]
     }
@@ -119,15 +119,15 @@ Insert as a new top-level key (after the closing `}` of `contactPage`, before th
 ```json
   "demoPage": {
     "badge": "Démonstration personnalisée en direct",
-    "title": "Découvrez Propflow",
+    "title": "Découvrez Propareto",
     "titleAccent": "en action.",
-    "subtitle": "Réservez une démonstration de 30 minutes adaptée à votre agence. Pas de diapositives — vos flux de travail, sur Propflow, avec un expert qui répond à toutes vos questions.",
+    "subtitle": "Réservez une démonstration de 30 minutes adaptée à votre agence. Pas de diapositives — vos flux de travail, sur Propareto, avec un expert qui répond à toutes vos questions.",
     "benefits": {
       "title": "Ce que vous obtiendrez",
       "items": [
         { "title": "Une visite conçue pour vous", "text": "Nous adaptons la démonstration aux flux de vente et de location précis de votre agence — pas un script générique." },
         { "title": "Des réponses, en direct", "text": "Posez vos questions les plus difficiles sur la migration, les tarifs et les intégrations. Nous y répondrons pendant l'appel." },
-        { "title": "Vos données, à votre façon", "text": "Voyez à quoi ressemblent votre pipeline, vos annonces et vos contacts dans Propflow avant de vous engager." },
+        { "title": "Vos données, à votre façon", "text": "Voyez à quoi ressemblent votre pipeline, vos annonces et vos contacts dans Propareto avant de vous engager." },
         { "title": "En moins de 30 minutes", "text": "Concis, rapide et respectueux de votre temps. Sans pression, sans engagement." }
       ]
     },
@@ -141,7 +141,7 @@ Insert as a new top-level key (after the closing `}` of `contactPage`, before th
       "title": "Et ensuite ?",
       "items": [
         { "title": "Réservez votre créneau", "text": "Choisissez un horaire ci-dessus. Vous recevrez une invitation immédiate avec un lien visio." },
-        { "title": "Démonstration de 30 minutes", "text": "Rencontrez votre expert produit pour une visite personnalisée de Propflow, en direct." },
+        { "title": "Démonstration de 30 minutes", "text": "Rencontrez votre expert produit pour une visite personnalisée de Propareto, en direct." },
         { "title": "Recevez votre plan", "text": "Repartez avec un plan de déploiement clair et sans engagement, conçu pour votre agence." }
       ]
     },
@@ -149,7 +149,7 @@ Insert as a new top-level key (after the closing `}` of `contactPage`, before th
       "title": "Avant de réserver",
       "items": [
         { "q": "Combien de temps dure la démonstration ?", "a": "Environ 30 minutes — assez pour voir les modules qui comptent pour vous, avec du temps pour les questions. Nous restons concentrés et ne dépassons jamais sans vous demander." },
-        { "q": "Dois-je préparer quelque chose ?", "a": "Aucune préparation requise. Si vous le souhaitez, apportez quelques exemples de biens ou de contacts et nous vous montrerons exactement comment ils vivraient dans Propflow." },
+        { "q": "Dois-je préparer quelque chose ?", "a": "Aucune préparation requise. Si vous le souhaitez, apportez quelques exemples de biens ou de contacts et nous vous montrerons exactement comment ils vivraient dans Propareto." },
         { "q": "La démonstration est-elle vraiment gratuite ?", "a": "Entièrement gratuite et sans engagement. C'est une conversation, pas un argumentaire de vente — vous décidez si et quand aller plus loin." }
       ]
     }
@@ -238,14 +238,14 @@ import Accordion from '../components/shared/Accordion';
 import SmartLink from '../components/shared/SmartLink';
 
 // Paste your Cal.com / Calendly embed URL here to go live, e.g.
-// 'https://cal.com/propflow/demo'. While empty, the styled placeholder shows.
+// 'https://cal.com/propareto/demo'. While empty, the styled placeholder shows.
 const SCHEDULER_URL = '';
 
 const benefitIcons = [Sparkles, MessageSquare, Database, Clock];
 
 export default function DemoPage() {
   const { t } = useTranslation();
-  useDocumentTitle('Book a Demo — Propflow', t('demoPage.subtitle'));
+  useDocumentTitle('Book a Demo — Propareto', t('demoPage.subtitle'));
 
   const benefits = t('demoPage.benefits.items', { returnObjects: true }) as { title: string; text: string }[];
   const steps = t('demoPage.steps.items', { returnObjects: true }) as { title: string; text: string }[];

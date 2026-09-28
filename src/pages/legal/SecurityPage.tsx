@@ -4,10 +4,10 @@ import LegalPageLayout from './LegalPageLayout';
 export default function SecurityPage() {
   return (
     <LegalPageLayout
-      documentTitle="Security — Propflow"
+      documentTitle="Security — Propareto"
       title="Security"
       updated="Last updated: July 9, 2026"
-      intro="Security is foundational to how we build Propflow. We follow industry best practices to protect your data and the integrity of our platform."
+      intro="Security is foundational to how we build Propareto. We follow industry best practices to protect your data and the integrity of our platform."
       sections={[
         {
           heading: 'Data encryption',
@@ -18,7 +18,7 @@ export default function SecurityPage() {
         {
           heading: 'Infrastructure',
           body: [
-            'Propflow runs on reputable cloud infrastructure providers with robust physical and network security. Our systems are designed with redundancy and regular backups to protect against data loss.',
+            'Propareto runs on reputable cloud infrastructure providers with robust physical and network security. Our systems are designed with redundancy and regular backups to protect against data loss.',
           ],
         },
         {
@@ -42,7 +42,7 @@ export default function SecurityPage() {
         {
           heading: 'Report a vulnerability',
           body: [
-            'If you believe you have found a security vulnerability, we want to hear from you. Please contact us at security@propflow.app so we can investigate and address it responsibly.',
+            'If you believe you have found a security vulnerability, we want to hear from you. Please contact us at security@propareto.com so we can investigate and address it responsibly.',
           ],
         },
       ]}

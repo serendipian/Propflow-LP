@@ -7,7 +7,7 @@ export const navLinks = [
 ] as const;
 
 export const siteConfig = {
-  name: 'Propflow',
+  name: 'Propareto',
   tagline: 'The OS for Modern Real Estate',
   trialCta: 'Start Free Trial',
   demoCta: 'Book Demo',

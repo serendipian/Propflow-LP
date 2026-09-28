@@ -75,7 +75,7 @@ export default function ResourcesSection() {
             <ResourceCard 
                 icon={BookOpen}
                 title="Blog & Guides"
-                desc="Latest industry insights, tips for growth, and Propflow updates."
+                desc="Latest industry insights, tips for growth, and Propareto updates."
                 linkText="Read Articles"
                 color="blue"
                 delay={0}
@@ -99,7 +99,7 @@ export default function ResourcesSection() {
             <ResourceCard 
                 icon={Code2}
                 title="Developer API"
-                desc="Documentation for custom integrations and building on Propflow."
+                desc="Documentation for custom integrations and building on Propareto."
                 linkText="View Docs"
                 color="emerald"
                 delay={0.3}

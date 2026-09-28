@@ -2,7 +2,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import SmartLink from '../shared/SmartLink';
-import logo from '../../assets/logo.png';
+import { Logo } from '../ui/Logo';
 
 export default function Footer() {
   const { t } = useTranslation();
@@ -11,8 +11,7 @@ export default function Footer() {
       <div className="max-w-screen-2xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-10 mb-16">
         <div className="col-span-2 md:col-span-1">
           <div className="flex items-center gap-2 mb-4">
-            <img src={logo} alt="Propflow" className="w-6 h-6 object-contain" />
-            <span className="text-lg font-bold text-zinc-900 dark:text-white">Propflow</span>
+            <Logo className="h-6 w-auto text-zinc-900 dark:text-white" />
           </div>
           <p className="text-zinc-500 mb-6">{t('footer.tagline')}</p>
           <div className="flex gap-4">

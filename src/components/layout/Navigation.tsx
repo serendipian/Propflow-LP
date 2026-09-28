@@ -8,7 +8,7 @@ import ThemeToggle from '../ui/ThemeToggle';
 import LanguagePicker from '../landing/LanguagePicker';
 import SmartLink from '../shared/SmartLink';
 import { navLinks } from '../../data/navigation';
-import logo from '../../assets/logo.png';
+import { Logo } from '../ui/Logo';
 
 export default function Navigation() {
   const { t } = useTranslation();
@@ -50,8 +50,7 @@ export default function Navigation() {
       >
         <div className="max-w-screen-2xl mx-auto px-6 flex items-center justify-between relative">
           <div className="flex items-center gap-2 group cursor-pointer relative z-10">
-            <img src={logo} alt="Propflow" className="w-8 h-8 object-contain" />
-            <span className="text-xl font-bold tracking-tight text-zinc-900 dark:text-white">Propflow</span>
+            <Logo className="h-8 w-auto text-zinc-900 dark:text-white" />
           </div>
 
           <div className="hidden lg:flex items-center gap-5 xl:gap-8 xl:absolute xl:left-1/2 xl:top-1/2 xl:-translate-x-1/2 xl:-translate-y-1/2">

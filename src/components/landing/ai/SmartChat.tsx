@@ -42,7 +42,7 @@ const SmartChat = () => {
         <div className="h-10 border-b border-zinc-200 dark:border-zinc-800 flex items-center px-4 bg-white dark:bg-zinc-900 justify-between">
            <div className="flex items-center gap-2">
               <Bot size={14} className="text-blue-500" />
-              <span className="text-xs font-semibold text-zinc-700 dark:text-zinc-300">Propflow AI Agent</span>
+              <span className="text-xs font-semibold text-zinc-700 dark:text-zinc-300">Propareto AI Agent</span>
            </div>
            <div className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse" />
         </div>

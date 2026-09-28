@@ -16,7 +16,7 @@ const benefitIcons = [Sparkles, MessageSquare, Database, Clock, Gift];
 
 export default function DemoPage() {
   const { t } = useTranslation();
-  useDocumentTitle('Book a Demo — Propflow', t('demoPage.subtitle'));
+  useDocumentTitle('Book a Demo — Propareto', t('demoPage.subtitle'));
 
   const benefits = t('demoPage.benefits.items', { returnObjects: true }) as { title: string; text: string }[];
   const steps = t('demoPage.steps.items', { returnObjects: true }) as { title: string; text: string }[];

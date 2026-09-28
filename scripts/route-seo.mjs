@@ -1,7 +1,7 @@
 // Per-route SEO metadata, consumed by the prerender script (scripts/prerender.mjs).
 // Keep in sync with the routes defined in src/main.tsx.
 
-export const SITE_URL = 'https://propflowcrm.com';
+export const SITE_URL = 'https://propareto.com';
 export const OG_IMAGE = `${SITE_URL}/og-image.png`;
 
 // `path` is the URL path (no leading slash for the output filename mapping,
@@ -9,56 +9,56 @@ export const OG_IMAGE = `${SITE_URL}/og-image.png`;
 export const ROUTES = [
   {
     path: '',
-    title: 'Propflow | The OS for Modern Real Estate',
+    title: 'Propareto | The OS for Modern Real Estate',
     description:
-      'Propflow is the operating system for modern real estate agencies. Manage properties, automate workflows, and close deals faster with AI-powered tools.',
+      'Propareto is the operating system for modern real estate agencies. Manage properties, automate workflows, and close deals faster with AI-powered tools.',
   },
   {
     path: 'pricing',
-    title: 'Pricing | Propflow',
+    title: 'Pricing | Propareto',
     description:
       'Simple, transparent pricing for real estate agencies of every size. Start with a free 30-day trial — no credit card required.',
   },
   {
     path: 'book-a-demo',
-    title: 'Book a Demo | Propflow',
+    title: 'Book a Demo | Propareto',
     description:
-      'See Propflow in action with a personalized 30-minute walkthrough tailored to your agency. Book your demo and get 3 months free.',
+      'See Propareto in action with a personalized 30-minute walkthrough tailored to your agency. Book your demo and get 3 months free.',
   },
   {
     path: 'features',
-    title: 'Features | Propflow',
+    title: 'Features | Propareto',
     description:
-      'Explore every Propflow module — properties, requests, owners, offers, and more — connected in one AI-powered operating system for real estate.',
+      'Explore every Propareto module — properties, requests, owners, offers, and more — connected in one AI-powered operating system for real estate.',
   },
   {
     path: 'solutions',
-    title: 'Solutions | Propflow',
+    title: 'Solutions | Propareto',
     description:
-      'Propflow for agency owners, agents, and operations managers — the operating system built around how your real estate team actually works.',
+      'Propareto for agency owners, agents, and operations managers — the operating system built around how your real estate team actually works.',
   },
   {
     path: 'contact',
-    title: 'Contact | Propflow',
+    title: 'Contact | Propareto',
     description:
-      'Get in touch with the Propflow team. We typically respond within 24 hours.',
+      'Get in touch with the Propareto team. We typically respond within 24 hours.',
   },
   {
     path: 'privacy',
-    title: 'Privacy Policy | Propflow',
+    title: 'Privacy Policy | Propareto',
     description:
-      'How Propflow collects, uses, and protects your information across our website and services.',
+      'How Propareto collects, uses, and protects your information across our website and services.',
   },
   {
     path: 'terms',
-    title: 'Terms of Service | Propflow',
+    title: 'Terms of Service | Propareto',
     description:
-      'The terms that govern your access to and use of Propflow’s website and services.',
+      'The terms that govern your access to and use of Propareto’s website and services.',
   },
   {
     path: 'security',
-    title: 'Security | Propflow',
+    title: 'Security | Propareto',
     description:
-      'How Propflow protects your data — encryption, infrastructure, access controls, and responsible disclosure.',
+      'How Propareto protects your data — encryption, infrastructure, access controls, and responsible disclosure.',
   },
 ];
