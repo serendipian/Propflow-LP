@@ -16,3 +16,16 @@ export const siteConfig = {
     subtext: 'No Credit Card Required!',
   },
 } as const;
+
+// The web app lives on its own subdomain. Its root sends signed-out visitors to
+// /auth/sign-in and signed-in users straight into the app.
+export const appUrl = 'https://app.propareto.com';
+export const signUpUrl = `${appUrl}/auth/sign-up`;
+
+// TODO: confirm these handles once the accounts are set up.
+export const socialLinks = [
+  { network: 'LinkedIn', href: 'https://www.linkedin.com/company/propareto' },
+  { network: 'X', href: 'https://x.com/propareto' },
+  { network: 'Instagram', href: 'https://www.instagram.com/propareto' },
+  { network: 'Facebook', href: 'https://www.facebook.com/propareto' },
+] as const;

@@ -143,7 +143,8 @@
     "bookDemo": "Book Demo"
   },
   "footer": {
-    "tagline": "The operating system for modern real estate agencies.",
+    "description": "Built on the Pareto principle: in real estate, 20% of your leads and actions drive 80% of your deals. Propareto brings that 20% to the surface and automates the rest, so your agents spend their time where it converts.",
+    "social": "Propareto on {{network}}",
     "product": "Product",
     "pipeline": "Pipeline",
     "listings": "Listings",

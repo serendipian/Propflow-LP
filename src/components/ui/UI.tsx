@@ -1,5 +1,6 @@
 
 import React, { forwardRef } from 'react';
+import SmartLink from '../shared/SmartLink';
 
 export interface SectionBadgeProps {
   children?: React.ReactNode;
@@ -29,9 +30,11 @@ export interface ButtonProps {
   children?: React.ReactNode;
   className?: string;
   onClick?: () => void;
+  /** Renders a link instead of a <button>. */
+  href?: string;
 }
 
-export const Button = ({ variant = "primary", children, className = "", onClick }: ButtonProps) => {
+export const Button = ({ variant = "primary", children, className = "", onClick, href }: ButtonProps) => {
   const baseStyle = "h-11 px-6 rounded-lg font-semibold text-sm transition-all flex items-center justify-center gap-2 relative overflow-hidden group";
   const variants = {
     primary: "bg-blue-600 hover:bg-blue-500 text-white shadow-lg shadow-blue-600/20 dark:shadow-[0_0_20px_-5px_rgba(59,130,246,0.3)] hover:dark:shadow-[0_0_30px_-5px_rgba(59,130,246,0.6)]",
@@ -40,12 +43,26 @@ export const Button = ({ variant = "primary", children, className = "", onClick 
     ghost: "bg-transparent text-zinc-500 dark:text-zinc-400 hover:text-blue-600 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800"
   };
 
-  return (
-    <button onClick={onClick} className={`${baseStyle} ${variants[variant]} ${className}`}>
+  const content = (
+    <>
       <span className="relative z-10 flex items-center gap-2">{children}</span>
       {variant === 'primary' && (
         <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-500 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
       )}
+    </>
+  );
+
+  if (href) {
+    return (
+      <SmartLink href={href} onClick={onClick} className={`${baseStyle} ${variants[variant]} ${className}`}>
+        {content}
+      </SmartLink>
+    );
+  }
+
+  return (
+    <button onClick={onClick} className={`${baseStyle} ${variants[variant]} ${className}`}>
+      {content}
     </button>
   );
 };

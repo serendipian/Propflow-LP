@@ -60,7 +60,7 @@ export default function SolutionSection() {
         <div className="absolute inset-0 bg-[radial-gradient(#3b82f6_1px,transparent_1px)] [background-size:32px_32px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-20 dark:opacity-10" />
       </div>
 
-      <div className="w-full max-w-[1600px] mx-auto px-6 relative z-10">
+      <div className="w-full max-w-7xl mx-auto px-6 relative z-10">
         
         <div className="text-center mb-6">
           <SectionBadge color="blue">{t('solution.badge')}</SectionBadge>

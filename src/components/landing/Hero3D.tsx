@@ -35,7 +35,7 @@ export default function Hero3D() {
 
   return (
     <motion.div
-      className="relative w-full max-w-[1100px] mx-auto mt-12 md:mt-20"
+      className="relative w-full mt-12 md:mt-20"
       onMouseMove={canHover ? handleMouseMove : undefined}
       onMouseLeave={canHover ? handleMouseLeave : undefined}
       initial={{ opacity: 0, y: 100, rotateX: 20 }}

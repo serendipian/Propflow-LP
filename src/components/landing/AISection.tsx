@@ -21,7 +21,7 @@ export default function AISection() {
           <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-500/5 blur-[100px] rounded-full mix-blend-multiply dark:mix-blend-screen" />
       </div>
 
-      <div className="max-w-[1100px] mx-auto px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
 
         <div className="text-center mb-12 md:mb-20">
           <SectionBadge color="blue"><Sparkles size={12} className="mr-1" /> {t('ai.badge')}</SectionBadge>

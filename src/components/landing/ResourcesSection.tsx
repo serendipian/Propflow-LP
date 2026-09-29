@@ -55,7 +55,7 @@ export default function ResourcesSection() {
   const { t } = useTranslation();
   return (
     <section id="resources" className="py-24 bg-zinc-50 dark:bg-black relative overflow-hidden">
-      <div className="max-w-[1100px] mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-6">
 
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-8">
             <div className="max-w-2xl">

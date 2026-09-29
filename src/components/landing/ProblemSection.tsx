@@ -27,7 +27,7 @@ export default function ProblemSection() {
       {/* Subtle Background Radial */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.02)_100%)] dark:bg-[radial-gradient(circle_at_center,transparent_0%,rgba(255,255,255,0.02)_100%)] pointer-events-none" />
 
-      <div className="relative z-20 w-full max-w-screen-2xl mx-auto px-6 flex flex-col items-center">
+      <div className="relative z-20 w-full max-w-7xl mx-auto px-6 flex flex-col items-center">
         
         {/* Title */}
         <motion.h2 
@@ -53,7 +53,7 @@ export default function ProblemSection() {
 
         {/* Pain Points Grid */}
         <motion.div 
-          className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mb-16 md:mb-24 max-w-5xl w-full"
+          className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mb-16 md:mb-24 w-full"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}

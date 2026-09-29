@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ChevronRight, Star } from 'lucide-react';
 import { Button, GlassPill } from '../ui/UI';
+import { signUpUrl } from '../../data/navigation';
 
 const TrustIndicator = () => {
   const { t } = useTranslation();
@@ -70,7 +71,7 @@ export default function CTASection() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-blue-500/5 blur-[100px] rounded-full pointer-events-none" />
       </div>
 
-      <div className="relative z-10 w-full max-w-screen-2xl mx-auto px-6 text-center">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 text-center">
         {/* Notification Badge */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -123,7 +124,7 @@ export default function CTASection() {
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.2 }}
         >
-          <Button variant="primary" className="w-full sm:w-auto text-lg h-12 px-8">
+          <Button variant="primary" className="w-full sm:w-auto text-lg h-12 px-8" href={signUpUrl}>
             {t('cta.startTrial')}
           </Button>
 

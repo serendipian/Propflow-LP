@@ -13,7 +13,7 @@ export default function OperationsSection() {
 
   return (
     <section id="solutions" className="py-24 bg-zinc-50 dark:bg-zinc-950 relative overflow-hidden border-t border-zinc-200 dark:border-zinc-800">
-      <div className="max-w-screen-2xl mx-auto px-6 relative z-10 flex flex-col items-center">
+      <div className="max-w-7xl mx-auto px-6 relative z-10 flex flex-col items-center">
 
         {/* Centered Header */}
         <div className="text-center mb-12 max-w-3xl">
@@ -63,7 +63,7 @@ export default function OperationsSection() {
         </div>
 
         {/* Centered Preview Pane - Height Increased to 850px to fit content */}
-        <div className="w-full max-w-[1100px]">
+        <div className="w-full">
            <div className="bg-white dark:bg-zinc-900 rounded-2xl p-2 border border-zinc-200 dark:border-zinc-800 shadow-2xl">
               <GlassPanel className="w-full h-[560px] sm:h-[700px] lg:h-[850px] rounded-xl overflow-hidden flex flex-col relative bg-zinc-50 dark:bg-black">
                  {/* Top Bar */}

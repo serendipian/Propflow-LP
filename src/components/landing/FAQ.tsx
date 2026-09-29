@@ -11,7 +11,7 @@ export default function FAQ() {
   return (
     <section className="py-24 bg-zinc-50 dark:bg-black relative" id="faq">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-zinc-200 dark:via-zinc-800 to-transparent" />
-      <div className="max-w-[1100px] mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-start relative">
           {/* Left Column: Context (Sticky) */}
           <div className="lg:col-span-5 lg:sticky lg:top-32 self-start">

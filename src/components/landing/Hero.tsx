@@ -6,6 +6,7 @@ import { motion } from 'framer-motion';
 import { ChevronRight, Star } from 'lucide-react';
 import { Button, GlassPill } from '../ui/UI';
 import Hero3D from './Hero3D';
+import { signUpUrl } from '../../data/navigation';
 
 const HeroTrustIndicator = () => {
   const { t } = useTranslation();
@@ -73,7 +74,7 @@ export default function Hero() {
         <div className="absolute top-[-10%] left-1/2 -translate-x-1/2 w-[600px] h-[500px] bg-white/40 dark:bg-white/5 blur-[100px] rounded-full pointer-events-none" />
       </div>
 
-      <div className="relative z-10 w-full max-w-screen-2xl mx-auto px-6 text-center">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 text-center">
         {/* Notification Badge */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -121,7 +122,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.3 }}
         >
-          <Button variant="primary" className="w-full sm:w-auto text-lg h-12 px-8">
+          <Button variant="primary" className="w-full sm:w-auto text-lg h-12 px-8" href={signUpUrl}>
             {t('hero.startTrial')}
           </Button>
 

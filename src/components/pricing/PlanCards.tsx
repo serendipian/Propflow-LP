@@ -5,6 +5,8 @@ import { Info } from 'lucide-react';
 import { basePlans } from '../../data/pricing';
 import { formatPrice } from '../../lib/currency';
 import type { BillingCycle, PlanId } from '../../data/pricing';
+import SmartLink from '../shared/SmartLink';
+import { signUpUrl } from '../../data/navigation';
 
 interface PlanCardsProps {
   billing: BillingCycle;
@@ -78,8 +80,9 @@ export default function PlanCards({ billing, selectedPlan, onSelectPlan }: PlanC
                   </div>
                 </div>
 
-                <button
-                  className={`w-full py-3.5 rounded-lg font-bold text-base transition-all mb-8 ${
+                <SmartLink
+                  href={id === 'enterprise' ? '/contact' : signUpUrl}
+                  className={`block text-center w-full py-3.5 rounded-lg font-bold text-base transition-all mb-8 ${
                     id === 'enterprise'
                       ? 'bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 hover:opacity-90'
                       : selectedPlan === id
@@ -88,7 +91,7 @@ export default function PlanCards({ billing, selectedPlan, onSelectPlan }: PlanC
                   }`}
                 >
                   {id === 'enterprise' ? t('pricingPage.talkToUs') : t('pricingPage.startFree')}
-                </button>
+                </SmartLink>
 
                 {plan.categories.length > 0 && (
                   <div className="h-px w-full mb-8 bg-zinc-100 dark:bg-zinc-800" />

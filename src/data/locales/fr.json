@@ -143,7 +143,8 @@
     "bookDemo": "Réserver une Démo"
   },
   "footer": {
-    "tagline": "Le système d'exploitation pour les agences immobilières modernes.",
+    "description": "Fondé sur le principe de Pareto : en immobilier, 20 % de vos leads et de vos actions génèrent 80 % de vos ventes. Propareto met ces 20 % en lumière et automatise le reste, pour que vos agents consacrent leur temps à ce qui convertit.",
+    "social": "Propareto sur {{network}}",
     "product": "Produit",
     "pipeline": "Pipeline",
     "listings": "Annonces",

@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { formatPrice } from '../../lib/currency';
 import { basePlans } from '../../data/pricing';
 import SmartLink from '../shared/SmartLink';
+import { signUpUrl } from '../../data/navigation';
 import AddonBuilder from '../pricing/AddonBuilder';
 import type { BillingCycle, PlanId } from '../../data/pricing';
 
@@ -19,7 +20,7 @@ export default function PricingSection() {
 
       <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-zinc-200 dark:via-zinc-800 to-transparent" />
 
-      <div className="max-w-screen-2xl mx-auto px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
 
         {/* Header */}
         <div className="text-center mb-16">
@@ -61,7 +62,7 @@ export default function PricingSection() {
         </div>
 
         {/* Plan Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl mx-auto mb-20 px-0 md:px-4 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20 items-start">
           {(Object.entries(basePlans) as [PlanId, typeof basePlans['solo']][]).map(([id, plan]) => (
             <div
                 key={id}
@@ -106,13 +107,13 @@ export default function PricingSection() {
                     </div>
                 </div>
 
-                <button className={`w-full py-3.5 rounded-lg font-bold text-base transition-all mb-8 ${
+                <SmartLink href={id === 'enterprise' ? '/contact' : signUpUrl} className={`block text-center w-full py-3.5 rounded-lg font-bold text-base transition-all mb-8 ${
                     id === 'enterprise'
                         ? 'bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 hover:opacity-90'
                         : (selectedPlan === id ? 'bg-blue-600 hover:bg-blue-500 text-white shadow-lg shadow-blue-500/20' : 'bg-zinc-100 dark:bg-zinc-800 text-zinc-900 dark:text-white hover:bg-zinc-200 dark:hover:bg-zinc-700')
                 }`}>
                     {id === 'enterprise' ? 'Talk to us' : 'Start for free'}
-                </button>
+                </SmartLink>
 
                 {plan.categories.length > 0 && (
                     <div className="h-px w-full mb-8 bg-zinc-100 dark:bg-zinc-800" />
@@ -150,7 +151,7 @@ export default function PricingSection() {
         </div>
 
         {/* Add-on Builder — same wrapper geometry as the plan-cards grid above */}
-        <div className="max-w-7xl mx-auto px-0 md:px-4">
+        <div>
           <AddonBuilder billing={billing} selectedPlan={selectedPlan} />
         </div>
 

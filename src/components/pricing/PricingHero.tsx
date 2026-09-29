@@ -18,7 +18,7 @@ export default function PricingHero({ billing, onBillingChange }: PricingHeroPro
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="max-w-screen-2xl mx-auto px-6 text-center"
+        className="max-w-7xl mx-auto px-6 text-center"
       >
         <SectionBadge color="blue">{t('pricing.badge')}</SectionBadge>
         <h1 className="text-4xl md:text-7xl font-bold text-zinc-900 dark:text-white mb-6 tracking-tight">

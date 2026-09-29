@@ -65,10 +65,10 @@ export default function TeamSection() {
   return (
     <section className="py-24 bg-zinc-50 dark:bg-black relative overflow-hidden border-t border-zinc-200 dark:border-zinc-900">
       
-      <div className="max-w-screen-2xl mx-auto px-6 relative z-10 flex flex-col items-center">
+      <div className="max-w-7xl mx-auto px-6 relative z-10 flex flex-col items-center">
         
         {/* Centered Header */}
-        <div className="text-center mb-4 max-w-4xl">
+        <div className="text-center mb-12 max-w-4xl">
             <SectionBadge color="blue"><Shield size={14} className="mr-1"/> {t('team.badge')}</SectionBadge>
             <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold text-zinc-900 dark:text-white mb-6 tracking-tight">
               {t('team.title')}
@@ -79,13 +79,13 @@ export default function TeamSection() {
         </div>
 
         {/* Visual Area - Performance Card Centered & Big; height only fixed at lg where the side panels float */}
-        <div className="relative w-full max-w-[1100px] mb-6 py-6 lg:py-0 h-auto lg:h-[580px] flex items-center justify-center">
+        <div className="relative w-full mb-6 py-6 lg:py-0 h-auto lg:h-[640px] flex items-center justify-center">
              {/* Background Effects */}
              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-500/5 rounded-full blur-[80px]" />
 
              {/* 1. TEAM DIRECTORY (Floating Left) */}
              <motion.div 
-                className="absolute left-0 top-[28%] -translate-y-1/2 z-30 w-[280px] bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl shadow-2xl overflow-hidden hidden lg:block hover:scale-105 transition-transform duration-500"
+                className="absolute left-0 top-[58%] -translate-y-1/2 z-30 w-[280px] bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl shadow-2xl overflow-hidden hidden lg:block hover:scale-105 transition-transform duration-500"
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
@@ -115,7 +115,7 @@ export default function TeamSection() {
 
              {/* 2. PERMISSIONS (Floating Right) */}
              <motion.div 
-                 className="absolute right-0 top-[15%] -translate-y-1/2 bg-white/95 dark:bg-zinc-950/95 backdrop-blur-xl border border-zinc-200 dark:border-zinc-800 rounded-xl shadow-2xl w-[280px] p-4 z-30 hidden lg:block hover:scale-105 transition-transform duration-500"
+                 className="absolute right-0 top-[38%] -translate-y-1/2 bg-white/95 dark:bg-zinc-950/95 backdrop-blur-xl border border-zinc-200 dark:border-zinc-800 rounded-xl shadow-2xl w-[280px] p-4 z-30 hidden lg:block hover:scale-105 transition-transform duration-500"
                  initial={{ opacity: 0, x: 50 }}
                  whileInView={{ opacity: 1, x: 0 }}
                  viewport={{ once: true }}
@@ -145,9 +145,9 @@ export default function TeamSection() {
                 </div>
              </motion.div>
 
-             {/* 3. PERFORMANCE ANALYTICS (Center & BIG) - Reduced Width */}
+             {/* 3. PERFORMANCE ANALYTICS (Center & BIG) - at lg it widens so the 280px side panels always overlap it by 32px */}
              <motion.div 
-                className="relative z-10 w-full max-w-[580px] bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-[2rem] shadow-xl overflow-hidden group"
+                className="relative z-10 w-full max-w-[580px] lg:max-w-none lg:w-[max(580px,calc(100%-496px))] bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-[2rem] shadow-xl overflow-hidden group"
                 initial={{ opacity: 0, y: 30, scale: 0.95 }}
                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 viewport={{ once: true }}
@@ -279,7 +279,7 @@ export default function TeamSection() {
         </div>
 
         {/* Feature Grid (3 boxes) */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-[1100px]">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
            {/* Box 1 */}
            <div className="bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800 p-8 rounded-2xl flex flex-col items-start hover:border-blue-300 dark:hover:border-blue-500/30 transition-colors group">
                 <div className="flex items-center gap-4 mb-3">

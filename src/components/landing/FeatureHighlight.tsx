@@ -17,7 +17,7 @@ export default function FeatureHighlight() {
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-zinc-200 dark:via-zinc-800 to-transparent" />
       <div className="absolute right-0 top-1/4 w-[500px] h-[500px] bg-blue-100 dark:bg-blue-900/10 rounded-full blur-[100px] pointer-events-none" />
 
-      <div className="max-w-screen-2xl mx-auto px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
 
         <div className="flex flex-col items-center mb-10 md:mb-16 text-center">
           <SectionBadge color="blue">{t('features.badge')}</SectionBadge>
@@ -30,7 +30,7 @@ export default function FeatureHighlight() {
         </div>
 
         {/* BOXED LAYOUT CONTAINER - Width Reduced to 1100px */}
-        <div className="max-w-[1100px] mx-auto bg-white dark:bg-zinc-900 rounded-2xl border border-zinc-200 dark:border-zinc-800 shadow-2xl overflow-hidden flex flex-col lg:flex-row h-auto lg:h-[600px]">
+        <div className="bg-white dark:bg-zinc-900 rounded-2xl border border-zinc-200 dark:border-zinc-800 shadow-2xl overflow-hidden flex flex-col lg:flex-row h-auto lg:h-[600px]">
 
             {/* SIDEBAR (TABS) - horizontal snap strip on mobile, evenly distributed column at lg+ */}
             <div className="lg:w-64 bg-zinc-50/50 dark:bg-zinc-950/50 border-b lg:border-b-0 lg:border-r border-zinc-200 dark:border-zinc-800 flex flex-col lg:h-full shrink-0">

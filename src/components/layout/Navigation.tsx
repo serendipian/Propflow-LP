@@ -7,7 +7,7 @@ import { Button } from '../ui/UI';
 import ThemeToggle from '../ui/ThemeToggle';
 import LanguagePicker from '../landing/LanguagePicker';
 import SmartLink from '../shared/SmartLink';
-import { navLinks } from '../../data/navigation';
+import { navLinks, appUrl } from '../../data/navigation';
 import { Logo } from '../ui/Logo';
 
 export default function Navigation() {
@@ -48,17 +48,17 @@ export default function Navigation() {
             : 'absolute top-[45px] bg-transparent border-b border-transparent py-5 z-40'
         }`}
       >
-        <div className="max-w-screen-2xl mx-auto px-6 flex items-center justify-between relative">
+        <div className="max-w-7xl mx-auto px-6 flex items-center justify-between relative">
           <div className="flex items-center gap-2 group cursor-pointer relative z-10">
             <Logo className="h-8 w-auto text-zinc-900 dark:text-white" />
           </div>
 
-          <div className="hidden lg:flex items-center gap-5 xl:gap-8 xl:absolute xl:left-1/2 xl:top-1/2 xl:-translate-x-1/2 xl:-translate-y-1/2">
+          <div className="hidden lg:flex items-center gap-4 xl:gap-8 xl:absolute xl:left-1/2 xl:top-1/2 xl:-translate-x-1/2 xl:-translate-y-1/2">
             {navLinks.map((item) => (
               <SmartLink
                 key={item.label}
                 href={item.href}
-                className={`text-[15px] font-medium transition-colors ${
+                className={`text-sm xl:text-[15px] font-medium whitespace-nowrap transition-colors ${
                   item.href.startsWith('/') && location.pathname === item.href
                     ? 'text-blue-600 dark:text-blue-400'
                     : 'text-zinc-600 dark:text-zinc-400 hover:text-blue-600 dark:hover:text-blue-400'
@@ -69,14 +69,14 @@ export default function Navigation() {
             ))}
           </div>
 
-          <div className="hidden lg:flex items-center gap-4 relative z-10">
+          <div className="hidden lg:flex items-center gap-3 xl:gap-4 relative z-10">
             <LanguagePicker />
             <ThemeToggle />
-            <div className="h-6 w-px bg-zinc-200 dark:bg-zinc-800 mx-1" />
-            <a href="#" className="hidden xl:block text-[15px] font-medium text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white transition-colors">
+            <div className="hidden xl:block h-6 w-px bg-zinc-200 dark:bg-zinc-800 mx-1" />
+            <a href={appUrl} className="hidden lg:block whitespace-nowrap text-sm xl:text-[15px] font-medium text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white transition-colors">
               {t('nav.signIn')}
             </a>
-            <Button variant="primary" className="!h-10 !px-5 !text-base" onClick={() => navigate('/book-a-demo')}>
+            <Button variant="primary" className="!h-10 !px-4 xl:!px-5 !text-base whitespace-nowrap" onClick={() => navigate('/book-a-demo')}>
               {t('nav.bookDemo')}
             </Button>
           </div>
@@ -102,6 +102,9 @@ export default function Navigation() {
                 {t(`nav.${item.label.toLowerCase()}`)}
               </SmartLink>
             ))}
+            <a href={appUrl} className="py-2.5 text-base font-medium text-zinc-600 dark:text-zinc-400 hover:text-blue-600 dark:hover:text-blue-400">
+              {t('nav.signIn')}
+            </a>
             <div className="h-px bg-zinc-200 dark:bg-zinc-800 my-2" />
             <div className="flex justify-between items-center py-1 mb-2">
               <span className="text-sm text-zinc-500">{t('nav.switchLanguage')}</span>

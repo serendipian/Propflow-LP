@@ -8,7 +8,7 @@ export default function WebsiteBuilderSection() {
   const { t } = useTranslation();
   return (
     <section className="py-24 bg-white dark:bg-zinc-950 relative overflow-hidden border-t border-zinc-200 dark:border-zinc-900">
-      <div className="max-w-screen-2xl mx-auto px-6 relative z-10 flex flex-col items-center">
+      <div className="max-w-7xl mx-auto px-6 relative z-10 flex flex-col items-center">
         
         {/* Centered Header */}
         <div className="text-center mb-16 max-w-4xl">
@@ -22,7 +22,7 @@ export default function WebsiteBuilderSection() {
         </div>
 
         {/* Centered Visual (Screen) */}
-        <div className="relative w-full max-w-[1100px] mb-12">
+        <div className="relative w-full mb-12">
              {/* Abstract Decorations */}
              <div className="absolute -top-10 -right-10 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
              <div className="absolute -bottom-10 -left-10 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
@@ -182,7 +182,7 @@ export default function WebsiteBuilderSection() {
         </div>
 
         {/* Options Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 w-full max-w-[1100px]">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 w-full">
               {/* Option 1: Native Builder (2/4 width) */}
               <div className="lg:col-span-2 bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800 p-8 rounded-2xl flex flex-col items-start hover:border-blue-300 dark:hover:border-blue-500/30 transition-colors group">
                 <h3 className="text-xl font-bold text-zinc-900 dark:text-white mb-2">Native Public Website</h3>

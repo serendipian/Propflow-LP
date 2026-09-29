@@ -6,6 +6,7 @@ import { Button } from '../ui/UI';
 import { formatPrice } from '../../lib/currency';
 import { aiOptions, aiUsageRates, basePlans, addonData } from '../../data/pricing';
 import type { BillingCycle, PlanId } from '../../data/pricing';
+import { signUpUrl } from '../../data/navigation';
 
 interface AddonBuilderProps {
   billing: BillingCycle;
@@ -371,6 +372,7 @@ export default function AddonBuilder({ billing, selectedPlan }: AddonBuilderProp
                     <Button
                       variant="primary"
                       className="w-full h-14 rounded-xl text-xl font-semibold shadow-lg shadow-blue-500/20"
+                      href={signUpUrl}
                     >
                       Start Free Trial
                     </Button>

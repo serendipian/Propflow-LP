@@ -16,7 +16,7 @@ export default function AutomationSection() {
       <div className="absolute inset-0 bg-[radial-gradient(#e4e4e7_1px,transparent_1px)] dark:bg-[radial-gradient(#27272a_1px,transparent_1px)] [background-size:24px_24px] opacity-40 dark:opacity-20 pointer-events-none" />
       <div className="absolute right-0 top-1/4 w-[600px] h-[600px] bg-blue-500/5 rounded-full blur-[120px] pointer-events-none" />
 
-      <div className="max-w-screen-2xl mx-auto px-6 relative z-10 flex flex-col items-center">
+      <div className="max-w-7xl mx-auto px-6 relative z-10 flex flex-col items-center">
 
            {/* Centered Header Content - Updated Spacing */}
            <div className="max-w-4xl text-center mb-12">
@@ -30,7 +30,7 @@ export default function AutomationSection() {
            </div>
 
            {/* Main 2-Col Card - Width matched to AI Section (1100px) */}
-           <div className="w-full max-w-[1100px] bg-white dark:bg-zinc-900 rounded-3xl border border-zinc-200 dark:border-zinc-800 shadow-2xl overflow-hidden flex flex-col lg:flex-row h-auto lg:h-[600px]">
+           <div className="w-full bg-white dark:bg-zinc-900 rounded-3xl border border-zinc-200 dark:border-zinc-800 shadow-2xl overflow-hidden flex flex-col lg:flex-row h-auto lg:h-[600px]">
 
               {/* Sidebar (Left) */}
               <div className="lg:w-64 bg-zinc-50/50 dark:bg-zinc-950/50 border-b lg:border-b-0 lg:border-r border-zinc-200 dark:border-zinc-800 flex flex-col shrink-0 relative">
