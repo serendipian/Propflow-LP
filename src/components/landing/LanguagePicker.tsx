@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown, Check } from 'lucide-react';
+import { Check } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 const languages = [
@@ -30,11 +30,12 @@ export default function LanguagePicker() {
     <div className="relative" ref={containerRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 px-3 min-h-[44px] md:min-h-0 py-1.5 rounded-lg bg-zinc-100 dark:bg-zinc-800/50 hover:bg-zinc-200 dark:hover:bg-zinc-800 transition-all border border-zinc-200 dark:border-zinc-700"
+        className="w-11 h-11 md:w-9 md:h-9 rounded-lg bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-colors"
         aria-label="Select language"
+        aria-haspopup="menu"
+        aria-expanded={isOpen}
       >
-        <span className="text-sm">{selected.flag}</span>
-        <ChevronDown size={12} className={`text-zinc-500 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
+        <span className="text-lg leading-none">{selected.flag}</span>
       </button>
 
       <AnimatePresence>

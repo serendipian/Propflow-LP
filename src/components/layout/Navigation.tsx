@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X, ArrowRight } from 'lucide-react';
 import { Button } from '../ui/UI';
 import ThemeToggle from '../ui/ThemeToggle';
@@ -49,9 +49,18 @@ export default function Navigation() {
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between relative">
-          <div className="flex items-center gap-2 group cursor-pointer relative z-10">
+          <Link
+            to="/"
+            aria-label="Propareto home"
+            className="flex items-center relative z-10"
+            onClick={() => {
+              setMobileMenuOpen(false);
+              // Already home: the route doesn't change, so bring the page back to the top.
+              if (location.pathname === '/') window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+          >
             <Logo className="h-8 w-auto text-zinc-900 dark:text-white" />
-          </div>
+          </Link>
 
           <div className="hidden lg:flex items-center gap-4 xl:gap-8 xl:absolute xl:left-1/2 xl:top-1/2 xl:-translate-x-1/2 xl:-translate-y-1/2">
             {navLinks.map((item) => (
@@ -70,8 +79,10 @@ export default function Navigation() {
           </div>
 
           <div className="hidden lg:flex items-center gap-3 xl:gap-4 relative z-10">
-            <LanguagePicker />
-            <ThemeToggle />
+            <div className="flex items-center gap-1.5">
+              <LanguagePicker />
+              <ThemeToggle />
+            </div>
             <div className="hidden xl:block h-6 w-px bg-zinc-200 dark:bg-zinc-800 mx-1" />
             <a href={appUrl} className="hidden lg:block whitespace-nowrap text-sm xl:text-[15px] font-medium text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white transition-colors">
               {t('nav.signIn')}
