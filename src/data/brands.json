@@ -1,0 +1,32 @@
+{
+  "propflow": {
+    "name": "Propflow",
+    "legalName": "Propflow SARL",
+    "market": "Morocco",
+    "siteUrl": "https://propflow.ma",
+    "appUrl": "https://app.propflow.ma",
+    "ogImage": "/og-propflow.png",
+    "emails": {
+      "hello": "hello@propflow.ma",
+      "security": "security@propflow.ma"
+    },
+    "socials": [
+      {
+        "network": "LinkedIn",
+        "href": "#"
+      },
+      {
+        "network": "X",
+        "href": "#"
+      },
+      {
+        "network": "Instagram",
+        "href": "#"
+      },
+      {
+        "network": "Facebook",
+        "href": "#"
+      }
+    ]
+  }
+}

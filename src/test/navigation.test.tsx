@@ -3,11 +3,12 @@ import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { render } from './test-utils';
 import Navigation from '../components/layout/Navigation';
+import { brand } from '../data/brand';
 
 describe('Navigation', () => {
-  it('renders the Propareto logo', () => {
+  it('renders the brand logo', () => {
     render(<Navigation />);
-    expect(screen.getByRole('img', { name: 'Propareto' })).toBeInTheDocument();
+    expect(screen.getByRole('img', { name: brand.name })).toBeInTheDocument();
   });
 
   it('renders navigation links', () => {

@@ -3,6 +3,7 @@ import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { render } from './test-utils';
 import ContactPage from '../pages/ContactPage';
+import { brand } from '../data/brand';
 
 describe('ContactPage', () => {
   it('renders hero section', () => {
@@ -20,7 +21,7 @@ describe('ContactPage', () => {
 
   it('renders contact info sidebar', () => {
     render(<ContactPage />);
-    expect(screen.getByText('hello@propareto.com')).toBeInTheDocument();
+    expect(screen.getByText(brand.emails.hello)).toBeInTheDocument();
     expect(screen.getByText('Casablanca, Morocco')).toBeInTheDocument();
   });
 

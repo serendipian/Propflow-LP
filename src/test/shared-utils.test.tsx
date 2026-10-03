@@ -17,8 +17,8 @@ describe('ScrollToTop', () => {
 
 describe('useDocumentTitle', () => {
   it('sets document title', () => {
-    render(<TitleTestComponent title="Pricing — Propareto" />);
-    expect(document.title).toBe('Pricing — Propareto');
+    render(<TitleTestComponent title="Pricing — Propflow" />);
+    expect(document.title).toBe('Pricing — Propflow');
   });
 
   it('sets meta description', () => {

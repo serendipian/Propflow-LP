@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 import type { LucideIcon } from 'lucide-react';
 import { BookOpen, Users, Code2, ArrowRight, PlayCircle } from 'lucide-react';
 import { Button } from '../ui/UI';
+import { brand } from '../../data/brand';
 
 const resourceColorClasses: Record<string, { bgBlur: string; icon: string; link: string }> = {
   blue: { bgBlur: 'bg-blue-500/10', icon: 'bg-blue-100 dark:bg-blue-500/10 text-blue-600 dark:text-blue-400', link: 'text-blue-600 dark:text-blue-400' },
@@ -75,7 +76,7 @@ export default function ResourcesSection() {
             <ResourceCard 
                 icon={BookOpen}
                 title="Blog & Guides"
-                desc="Latest industry insights, tips for growth, and Propareto updates."
+                desc={`Latest industry insights, tips for growth, and ${brand.name} updates.`}
                 linkText="Read Articles"
                 color="blue"
                 delay={0}
@@ -99,7 +100,7 @@ export default function ResourcesSection() {
             <ResourceCard 
                 icon={Code2}
                 title="Developer API"
-                desc="Documentation for custom integrations and building on Propareto."
+                desc={`Documentation for custom integrations and building on ${brand.name}.`}
                 linkText="View Docs"
                 color="emerald"
                 delay={0.3}

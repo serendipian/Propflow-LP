@@ -8,6 +8,7 @@ import AddonBuilder from '../components/pricing/AddonBuilder';
 import PricingFAQ from '../components/pricing/PricingFAQ';
 import EnterpriseCTA from '../components/pricing/EnterpriseCTA';
 import type { BillingCycle, PlanId } from '../data/pricing';
+import { brand } from '../data/brand';
 
 export default function PricingPage() {
   const { t } = useTranslation();
@@ -15,7 +16,7 @@ export default function PricingPage() {
   const [selectedPlan, setSelectedPlan] = useState<PlanId>('team');
 
   useDocumentTitle(
-    t('pricingPage.title') + ' — Propareto',
+    t('pricingPage.title') + ` — ${brand.name}`,
     t('pricingPage.subtitle')
   );
 

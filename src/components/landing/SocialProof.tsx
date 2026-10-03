@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { brand } from '../../data/brand';
 
 export default function SocialProof() {
   const { t } = useTranslation();
@@ -39,7 +40,7 @@ export default function SocialProof() {
             <div className="absolute -top-5 right-3 md:-top-6 md:-right-6 bg-gradient-to-br from-blue-600 to-indigo-600 text-white font-bold text-sm md:text-base px-4 py-3 md:px-6 md:py-4 rounded-xl shadow-lg transform rotate-6 z-10">
               "Game Changer"
             </div>
-            <p className="text-xl text-zinc-700 dark:text-zinc-300 italic mb-8 leading-relaxed">"Propareto transformed how we operate. We went from chaotic WhatsApp groups to a streamlined machine. Our revenue is up 40% YoY."</p>
+            <p className="text-xl text-zinc-700 dark:text-zinc-300 italic mb-8 leading-relaxed">"{brand.name} transformed how we operate. We went from chaotic WhatsApp groups to a streamlined machine. Our revenue is up 40% YoY."</p>
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 bg-zinc-200 dark:bg-zinc-800 rounded-full overflow-hidden">
                  <img src="https://i.pravatar.cc/150?img=11" alt="David Ross, Principal at Ross Realty Group" className="w-full h-full object-cover" loading="lazy" width="48" height="48" />

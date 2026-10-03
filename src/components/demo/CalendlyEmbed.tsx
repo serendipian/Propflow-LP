@@ -32,7 +32,7 @@ function loadCalendlyScript(): Promise<void> {
   return scriptPromise;
 }
 
-// Propareto brand blue, minus the leading '#' (Calendly expects bare hex).
+// Brand blue, minus the leading '#' (Calendly expects bare hex).
 const PRIMARY = '3b82f6';
 
 function buildUrl(baseUrl: string, theme: 'dark' | 'light'): string {

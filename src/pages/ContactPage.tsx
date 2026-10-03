@@ -5,11 +5,12 @@ import { useDocumentTitle } from '../hooks/useDocumentTitle';
 import { GlassPanel } from '../components/ui/UI';
 import ContactForm from '../components/contact/ContactForm';
 import ContactInfo from '../components/contact/ContactInfo';
+import { brand } from '../data/brand';
 
 export default function ContactPage() {
   const { t } = useTranslation();
 
-  useDocumentTitle('Contact — Propareto', t('contactPage.subtitle'));
+  useDocumentTitle(`Contact — ${brand.name}`, t('contactPage.subtitle'));
 
   return (
     <>

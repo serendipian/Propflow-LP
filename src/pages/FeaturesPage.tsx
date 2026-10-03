@@ -7,6 +7,7 @@ import {
 import { useDocumentTitle } from '../hooks/useDocumentTitle';
 import { Button, SectionBadge, GlassPill } from '../components/ui/UI';
 import { modules } from '../data/features';
+import { brand } from '../data/brand';
 
 // Capability bands — the higher-order "why it matters" story above the module grid.
 const capabilities = [
@@ -37,8 +38,8 @@ const stats = [
 
 export default function FeaturesPage() {
   useDocumentTitle(
-    'Features | Propareto',
-    'Explore every Propareto module — properties, requests, owners, offers, and more — connected in one AI-powered operating system.',
+    `Features | ${brand.name}`,
+    `Explore every ${brand.name} module — properties, requests, owners, offers, and more — connected in one AI-powered operating system.`,
   );
   const reduce = useReducedMotion();
   const navigate = useNavigate();
@@ -81,7 +82,7 @@ export default function FeaturesPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
           >
-            Propareto replaces your fragmented toolset with ten connected modules and AI at the core — so people, properties, and processes finally work as one.
+            {brand.name} replaces your fragmented toolset with ten connected modules and AI at the core — so people, properties, and processes finally work as one.
           </motion.p>
 
           <motion.div

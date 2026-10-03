@@ -31,7 +31,7 @@
   "solution": {
     "badge": "La Solution",
     "title": "Transformez la Complexité en Clarté. Créez de l'Ordre à partir du Chaos.",
-    "subtitle": "Propareto remplace vos outils fragmentés par un système d'exploitation intelligent unique, conçu pour orchestrer l'ensemble de votre agence, conclure plus de mandats et retrouver vos soirées !"
+    "subtitle": "{{brand}} remplace vos outils fragmentés par un système d'exploitation intelligent unique, conçu pour orchestrer l'ensemble de votre agence, conclure plus de mandats et retrouver vos soirées !"
   },
   "features": {
     "badge": "10+ Modules Connectés",
@@ -51,22 +51,22 @@
   "integrations": {
     "badge": "Workflow Intégré",
     "title": "Connectez vos Outils Favoris !",
-    "subtitle": "Connectez Propareto à vos outils favoris et créez des workflows puissants pour vos équipes commerciales et de direction. Plus de 30 intégrations natives."
+    "subtitle": "Connectez {{brand}} à vos outils favoris et créez des workflows puissants pour vos équipes commerciales et de direction. Plus de 30 intégrations natives."
   },
   "automation": {
     "badge": "Automatisations Personnalisées",
     "title": "Créez des Workflows pour Automatiser les Tâches Répétitives",
-    "subtitle": "Construisez des scénarios puissants pour mettre votre travail routinier en pilote automatique. Du routage des leads au suivi intelligent, si vous pouvez le définir, Propareto peut l'automatiser !"
+    "subtitle": "Construisez des scénarios puissants pour mettre votre travail routinier en pilote automatique. Du routage des leads au suivi intelligent, si vous pouvez le définir, {{brand}} peut l'automatiser !"
   },
   "website": {
     "badge": "Vitrine Digitale",
     "title": "Votre Site Web Public, Synchronisé Instantanément.",
-    "subtitle": "Lancez un site web d'agence élégant et optimisé pour le SEO qui affiche les annonces directement depuis votre base de données Propareto."
+    "subtitle": "Lancez un site web d'agence élégant et optimisé pour le SEO qui affiche les annonces directement depuis votre base de données {{brand}}."
   },
   "team": {
     "badge": "Contrôles Entreprise",
     "title": "Développez votre Équipe en Toute Confiance.",
-    "subtitle": "Que vous soyez une agence de proximité ou une franchise nationale, Propareto vous donne un contrôle granulaire sur vos données et vos collaborateurs."
+    "subtitle": "Que vous soyez une agence de proximité ou une franchise nationale, {{brand}} vous donne un contrôle granulaire sur vos données et vos collaborateurs."
   },
   "social": {
     "title": "Ils Nous Font Confiance"
@@ -74,7 +74,7 @@
   "pricing": {
     "badge": "ROI Positif Garanti",
     "title": "Tarifs Abordables, Impact Massif",
-    "subtitle": "Propareto se rentabilise grâce à des agents plus heureux et plus productifs.",
+    "subtitle": "{{brand}} se rentabilise grâce à des agents plus heureux et plus productifs.",
     "monthly": "Mensuel",
     "yearly": "Annuel",
     "save": "Économisez {{percent}}%",
@@ -95,23 +95,23 @@
         "a": "La plupart des agences sont opérationnelles en 48 heures. Notre équipe d'intégration dédiée gère la migration des données depuis vos tableurs ou CRM existants (Salesforce, HubSpot, Pipedrive) gratuitement à partir du plan Growth."
       },
       {
-        "q": "Propareto est-il conforme au RGPD et aux lois sur la protection des données ?",
+        "q": "{{brand}} est-il conforme au RGPD et aux lois sur la protection des données ?",
         "a": "Oui. Nous sommes entièrement conformes au RGPD et SOC-2 Type II. Vos données sont chiffrées au repos et en transit selon les standards bancaires AES-256, garantissant la sécurité et la confidentialité des informations de vos clients."
       },
       {
         "q": "Puis-je personnaliser les pipelines et les workflows ?",
-        "a": "Absolument. Propareto est conçu pour s'adapter aux processus spécifiques de votre agence. Vous pouvez créer des étapes de transaction personnalisées, des déclencheurs automatisés et des champs obligatoires pour vous assurer que votre équipe suit exactement votre méthode."
+        "a": "Absolument. {{brand}} est conçu pour s'adapter aux processus spécifiques de votre agence. Vous pouvez créer des étapes de transaction personnalisées, des déclencheurs automatisés et des champs obligatoires pour vous assurer que votre équipe suit exactement votre méthode."
       },
       {
         "q": "Proposez-vous un accès API pour des intégrations personnalisées ?",
-        "a": "Oui, notre plan Enterprise inclut un accès API complet et des webhooks. Vous pouvez connecter Propareto à votre site web personnalisé, votre logiciel de comptabilité ou tout autre outil propriétaire que vous utilisez."
+        "a": "Oui, notre plan Enterprise inclut un accès API complet et des webhooks. Vous pouvez connecter {{brand}} à votre site web personnalisé, votre logiciel de comptabilité ou tout autre outil propriétaire que vous utilisez."
       },
       {
         "q": "Quel type de support et de formation est inclus ?",
         "a": "Tous les plans incluent un support par email 24h/24 et 7j/7 et l'accès à notre base de connaissances. Les plans Growth et Enterprise bénéficient d'un Customer Success Manager dédié et de sessions de formation vidéo en direct pour toute votre équipe."
       },
       {
-        "q": "Propareto fonctionne-t-il pour la vente et la location ?",
+        "q": "{{brand}} fonctionne-t-il pour la vente et la location ?",
         "a": "Oui. Nous supportons des pipelines séparés pour la Vente et la Location. Vous pouvez gérer propriétaires, locataires, acheteurs et vendeurs dans une base de données unifiée avec des workflows distincts pour chaque type de transaction."
       },
       {
@@ -132,7 +132,7 @@
   },
   "resources": {
     "title": "Des Ressources pour Vous Aider à Grandir.",
-    "subtitle": "Explorez nos guides, notre communauté et notre documentation pour tirer le meilleur parti de Propareto."
+    "subtitle": "Explorez nos guides, notre communauté et notre documentation pour tirer le meilleur parti de {{brand}}."
   },
   "cta": {
     "badge": "Nouveau : Retouche Photo par IA",
@@ -143,8 +143,8 @@
     "bookDemo": "Réserver une Démo"
   },
   "footer": {
-    "description": "Fondé sur le principe de Pareto : en immobilier, 20 % de vos leads et de vos actions génèrent 80 % de vos ventes. Propareto met ces 20 % en lumière et automatise le reste, pour que vos agents consacrent leur temps à ce qui convertit.",
-    "social": "Propareto sur {{network}}",
+    "description": "Fondé sur le principe de Pareto : en immobilier, 20 % de vos leads et de vos actions génèrent 80 % de vos ventes. {{brand}} met ces 20 % en lumière et automatise le reste, pour que vos agents consacrent leur temps à ce qui convertit.",
+    "social": "{{brand}} sur {{network}}",
     "product": "Produit",
     "pipeline": "Pipeline",
     "listings": "Annonces",
@@ -159,7 +159,7 @@
     "privacy": "Confidentialité",
     "terms": "Conditions",
     "security": "Sécurité",
-    "copyright": "© {{year}} Propareto Inc. Tous droits réservés.",
+    "copyright": "© {{year}} {{legalName}}. Tous droits réservés.",
     "designedFor": "Conçu pour le futur."
   },
   "pricingPage": {
@@ -235,23 +235,23 @@
     },
     "info": {
       "title": "Informations de Contact",
-      "email": "hello@propareto.com",
+      "email": "{{helloEmail}}",
       "phone": "+212 5XX-XXXXXX",
       "address": "Casablanca, Maroc",
       "hours": "Lun–Ven, 9h00 – 18h00 (GMT+1)",
       "hoursLabel": "Horaires d'Ouverture",
       "demo": {
         "title": "Réserver une Démo",
-        "description": "Découvrez Propareto en action avec une présentation personnalisée pour votre agence.",
+        "description": "Découvrez {{brand}} en action avec une présentation personnalisée pour votre agence.",
         "cta": "Planifier une Démo"
       }
     }
   },
   "demoPage": {
     "badge": "Démonstration personnalisée en direct",
-    "title": "Découvrez Propareto",
+    "title": "Découvrez {{brand}}",
     "titleAccent": "en action.",
-    "subtitle": "Réservez une démonstration de 30 minutes adaptée à votre agence. Pas de diapositives — vos flux de travail, sur Propareto, avec un expert qui répond à toutes vos questions.",
+    "subtitle": "Réservez une démonstration de 30 minutes adaptée à votre agence. Pas de diapositives — vos flux de travail, sur {{brand}}, avec un expert qui répond à toutes vos questions.",
     "offer": {
       "hero": "Réservez une démo, obtenez 3 mois gratuits",
       "title": "3 mois offerts",
@@ -262,9 +262,9 @@
       "items": [
         { "title": "Une visite conçue pour vous", "text": "Nous adaptons la démonstration aux flux de vente et de location précis de votre agence — pas un script générique." },
         { "title": "Des réponses, en direct", "text": "Posez vos questions les plus difficiles sur la migration, les tarifs et les intégrations. Nous y répondrons pendant l'appel." },
-        { "title": "Vos données, à votre façon", "text": "Voyez à quoi ressemblent votre pipeline, vos annonces et vos contacts dans Propareto avant de vous engager." },
+        { "title": "Vos données, à votre façon", "text": "Voyez à quoi ressemblent votre pipeline, vos annonces et vos contacts dans {{brand}} avant de vous engager." },
         { "title": "En moins de 30 minutes", "text": "Concis, rapide et respectueux de votre temps. Sans pression, sans engagement." },
-        { "title": "Profitez de 3 mois gratuits", "text": "Réservez et participez à votre démo pour débloquer 3 mois de Propareto offerts — toutes les fonctionnalités, sans frais." }
+        { "title": "Profitez de 3 mois gratuits", "text": "Réservez et participez à votre démo pour débloquer 3 mois de {{brand}} offerts — toutes les fonctionnalités, sans frais." }
       ]
     },
     "scheduler": {
@@ -277,7 +277,7 @@
       "title": "Et ensuite ?",
       "items": [
         { "title": "Réservez votre créneau", "text": "Choisissez un horaire ci-dessus. Vous recevrez une invitation immédiate avec un lien visio." },
-        { "title": "Démonstration de 30 minutes", "text": "Rencontrez votre expert produit pour une visite personnalisée de Propareto, en direct." },
+        { "title": "Démonstration de 30 minutes", "text": "Rencontrez votre expert produit pour une visite personnalisée de {{brand}}, en direct." },
         { "title": "Profitez de 3 mois gratuits", "text": "Vous êtes convaincu ? Démarrez et vos 3 premiers mois sont offerts — sans engagement." }
       ]
     },
@@ -287,7 +287,7 @@
         { "q": "Comment obtenir les 3 mois gratuits ?", "a": "Il suffit de réserver et de participer à votre démo. Après votre visite personnalisée, nous appliquons 3 mois gratuits à votre compte lors de votre démarrage — aucun code promo à chercher." },
         { "q": "Y a-t-il un piège avec les 3 mois gratuits ?", "a": "Aucun. C'est notre façon de vous laisser découvrir toute la plateforme sans risque. Vous profitez de toutes les fonctionnalités pendant trois mois, sans frais et sans obligation de continuer ensuite." },
         { "q": "Combien de temps dure la démo, et qui doit y participer ?", "a": "Environ 30 minutes. Elle est plus utile avec la personne responsable de vos ventes ou de vos opérations — un dirigeant d'agence, un agent clé ou votre responsable des opérations. Invitez toute personne utile à la décision." },
-        { "q": "Est-ce un argumentaire de vente ?", "a": "Non. C'est une session de travail adaptée à vos flux réels. Nous vous montrons comment vos biens, contacts et pipeline fonctionnent dans Propareto, et répondons en direct à vos questions les plus difficiles." },
+        { "q": "Est-ce un argumentaire de vente ?", "a": "Non. C'est une session de travail adaptée à vos flux réels. Nous vous montrons comment vos biens, contacts et pipeline fonctionnent dans {{brand}}, et répondons en direct à vos questions les plus difficiles." },
         { "q": "Que se passe-t-il après les 3 mois gratuits ?", "a": "Vous continuez sur le forfait adapté à votre équipe — à un prix vite rentabilisé. Sans engagement de longue durée, et résiliable à tout moment. Nous ne débiterons jamais sans vous prévenir." }
       ]
     }

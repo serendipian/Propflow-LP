@@ -4,12 +4,13 @@ import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useDocumentTitle } from '../hooks/useDocumentTitle';
 import { Button } from '../components/ui/UI';
+import { brand } from '../data/brand';
 
 export default function NotFoundPage() {
   const { t } = useTranslation();
   const navigate = useNavigate();
 
-  useDocumentTitle('Page Not Found — Propareto');
+  useDocumentTitle(`Page Not Found — ${brand.name}`);
 
   return (
     <section className="pt-40 pb-32 bg-white dark:bg-zinc-950 min-h-[70vh] flex items-center">

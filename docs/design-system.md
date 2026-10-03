@@ -1,4 +1,4 @@
-# Propareto Landing Page - Design System
+# Propflow Landing Page - Design System
 
 ## Color Palette
 

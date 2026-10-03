@@ -27,6 +27,7 @@ export default function Footer() {
             <Logo className="h-10 w-auto text-zinc-900 dark:text-white" />
           </div>
           <p className="text-zinc-500 mb-6 max-w-sm leading-relaxed">{t('footer.description')}</p>
+          {socialLinks.length > 0 && (
           <div className="flex gap-3">
             {socialLinks.map(({ network, href }) => {
               const Icon = socialIcons[network];
@@ -34,8 +35,7 @@ export default function Footer() {
                 <a
                   key={network}
                   href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  {...(href.startsWith('http') && { target: '_blank', rel: 'noopener noreferrer' })}
                   aria-label={t('footer.social', { network })}
                   className="w-9 h-9 rounded-lg flex items-center justify-center bg-zinc-200/60 dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-800 text-zinc-500 hover:text-blue-600 dark:hover:text-blue-400 hover:border-blue-300 dark:hover:border-blue-500/40 transition-colors"
                 >
@@ -44,6 +44,7 @@ export default function Footer() {
               );
             })}
           </div>
+          )}
         </div>
         
         <div>

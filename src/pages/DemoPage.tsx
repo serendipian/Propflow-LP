@@ -7,6 +7,7 @@ import { GlassPanel, GlassPill } from '../components/ui/UI';
 import Accordion from '../components/shared/Accordion';
 import SmartLink from '../components/shared/SmartLink';
 import CalendlyEmbed from '../components/demo/CalendlyEmbed';
+import { brand } from '../data/brand';
 
 // Calendly booking link. When set, the live scheduler renders; when empty,
 // the styled placeholder shows.
@@ -16,7 +17,7 @@ const benefitIcons = [Sparkles, MessageSquare, Database, Clock, Gift];
 
 export default function DemoPage() {
   const { t } = useTranslation();
-  useDocumentTitle('Book a Demo — Propareto', t('demoPage.subtitle'));
+  useDocumentTitle(`Book a Demo — ${brand.name}`, t('demoPage.subtitle'));
 
   const benefits = t('demoPage.benefits.items', { returnObjects: true }) as { title: string; text: string }[];
   const steps = t('demoPage.steps.items', { returnObjects: true }) as { title: string; text: string }[];

@@ -1,8 +1,8 @@
 {
-  "name": "propareto-lp",
+  "name": "propflow-lp",
   "private": true,
   "version": "1.0.0",
-  "description": "Propareto marketing website - The OS for Modern Real Estate",
+  "description": "Propflow marketing website - The OS for Modern Real Estate",
   "type": "module",
   "scripts": {
     "dev": "vite",

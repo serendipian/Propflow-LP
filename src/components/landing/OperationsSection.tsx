@@ -4,6 +4,7 @@ import { SectionBadge, GlassPanel } from '../ui/UI';
 import { motion, AnimatePresence } from 'framer-motion';
 import { modules } from '../../data/operations';
 import OpsVisualization from './operations/OpsVisualization';
+import { brand } from '../../data/brand';
 
 export default function OperationsSection() {
   const { t } = useTranslation();
@@ -75,7 +76,7 @@ export default function OperationsSection() {
                     </div>
                     <div className="flex items-center gap-2 text-[10px] font-medium text-zinc-400 bg-zinc-100 dark:bg-zinc-800 px-3 py-1 rounded-md">
                        <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse" />
-                       app.propareto.com/ops/{activeId}
+                       {brand.appHost}/ops/{activeId}
                     </div>
                     <div className="w-12" /> {/* Spacer for balance */}
                  </div>

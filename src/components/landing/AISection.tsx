@@ -10,6 +10,7 @@ import { SectionBadge } from '../ui/UI';
 import SmartChat from './ai/SmartChat';
 import BeforeAfterSlider from './ai/BeforeAfterSlider';
 import FeatureIcon from './ai/FeatureIcon';
+import { brand } from '../../data/brand';
 
 export default function AISection() {
   const { t } = useTranslation();
@@ -161,7 +162,7 @@ export default function AISection() {
                         </div>
                     </div>
                     <p className="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">
-                        New listing or request? Propareto instantly cross-references your entire database to identify potential matches.
+                        New listing or request? {brand.name} instantly cross-references your entire database to identify potential matches.
                     </p>
                 </div>
                 <div className="w-20 h-20 bg-zinc-50 dark:bg-zinc-800 rounded-full flex items-center justify-center relative shrink-0">

@@ -9,6 +9,7 @@ import LanguagePicker from '../landing/LanguagePicker';
 import SmartLink from '../shared/SmartLink';
 import { navLinks, appUrl } from '../../data/navigation';
 import { Logo } from '../ui/Logo';
+import { brand } from '../../data/brand';
 
 export default function Navigation() {
   const { t } = useTranslation();
@@ -51,7 +52,7 @@ export default function Navigation() {
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between relative">
           <Link
             to="/"
-            aria-label="Propareto home"
+            aria-label={`${brand.name} home`}
             className="flex items-center relative z-10"
             onClick={() => {
               setMobileMenuOpen(false);

@@ -1,13 +1,14 @@
 import React from 'react';
 import LegalPageLayout from './LegalPageLayout';
+import { brand } from '../../data/brand';
 
 export default function PrivacyPage() {
   return (
     <LegalPageLayout
-      documentTitle="Privacy Policy — Propareto"
+      documentTitle={`Privacy Policy — ${brand.name}`}
       title="Privacy Policy"
       updated="Last updated: July 9, 2026"
-      intro="This Privacy Policy explains how Propareto collects, uses, and protects your information when you use our website and services. By using Propareto, you agree to the practices described here."
+      intro={`This Privacy Policy explains how ${brand.name} collects, uses, and protects your information when you use our website and services. By using ${brand.name}, you agree to the practices described here.`}
       sections={[
         {
           heading: 'Information we collect',
@@ -55,7 +56,7 @@ export default function PrivacyPage() {
         {
           heading: 'Contact us',
           body: [
-            'If you have questions about this Privacy Policy or our data practices, please contact us at hello@propareto.com.',
+            `If you have questions about this Privacy Policy or our data practices, please contact us at ${brand.emails.hello}.`,
           ],
         },
       ]}

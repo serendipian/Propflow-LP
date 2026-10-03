@@ -16,7 +16,7 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { dirname, join } from 'node:path';
-import { ROUTES, SITE_URL, OG_IMAGE } from './route-seo.mjs';
+import { ROUTES, SITE_URL, OG_IMAGE, BRAND } from './route-seo.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const distDir = join(__dirname, '..', 'dist');
@@ -45,7 +45,7 @@ function esc(s) {
 const organizationLd = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
-  name: 'Propareto',
+  name: BRAND.name,
   url: SITE_URL,
   logo: `${SITE_URL}/icon-512.png`,
   description:
@@ -55,7 +55,7 @@ const organizationLd = {
 const softwareLd = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
-  name: 'Propareto',
+  name: BRAND.name,
   applicationCategory: 'BusinessApplication',
   operatingSystem: 'Web',
   url: SITE_URL,
@@ -154,7 +154,7 @@ async function render404() {
   const headBlock = [
     '',
     '  <!-- prerendered SEO: 404 -->',
-    '  <title>Page Not Found | Propareto</title>',
+    `  <title>Page Not Found | ${BRAND.name}</title>`,
     '  <meta name="robots" content="noindex">',
     '',
   ].join('\n');
@@ -163,5 +163,41 @@ async function render404() {
 
 writeFileSync(join(distDir, '404.html'), await render404(), 'utf8');
 console.log('  prerendered 404 -> dist/404.html');
+
+// Brand-specific static files (they used to live in public/ with the domain
+// hard-coded): sitemap, robots and the web app manifest.
+const sitemap = [
+  '<?xml version="1.0" encoding="UTF-8"?>',
+  '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+  ...ROUTES.map((r) =>
+    [
+      '  <url>',
+      `    <loc>${r.path ? `${SITE_URL}/${r.path}` : `${SITE_URL}/`}</loc>`,
+      `    <lastmod>${r.sitemap.lastmod}</lastmod>`,
+      `    <changefreq>${r.sitemap.changefreq}</changefreq>`,
+      `    <priority>${r.sitemap.priority}</priority>`,
+      '  </url>',
+    ].join('\n'),
+  ),
+  '</urlset>',
+  '',
+].join('\n');
+writeFileSync(join(distDir, 'sitemap.xml'), sitemap, 'utf8');
+writeFileSync(join(distDir, 'robots.txt'), `User-agent: *\nAllow: /\n\nSitemap: ${SITE_URL}/sitemap.xml\n`, 'utf8');
+const manifest = {
+  name: BRAND.name,
+  short_name: BRAND.name,
+  description: 'The operating system for modern real estate agencies.',
+  start_url: '/',
+  display: 'standalone',
+  background_color: '#09090b',
+  theme_color: '#3b82f6',
+  icons: [
+    { src: '/icon-192.png', sizes: '192x192', type: 'image/png' },
+    { src: '/icon-512.png', sizes: '512x512', type: 'image/png' },
+  ],
+};
+writeFileSync(join(distDir, 'site.webmanifest'), JSON.stringify(manifest, null, 2) + '\n', 'utf8');
+console.log('  wrote dist/sitemap.xml, dist/robots.txt, dist/site.webmanifest');
 
 console.log(`Prerendered ${count} routes + 404.`);

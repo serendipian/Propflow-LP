@@ -1,5 +1,6 @@
 import type { LucideIcon } from 'lucide-react';
 import { Zap, Share2, Clock, BarChart3, DollarSign, UserPlus, RefreshCw, Star, CalendarCheck } from 'lucide-react';
+import { brand } from './brand';
 
 // --- Color Map for WorkflowNode ---
 
@@ -63,7 +64,7 @@ export const workflows: Record<WorkflowType, {
   priceupdate: {
     label: "Price Updates",
     title: "Sync changes instantly.",
-    desc: "Every time a property price is updated in Propareto, the automation updates price on MLS, republishes listing with new price on social media and informs partners.",
+    desc: `Every time a property price is updated in ${brand.name}, the automation updates price on MLS, republishes listing with new price on social media and informs partners.`,
     icon: RefreshCw
   },
   reviews: {

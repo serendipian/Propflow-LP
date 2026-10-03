@@ -1,8 +1,8 @@
-# Propareto Landing Page - Architecture & Components
+# Propflow Landing Page - Architecture & Components
 
 ## Overview
 
-Propareto LP is a single-page marketing site for a real estate agency SaaS platform. Built with React 19 + TypeScript, bundled by Vite, styled with Tailwind CSS (CDN), and animated with Framer Motion.
+Propflow LP is a single-page marketing site for a real estate agency SaaS platform. Built with React 19 + TypeScript, bundled by Vite, styled with Tailwind CSS (CDN), and animated with Framer Motion.
 
 ## Tech Stack
 

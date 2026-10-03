@@ -1,13 +1,14 @@
 import React from 'react';
 import LegalPageLayout from './LegalPageLayout';
+import { brand } from '../../data/brand';
 
 export default function TermsPage() {
   return (
     <LegalPageLayout
-      documentTitle="Terms of Service — Propareto"
+      documentTitle={`Terms of Service — ${brand.name}`}
       title="Terms of Service"
       updated="Last updated: July 9, 2026"
-      intro="These Terms of Service govern your access to and use of Propareto's website and services. By accessing or using Propareto, you agree to be bound by these terms."
+      intro={`These Terms of Service govern your access to and use of ${brand.name}'s website and services. By accessing or using ${brand.name}, you agree to be bound by these terms.`}
       sections={[
         {
           heading: 'Acceptance of terms',
@@ -17,7 +18,7 @@ export default function TermsPage() {
         },
         {
           heading: 'Use of the service',
-          body: ['You agree to use Propareto only for lawful purposes and in accordance with these terms. You agree not to:'],
+          body: [`You agree to use ${brand.name} only for lawful purposes and in accordance with these terms. You agree not to:`],
           bullets: [
             'Use the service in any way that violates applicable laws or regulations.',
             'Attempt to gain unauthorized access to our systems or another user’s account.',
@@ -40,13 +41,13 @@ export default function TermsPage() {
         {
           heading: 'Intellectual property',
           body: [
-            'Propareto and its licensors retain all rights, title, and interest in and to the service, including all related intellectual property. These terms do not grant you any rights to our trademarks or branding.',
+            `${brand.name} and its licensors retain all rights, title, and interest in and to the service, including all related intellectual property. These terms do not grant you any rights to our trademarks or branding.`,
           ],
         },
         {
           heading: 'Disclaimers and limitation of liability',
           body: [
-            'The service is provided “as is” and “as available” without warranties of any kind, whether express or implied. To the fullest extent permitted by law, Propareto shall not be liable for any indirect, incidental, or consequential damages arising from your use of the service.',
+            `The service is provided “as is” and “as available” without warranties of any kind, whether express or implied. To the fullest extent permitted by law, ${brand.name} shall not be liable for any indirect, incidental, or consequential damages arising from your use of the service.`,
           ],
         },
         {
@@ -58,7 +59,7 @@ export default function TermsPage() {
         {
           heading: 'Contact us',
           body: [
-            'Questions about these Terms of Service can be directed to hello@propareto.com.',
+            `Questions about these Terms of Service can be directed to ${brand.emails.hello}.`,
           ],
         },
       ]}

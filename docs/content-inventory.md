@@ -1,11 +1,11 @@
-# Propareto Landing Page - Content & Copy Inventory
+# Propflow Landing Page - Content & Copy Inventory
 
 ## Brand Identity
 
-- **Product Name:** Propareto
+- **Product Name:** Propflow
 - **Tagline:** "The OS for Modern Real Estate"
 - **Full Tagline:** "The operating system for modern real estate agencies"
-- **Copyright:** 2024 Propareto Inc.
+- **Copyright:** 2024 Propflow Inc.
 
 ## Navigation Links
 
@@ -46,7 +46,7 @@
 ### 3. Solution Section
 - **Badge:** "The Solution"
 - **Headline:** "Turn Complexity into Clarity. **Create Order from Chaos.**"
-- **Subheading:** "Propareto replaces your fragmented toolset with a single intelligent operating system that connects your people, properties, and processes."
+- **Subheading:** "Propflow replaces your fragmented toolset with a single intelligent operating system that connects your people, properties, and processes."
 - **8 Solution Nodes:**
   - Databases, Workflow, Agenda, Smart Assistant
   - Visibility, Tools, Automations, Management
@@ -96,7 +96,7 @@
 ### 9. Website Builder
 - **Badge:** "Website"
 - **Headline:** "Your Public Website, **Synced Instantly.**"
-- **Subheading:** "Launch a stunning, SEO-optimized agency website that pulls listings directly from your Propareto database."
+- **Subheading:** "Launch a stunning, SEO-optimized agency website that pulls listings directly from your Propflow database."
 - **3 Options:** Native public website, Connect existing site (WordPress/Webflow), Connect MLS (Zillow/Realtor)
 
 ### 10. Team
@@ -108,7 +108,7 @@
 - **Badge:** "Testimonials"
 - **Headline:** "They **Trusted Us**"
 - **Stats:** 3x Faster Deal Velocity, 15h Saved Per Week
-- **Testimonial:** "Propareto transformed how we operate. The AI matching alone saved us 20 hours a week, and the automation workflows eliminated 90% of our manual follow-ups. Revenue is up 40% YoY." - David Ross, Principal, Ross Realty Group
+- **Testimonial:** "Propflow transformed how we operate. The AI matching alone saved us 20 hours a week, and the automation workflows eliminated 90% of our manual follow-ups. Revenue is up 40% YoY." - David Ross, Principal, Ross Realty Group
 
 ### 12. Pricing
 - **Badge:** "Pricing"
@@ -146,7 +146,7 @@
 - **Headline:** "From Leads to Deals. **Fully Orchestrated.**"
 - **Subtext:** "Spreadsheets weren't built to scale agencies. Neither was your brain!"
 - **CTAs:** "Start Free Trial" + "Book Demo"
-- **Trust:** "500+ agencies trust Propareto" / "4.9/5 average rating"
+- **Trust:** "500+ agencies trust Propflow" / "4.9/5 average rating"
 
 ### 17. Footer
 - **Columns:** Product (Features, Pricing, Integrations, Changelog, Roadmap), Company (About, Blog, Careers, Contact, Partners), Legal (Privacy, Terms, Security, GDPR, Cookie Policy)

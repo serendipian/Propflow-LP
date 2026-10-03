@@ -8,6 +8,7 @@ import {
 import type { LucideIcon } from 'lucide-react';
 import { useDocumentTitle } from '../hooks/useDocumentTitle';
 import { Button, SectionBadge, GlassPill } from '../components/ui/UI';
+import { brand } from '../data/brand';
 
 interface Role {
   id: string;
@@ -63,8 +64,8 @@ const roles: Role[] = [
 
 export default function SolutionsPage() {
   useDocumentTitle(
-    'Solutions | Propareto',
-    'Propareto for agency owners, agents, and operations managers — the operating system built around how your real estate team actually works.',
+    `Solutions | ${brand.name}`,
+    `${brand.name} for agency owners, agents, and operations managers — the operating system built around how your real estate team actually works.`,
   );
   const reduce = useReducedMotion();
   const navigate = useNavigate();
@@ -99,7 +100,7 @@ export default function SolutionsPage() {
             className="text-lg md:text-xl text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.2 }}
           >
-            Whether you own the business, close the deals, or keep the machine running — Propareto is shaped around how you actually work.
+            Whether you own the business, close the deals, or keep the machine running — {brand.name} is shaped around how you actually work.
           </motion.p>
 
           {/* Role quick-jump chips */}

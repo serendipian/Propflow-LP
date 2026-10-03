@@ -31,7 +31,7 @@
   "solution": {
     "badge": "The Solution",
     "title": "Turn Complexity into Clarity. Create Order from Chaos.",
-    "subtitle": "Propareto replaces your fragmented toolset with a single intelligent operating system, designed to help you orchestrate your entire agency, close additional deals and reclaim your evenings back !"
+    "subtitle": "{{brand}} replaces your fragmented toolset with a single intelligent operating system, designed to help you orchestrate your entire agency, close additional deals and reclaim your evenings back !"
   },
   "features": {
     "badge": "10+ Connected Modules",
@@ -51,22 +51,22 @@
   "integrations": {
     "badge": "Integrated Workflow",
     "title": "Connect your Favorite Tools!",
-    "subtitle": "Connect Propareto to your favorite tools and create powerful workflows for your sales and leadership teams. More than 30+ native integrations."
+    "subtitle": "Connect {{brand}} to your favorite tools and create powerful workflows for your sales and leadership teams. More than 30+ native integrations."
   },
   "automation": {
     "badge": "Custom Automations",
     "title": "Build Workflows to Automate Repetitive Tasks",
-    "subtitle": "Build powerful scenarios to put your busywork on autopilot. From lead routing to smart follow-up, if you can define it, Propareto can automate it!"
+    "subtitle": "Build powerful scenarios to put your busywork on autopilot. From lead routing to smart follow-up, if you can define it, {{brand}} can automate it!"
   },
   "website": {
     "badge": "Digital Storefront",
     "title": "Your Public Website, Synced Instantly.",
-    "subtitle": "Launch a stunning, SEO-optimized agency website that pulls listings directly from your Propareto database."
+    "subtitle": "Launch a stunning, SEO-optimized agency website that pulls listings directly from your {{brand}} database."
   },
   "team": {
     "badge": "Enterprise Controls",
     "title": "Scale your Team with confidence.",
-    "subtitle": "Whether you are a boutique agency or a nationwide franchise, Propareto gives you granular control over your data and workforce."
+    "subtitle": "Whether you are a boutique agency or a nationwide franchise, {{brand}} gives you granular control over your data and workforce."
   },
   "social": {
     "title": "They Trusted Us"
@@ -74,7 +74,7 @@
   "pricing": {
     "badge": "Guaranteed Positive ROI",
     "title": "Affordable Pricing, Massive Impact",
-    "subtitle": "Propareto pays for itself in happier, more productive agents.",
+    "subtitle": "{{brand}} pays for itself in happier, more productive agents.",
     "monthly": "Monthly",
     "yearly": "Yearly",
     "save": "Save {{percent}}%",
@@ -95,23 +95,23 @@
         "a": "Most agencies are up and running within 48 hours. Our dedicated onboarding team handles the data migration from your existing spreadsheets or CRM (Salesforce, HubSpot, Pipedrive) for free on the Growth plan and above."
       },
       {
-        "q": "Is Propareto compliant with GDPR and data privacy laws?",
+        "q": "Is {{brand}} compliant with GDPR and data privacy laws?",
         "a": "Yes. We are fully GDPR and SOC-2 Type II compliant. Your data is encrypted at rest and in transit using bank-grade AES-256 standards, ensuring your client information remains secure and confidential."
       },
       {
         "q": "Can I customize the pipelines and workflows?",
-        "a": "Absolutely. Propareto is built to adapt to your specific agency processes. You can create custom deal stages, automated triggers, and mandatory fields to ensure your team follows your exact playbook."
+        "a": "Absolutely. {{brand}} is built to adapt to your specific agency processes. You can create custom deal stages, automated triggers, and mandatory fields to ensure your team follows your exact playbook."
       },
       {
         "q": "Do you offer API access for custom integrations?",
-        "a": "Yes, our Enterprise plan includes full API access and webhooks. You can connect Propareto to your custom website, accounting software, or any other proprietary tools you use."
+        "a": "Yes, our Enterprise plan includes full API access and webhooks. You can connect {{brand}} to your custom website, accounting software, or any other proprietary tools you use."
       },
       {
         "q": "What kind of support and training is included?",
         "a": "All plans include 24/7 email support and access to our knowledge base. Growth and Enterprise plans receive a dedicated Customer Success Manager and live video training sessions for your entire team."
       },
       {
-        "q": "Does Propareto work for both sales and rentals?",
+        "q": "Does {{brand}} work for both sales and rentals?",
         "a": "Yes. We support separate pipelines for Sales and Rentals/Lettings. You can manage landlords, tenants, buyers, and sellers in one unified database with distinct workflows for each transaction type."
       },
       {
@@ -132,7 +132,7 @@
   },
   "resources": {
     "title": "Resources to help you scale.",
-    "subtitle": "Explore our guides, community, and documentation to get the most out of Propareto."
+    "subtitle": "Explore our guides, community, and documentation to get the most out of {{brand}}."
   },
   "cta": {
     "badge": "New: AI Photo Enhancement",
@@ -143,8 +143,8 @@
     "bookDemo": "Book Demo"
   },
   "footer": {
-    "description": "Built on the Pareto principle: in real estate, 20% of your leads and actions drive 80% of your deals. Propareto brings that 20% to the surface and automates the rest, so your agents spend their time where it converts.",
-    "social": "Propareto on {{network}}",
+    "description": "Built on the Pareto principle: in real estate, 20% of your leads and actions drive 80% of your deals. {{brand}} brings that 20% to the surface and automates the rest, so your agents spend their time where it converts.",
+    "social": "{{brand}} on {{network}}",
     "product": "Product",
     "pipeline": "Pipeline",
     "listings": "Listings",
@@ -159,7 +159,7 @@
     "privacy": "Privacy",
     "terms": "Terms",
     "security": "Security",
-    "copyright": "© {{year}} Propareto Inc. All rights reserved.",
+    "copyright": "© {{year}} {{legalName}}. All rights reserved.",
     "designedFor": "Designed for the future."
   },
   "pricingPage": {
@@ -235,23 +235,23 @@
     },
     "info": {
       "title": "Contact Information",
-      "email": "hello@propareto.com",
+      "email": "{{helloEmail}}",
       "phone": "+212 5XX-XXXXXX",
       "address": "Casablanca, Morocco",
       "hours": "Mon–Fri, 9:00 AM – 6:00 PM (GMT+1)",
       "hoursLabel": "Business Hours",
       "demo": {
         "title": "Book a Demo",
-        "description": "See Propareto in action with a personalized walkthrough for your agency.",
+        "description": "See {{brand}} in action with a personalized walkthrough for your agency.",
         "cta": "Schedule Demo"
       }
     }
   },
   "demoPage": {
     "badge": "Live personalized walkthrough",
-    "title": "See Propareto",
+    "title": "See {{brand}}",
     "titleAccent": "in action.",
-    "subtitle": "Book a 30-minute walkthrough tailored to your agency. No slides — just your workflows, running on Propareto, with an expert answering every question.",
+    "subtitle": "Book a 30-minute walkthrough tailored to your agency. No slides — just your workflows, running on {{brand}}, with an expert answering every question.",
     "offer": {
       "hero": "Book a demo, get 3 months free",
       "title": "Get 3 months free",
@@ -262,9 +262,9 @@
       "items": [
         { "title": "A tour built around you", "text": "We map the demo to your agency's exact sales and rental workflows — not a generic script." },
         { "title": "Answers, live", "text": "Bring your hardest questions on migration, pricing, and integrations. We'll answer them on the call." },
-        { "title": "Your data, your way", "text": "See how your pipeline, listings, and contacts look inside Propareto before you commit to anything." },
+        { "title": "Your data, your way", "text": "See how your pipeline, listings, and contacts look inside {{brand}} before you commit to anything." },
         { "title": "Under 30 minutes", "text": "Focused, fast, and respectful of your time. No pressure, no obligation." },
-        { "title": "Enjoy 3 months free", "text": "Book and attend your demo to unlock 3 months of Propareto on us — every feature, zero cost." }
+        { "title": "Enjoy 3 months free", "text": "Book and attend your demo to unlock 3 months of {{brand}} on us — every feature, zero cost." }
       ]
     },
     "scheduler": {
@@ -277,7 +277,7 @@
       "title": "What Happens Next?",
       "items": [
         { "title": "Book your slot", "text": "Choose a time above. You'll get an instant calendar invite with a video link." },
-        { "title": "30-minute walkthrough", "text": "Meet your product expert for a tailored tour of Propareto, live." },
+        { "title": "30-minute walkthrough", "text": "Meet your product expert for a tailored tour of {{brand}}, live." },
         { "title": "Enjoy 3 months free", "text": "Love what you see? Get started and your first 3 months are on us — no obligation." }
       ]
     },
@@ -287,7 +287,7 @@
         { "q": "How do I get the 3 months free?", "a": "Just book and attend your demo. Once you've had your personalized walkthrough, we'll apply 3 months free to your account when you get started — no promo codes to hunt for." },
         { "q": "Is there a catch with the free 3 months?", "a": "None. It's our way of letting you experience the full platform risk-free. You get every feature for three months at no cost, and there's no obligation to continue afterward." },
         { "q": "How long does the demo take, and who should join?", "a": "About 30 minutes. It's most valuable with whoever owns your sales or operations — an agency lead, a top agent, or your ops manager. Bring anyone who'd help decide." },
-        { "q": "Is this a sales pitch?", "a": "No. It's a working session mapped to your actual workflows. We show you how your properties, contacts, and pipeline run inside Propareto, and answer your hardest questions live." },
+        { "q": "Is this a sales pitch?", "a": "No. It's a working session mapped to your actual workflows. We show you how your properties, contacts, and pipeline run inside {{brand}}, and answer your hardest questions live." },
         { "q": "What happens after the 3 free months?", "a": "You continue on the plan that fits your team — starting at a price that pays for itself. No long-term contract, and you can cancel anytime. We'll never auto-charge without telling you first." }
       ]
     }
