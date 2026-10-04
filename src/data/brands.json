@@ -6,6 +6,11 @@
     "siteUrl": "https://propflow.ma",
     "appUrl": "https://app.propflow.ma",
     "ogImage": "/og-propflow.png",
+    "gaMeasurementId": "G-DMMWZGPMDQ",
+    "currency": {
+      "code": "MAD",
+      "rate": 10
+    },
     "emails": {
       "hello": "hello@propflow.ma",
       "security": "security@propflow.ma"

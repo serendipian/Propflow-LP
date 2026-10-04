@@ -1,4 +1,5 @@
 import { useState, useCallback } from 'react';
+import { trackEvent } from '../lib/analytics';
 
 export interface ContactFormData {
   name: string;
@@ -87,6 +88,7 @@ export function useContactForm(t: (key: string) => string) {
 
     if (Object.keys(validationErrors).length === 0) {
       console.log('Contact form submitted:', data);
+      trackEvent('generate_lead', { form: 'contact' });
       setSubmitted(true);
       return true;
     }

@@ -1,23 +1,20 @@
-export interface LocaleConfig {
-  locale: string;
-  currency: string;
-  symbol: string;
+import { brand } from '../data/brand';
+
+// Plan and add-on prices (src/data/pricing.ts) are stored in USD. Each brand
+// shows a single currency (`currency` in brands.json: code + fixed rate from
+// USD), whatever the reader's language; the language only sets number format.
+export interface CurrencyConfig {
+  code: string;
   rate: number; // conversion rate from USD
 }
 
-export const localeConfigs: Record<string, LocaleConfig> = {
-  en: { locale: 'en-US', currency: 'USD', symbol: '$', rate: 1 },
-  fr: { locale: 'fr-MA', currency: 'MAD', symbol: 'MAD', rate: 10 },
-};
+const numberLocales: Record<string, string> = { en: 'en-US', fr: 'fr-MA' };
 
-export function formatPrice(amount: number, lang: string): string {
-  const config = localeConfigs[lang] || localeConfigs.en;
-  const converted = Math.round(amount * config.rate);
-
-  return new Intl.NumberFormat(config.locale, {
+export function formatPrice(amount: number, lang: string, currency: CurrencyConfig = brand.currency): string {
+  return new Intl.NumberFormat(numberLocales[lang] ?? 'en-US', {
     style: 'currency',
-    currency: config.currency,
+    currency: currency.code,
     minimumFractionDigits: 0,
     maximumFractionDigits: 0,
-  }).format(converted);
+  }).format(Math.round(amount * currency.rate));
 }

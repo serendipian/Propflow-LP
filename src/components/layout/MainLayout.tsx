@@ -3,6 +3,7 @@ import { Outlet } from 'react-router-dom';
 import Navigation from './Navigation';
 import Footer from './Footer';
 import ScrollToTop from '../shared/ScrollToTop';
+import CookieConsent from './CookieConsent';
 
 export default function MainLayout() {
   return (
@@ -18,6 +19,7 @@ export default function MainLayout() {
       <Suspense fallback={null}>
         <Footer />
       </Suspense>
+      <CookieConsent />
     </div>
   );
 }

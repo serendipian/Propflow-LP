@@ -5,6 +5,7 @@ import { Linkedin, Instagram, Facebook } from 'lucide-react';
 import SmartLink from '../shared/SmartLink';
 import { Logo } from '../ui/Logo';
 import { socialLinks } from '../../data/navigation';
+import { analyticsEnabled, openCookieSettings } from '../../lib/analytics';
 
 // Lucide only ships the old Twitter bird, so the X mark is drawn here.
 function XIcon({ size = 16 }: { size?: number }) {
@@ -79,7 +80,14 @@ export default function Footer() {
       
       <div className="max-w-7xl mx-auto px-6 pt-8 border-t border-zinc-200 dark:border-zinc-900 flex flex-col md:flex-row justify-between items-center gap-2 text-center text-zinc-500">
         <p>{t('footer.copyright', { year: new Date().getFullYear() })}</p>
-        <p>{t('footer.designedFor')}</p>
+        <div className="flex items-center gap-4">
+          {analyticsEnabled && (
+            <button onClick={openCookieSettings} className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+              {t('footer.cookieSettings')}
+            </button>
+          )}
+          <p>{t('footer.designedFor')}</p>
+        </div>
       </div>
     </footer>
   );

@@ -160,7 +160,8 @@
     "terms": "Conditions",
     "security": "Sécurité",
     "copyright": "© {{year}} {{legalName}}. Tous droits réservés.",
-    "designedFor": "Conçu pour le futur."
+    "designedFor": "Conçu pour le futur.",
+    "cookieSettings": "Paramètres des cookies"
   },
   "pricingPage": {
     "title": "Tarifs Simples et Transparents",
@@ -296,5 +297,12 @@
     "title": "Cette page n'existe pas",
     "subtitle": "L'adresse est peut-être mal saisie, ou la page a été déplacée. Revenons sur la bonne voie.",
     "cta": "Retour à l'accueil"
+  },
+  "cookies": {
+    "title": "Cookies",
+    "text": "Nous utilisons les cookies de Google Analytics pour comprendre comment notre site est utilisé, uniquement avec votre accord.",
+    "policy": "Politique de confidentialité",
+    "accept": "Accepter",
+    "decline": "Refuser"
   }
 }

@@ -62,7 +62,7 @@ const softwareLd = {
   offers: {
     '@type': 'Offer',
     price: '0',
-    priceCurrency: 'USD',
+    priceCurrency: BRAND.currency.code,
     description: 'Free 30-day trial — no credit card required.',
   },
   // No aggregateRating until real, on-site customer reviews exist: Google's
